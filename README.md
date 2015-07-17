@@ -1,2 +1,3 @@
 # man-css
-:art: CSS for man pages
+
+CSS for man pages
