@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>man-css</title>
+  <meta charset="utf-8">
+  <meta name="viewport" value="width=960">
+  <link rel="stylesheet" type="text/css" href="man.css">
+</head>
+<body>
+
+<div id="man">
+  <h1><i>📘</i> <code>man-css</code></h1>
+
+  <p>&hellip; is a CSS library to make attractive documentation for software projects</a>. Focus is placed on simplicity &amp; clarity with a nod to the monospaced world that we live in for working.
+
+  <h2 id="usage"><a href="#usage">#</a>Usage</h2>
+
+  <p>Simply include the stylesheet in your page&hellip;</p>
+
+  <pre><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type=</span><span class="s">&quot;text/css&quot;</span> <span class="na">href=</span><span class="s">&quot;http://davidfmiller.github.io/man-css/man.css&quot;</span><span class="nt">&gt;</span></pre>
+
+  <p>&hellip; or save the file locally within your project&rsquo;s repository and include it from there.</p>
+
+  <p>This page is built using <code>man-css</code>; or save and copy the source to use as a template for your project&rsquo;s documentation.</p>
+
+  <h3>Code blocks</h3>
+
+  <p>&hellip; should be placed within <code>&lt;pre&gt;&lt;/pre&gt;</code> tags. Output from <a href="http://pygments.org" title="pygments"><code>pygments</code></a> <a href="http://pygments.org/docs/formatters/?highlight=html%20formatter#HtmlFormatter" title="HTMLFormatter"><code>HTMLFormatter</code></a> will receive syntax highlighting, ex:
+
+  <pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">&quot;en&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+  <span class="nt">&lt;title&gt;</span>man-css<span class="nt">&lt;/title&gt;</span>
+  <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">&quot;utf-8&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;viewport&quot;</span> <span class="na">value=</span><span class="s">&quot;width=960&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type=</span><span class="s">&quot;text/css&quot;</span> <span class="na">href=</span><span class="s">&quot;man.css&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre>
+
+<p>Here&rsquo;s how to create annotated markup from a source file:</p>
+
+  <pre><i>⚡</i> pygmentize -f html -l python -o output.html input.py <span class="c"># output.html contains the annotated source</span>
+</pre>
+
+  <h3>Text Selection</h3>
+
+  <p>Use an <code>&lt;i&gt;</code> tag within a <code>&lt;pre&gt;</code> block to <em>prevent</em> text-selection on elements (<abbr title="example">ex:</abbr> command prompts, comments, etc.)
+
+  <h2 id="history"><a href="#history">#</a>Version History</h2>
+  <dl>
+    <dt><code>v0.0.1</code> - ???</dt>
+    <dd>Initial release</dd>
+  </dl>
+
+  <h2 id="todo"><a href="#todo">#</a>Todo</h2>
+
+  <p>The following pieces are either actively in development or on the roadmap:</p>
+
+  <ul>
+    <li>phone &amp; tablet styles</li>
+  </ul>
+
+  <p>If there is something you would like to see included please <a href="https://github.com/davidfmiller/man-css/issues/new">file an issue</a>.</p>
+
+  <h2 id="contribute"><a href="#contribute">#</a>Contribute</h2>
+
+  <p><a href="https://github.com/davidfmiller/catf" title="Clone on GitHub">Clone it</a>.</p>
+
+</div>
+
+</body>
+</html>
