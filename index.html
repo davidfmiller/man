@@ -21,13 +21,13 @@
 
   <p>&hellip; or save the file locally within your project&rsquo;s repository and include it from there.</p>
 
-  <p>This page is built using <code>man-css</code>; or save and copy the source to use as a template for your project&rsquo;s documentation.</p>
+  <p>This page is built using <code>man-css</code>; save and copy the source to use as a template for your project&rsquo;s documentation.</p>
 
   <h3>Code blocks</h3>
 
   <p>&hellip; should be placed within <code>&lt;pre&gt;&lt;/pre&gt;</code> tags. Output from <a href="http://pygments.org" title="pygments"><code>pygments</code></a> <a href="http://pygments.org/docs/formatters/?highlight=html%20formatter#HtmlFormatter" title="HTMLFormatter"><code>HTMLFormatter</code></a> will receive syntax highlighting, ex:
 
-  <pre><span class="cp">&lt;!DOCTYPE html&gt;</span>
+  <pre id="pre-code"><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">&quot;en&quot;</span><span class="nt">&gt;</span>
 <span class="nt">&lt;head&gt;</span>
   <span class="nt">&lt;title&gt;</span>man-css<span class="nt">&lt;/title&gt;</span>
@@ -37,13 +37,12 @@
 <span class="nt">&lt;/head&gt;</span>
 
 <span class="nt">&lt;/body&gt;</span>
-<span class="nt">&lt;/html&gt;</span>
+<span class="nt">&lt;/html&gt;</span><a href="#pre-code" class="hash">#</a>
 </pre>
 
 <p>Here&rsquo;s how to create annotated markup from a source file:</p>
 
-  <pre><i>⚡</i> pygmentize -f html -l python -o output.html input.py <span class="c"># output.html contains the annotated source</span>
-</pre>
+  <pre><i>⚡</i> pygmentize -f html -l python -o output.html input.py</pre>
 
   <h3>Text Selection</h3>
 
@@ -60,6 +59,7 @@
   <p>The following pieces are either actively in development or on the roadmap:</p>
 
   <ul>
+    <li><code>&lt;pre&gt;</code> in <code>&lt;dd&gt;</code></li>
     <li>phone &amp; tablet styles</li>
   </ul>
 

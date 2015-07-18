@@ -129,6 +129,41 @@ pre {
   border: 1px solid rgba(0,0,0,0.1);
   transition: border-color 0.1s linear;
   cursor: text;
+  position: relative;
+}
+
+pre a.hash {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: block;
+  padding: 5px;
+  border-top-left-radius: 3px;
+  font-style: normal;
+  color: rgba(0,0,0,0.3);
+  opacity: 0;
+  transition: opacity 0.2s;
+
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+pre:hover a.hash {
+  opacity: 1;
+}
+
+pre a.hash:hover {
+  text-decoration: none;
+  color: rgba(0,0,0,0.5);
+}
+
+pre:target {
+  border-color: rgba(0,0,0,0.7);
 }
 
 pre:hover {
