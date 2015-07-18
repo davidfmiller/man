@@ -11,7 +11,12 @@
 <div id="man">
   <h1><i>📘</i> <code>man-css</code></h1>
 
-  <p>&hellip; is a CSS library to make attractive documentation for software projects</a>. Focus is placed on simplicity &amp; clarity with a nod to the monospaced world that we live in while working.
+  <p>
+    &hellip; is a CSS library to make attractive documentation for software projects</a>. Focus is placed on simplicity &amp; clarity with a nod to the monospaced world that we live in while working.
+  </p>
+  <p>
+    It is perfectly suited to styling <a href="http://daringfireball.net/projects/markdown/">Markdown</a>-generated documents, although manually-authored <code>man-css</code> HTML will provide some capabilities that are not supported in Markdown&rsquo;s simplified syntax/structure.
+  </p>
 
   <h2 id="usage"><a href="#usage">#</a>Usage</h2>
 
@@ -35,12 +40,13 @@
   <span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">&quot;viewport&quot;</span> <span class="na">value=</span><span class="s">&quot;width=960&quot;</span><span class="nt">&gt;</span>
   <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type=</span><span class="s">&quot;text/css&quot;</span> <span class="na">href=</span><span class="s">&quot;man.css&quot;</span><span class="nt">&gt;</span>
 <span class="nt">&lt;/head&gt;</span>
-
+<span class="nt">&lt;body&gt;</span>
+<span class="c">&lt;-- markup --&gt;</span>
 <span class="nt">&lt;/body&gt;</span>
 <span class="nt">&lt;/html&gt;</span><a href="#pre-code" class="hash">#</a>
 </pre>
 
-<p>Here&rsquo;s how to create annotated markup from a source file:</p>
+<p>Create annotated markup from a source file like so:</p>
 
   <pre><i>⚡</i> pygmentize -f html -l python -o output.html input.py</pre>
 
@@ -59,6 +65,10 @@
   <p>The following pieces are either actively in development or on the roadmap:</p>
 
   <ul>
+    <li><code>a.target</code> in <code>dt</code> &amp; <code>h3</code></li>
+    <li>explain <code>a.hash</code></li>
+    <li>shell command styles/example</li>
+    <li><code>&lt;a&gt;</code> in <code>&lt;code&gt;</code> underlines</li>
     <li><code>&lt;pre&gt;</code> in <code>&lt;dd&gt;</code></li>
     <li>phone &amp; tablet styles</li>
   </ul>

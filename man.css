@@ -89,10 +89,12 @@ dd pre {
 
 ul li {
   padding-left: 10px;
+  padding-bottom: 10px;
 }
 
 ul li:after {
-  content: ","
+  content: ",";
+  color: #666;
 }
 
 ul li:last-child:after {
