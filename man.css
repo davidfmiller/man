@@ -45,6 +45,13 @@ h1 i {
   font-style: normal;
 }
 
+a {
+  color: blue;
+  text-decoration: none;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+}
+
 h2 a {
   position: absolute;
   text-decoration: none;
@@ -115,6 +122,7 @@ code, pre {
   font-family: consolas, menlo, monaco, monospace-serif;
 }
 
+code a,
 code {
   color: #666;
 }
