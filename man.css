@@ -90,8 +90,12 @@ dd {
   margin: 10px 0 20px 0;
 }
 
-dd pre {
-  margin: 10px 0;
+dt + dd > pre {
+  margin: 0;
+}
+
+dd + dd > pre {
+  margin: -10px 0 10px 0;
 }
 
 ul li {
@@ -153,7 +157,7 @@ pre a.hash {
   color: rgba(0,0,0,0.3);
   opacity: 0;
   transition: opacity 0.2s;
-
+  border: none;
 
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -169,7 +173,8 @@ pre:hover a.hash {
 
 pre a.hash:hover {
   text-decoration: none;
-  color: rgba(0,0,0,0.5);
+  color: rgba(255,255,255,1);
+  background: rgba(0,0,0,0.3);
 }
 
 pre:target {
