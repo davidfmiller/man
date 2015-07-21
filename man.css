@@ -188,11 +188,6 @@ pre:hover {
 
 pre a {
   color: blue;
-  text-decoration: none;
-}
-
-pre a:hover {
-  text-decoration: underline;
 }
 
 i {
