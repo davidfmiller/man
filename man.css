@@ -191,6 +191,10 @@ pre a {
   text-decoration: none;
 }
 
+pre a:hover {
+  text-decoration: underline;
+}
+
 i {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -232,6 +236,7 @@ dl {
 
 }
 */
+
 
 pre .hll { background-color: #ffffcc }
 pre .c { color: #999988; font-style: italic } /* Comment */
