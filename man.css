@@ -188,7 +188,6 @@ pre:hover {
 
 pre a {
   color: blue;
-  text-decoration: none;
 }
 
 i {
@@ -232,6 +231,7 @@ dl {
 
 }
 */
+
 
 pre .hll { background-color: #ffffcc }
 pre .c { color: #999988; font-style: italic } /* Comment */
