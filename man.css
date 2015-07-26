@@ -52,19 +52,36 @@ a {
   border-bottom-style: solid;
 }
 
+dt a,
+h3 a,
 h2 a {
   position: absolute;
   text-decoration: none;
+  border: none;
   color: #eee;
   left: -15px;
-
-  transform: color 0.2s linear;
+  transition: color 0.2s linear;
 }
 
-h2:target{
+
+dt:hover a,
+h3:hover a,
+h2:hover a {
+  color: #888;
+}
+
+
+dt:target a,
+h2:target a,
+h3:target a,
+dt:target a:hover,
+h2:target a:hover,
+h3:target a:hover {
   color: red;
 }
 
+h3 a:hover,
+dt a:hover,
 h2 a:hover {
   text-decoration: underline;
   color: blue;
