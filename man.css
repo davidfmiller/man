@@ -195,7 +195,7 @@ pre a.hash:hover {
 }
 
 pre:target {
-  border-color: rgba(0,0,0,0.7);
+  border-color: red;
 }
 
 pre:hover {
