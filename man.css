@@ -7,17 +7,14 @@ html {
 body {
   color: #000;
   font: 13px consolas, menlo, monaco, monospace-serif;
+  width: 800px;
+  margin: 0 auto;
+  padding: 50px 0;
 }
 
 div {
   position: relative;
   z-index: 1;
-}
-
-body {
-  width: 800px;
-  margin: 0 auto;
-  padding: 50px 0;
 }
 
 h1 {
@@ -52,9 +49,22 @@ a {
   border-bottom-style: solid;
 }
 
+a:visited {
+  color: purple;
+}
+
+a:hover {
+  color: red;
+}
+
+
+
 dt a,
+dt a:visited,
 h3 a,
-h2 a {
+h3 a:visited,
+h2 a,
+h2 a:visited {
   position: absolute;
   text-decoration: none;
   border: none;
@@ -89,11 +99,16 @@ h2 a:hover {
 
 h3 {
   font-weight: bold;
+  position: relative;
 }
 
 p {
   margin: 20px 0;
   line-height: 1.5em;
+}
+
+dt {
+  position: relative;
 }
 
 dl {
@@ -117,12 +132,16 @@ dd + dd > pre {
 
 ul li {
   padding-left: 10px;
-  padding-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 ul li:after {
   content: ",";
   color: #666;
+}
+
+ul li:last-child {
+
 }
 
 ul li:last-child:after {
@@ -220,7 +239,7 @@ i {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  left: -20px;
+
 }
 
 dl {
@@ -229,27 +248,22 @@ dl {
 
 @media screen and (max-device-width: 480px) { /* smartphone */
 
-  html { background: #fff; }
-  body { -webkit-text-size-adjust: 300%; }
-  #man { width: auto; padding: 20px 50px; }
-  #man a { color: blue !important; border-bottom: 1px solid #ddd; text-decoration: none; }
-  #man a:visited { color: purple; }
-  #man a:active { color: red; }
-  ol { display: none; }
-
-  h1 i,
-  h2 a { display: none; }
+  body { padding: 50px 0 20px 0; }
+  pre {
+    overflow: scroll;
+  }
 }
+
+
+@media only screen and (device-width: 768px) { /* tablet */
+
+  body { padding: 50px 0 20px 0; }
+  pre {
+    overflow: scroll;
+  }
+}
+
 /*
-@media only screen and (device-width: 768px) { /* tablet
-
-  html { background: #fff; font-size: 13px;}
-  body { -webkit-text-size-adjust: 300%; text-shadow: none; }
-  p { display: block;  line-height: 16px; padding: 20px 0 15px 0; }
-  #man { width: auto; color: #000; }
-  #man a { color: blue !important; border-bottom: 1px solid #ddd; text-decoration: none; }
-}
-
 @media only screen and (-webkit-min-device-pixel-ratio: 2) { /* retina
 
 }
