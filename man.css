@@ -130,9 +130,14 @@ dd + dd > pre {
   margin: -10px 0 10px 0;
 }
 
-ul li {
+li {
   padding-left: 10px;
   margin-bottom: 10px;
+}
+
+ol li {
+  list-style-position: inside;
+  list-style-type: decimal;
 }
 
 ul li:after {
@@ -140,7 +145,7 @@ ul li:after {
   color: #666;
 }
 
-ul li:last-child {
+li:last-child {
 
 }
 
