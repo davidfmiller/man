@@ -188,6 +188,10 @@ pre {
   position: relative;
 }
 
+pre code {
+  background: transparent;
+}
+
 pre a.hash {
   position: absolute;
   bottom: 0;
