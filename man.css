@@ -250,6 +250,11 @@ dl {
   margin: 10px 0;
 }
 
+body > img {
+	box-shadow: 1px 1px 5px #ddd;
+}
+
+
 @media screen and (max-device-width: 480px) { /* smartphone */
 
   body { padding: 50px 0 20px 0; }
