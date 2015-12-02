@@ -248,12 +248,16 @@ i {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-
 }
 
 dl {
   margin: 10px 0;
 }
+
+body > img {
+	box-shadow: 1px 1px 5px #ddd;
+}
+
 
 @media screen and (max-device-width: 480px) { /* smartphone */
 
