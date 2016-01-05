@@ -30,6 +30,12 @@ h2 {
   font-size:15px;
 }
 
+h3 {
+  font-weight: bold;
+  position: relative;
+  margin: 20px 0 20px 0;
+}
+
 h1 code {
   font-size: 20px;
   font-weight: bold;
@@ -55,6 +61,17 @@ a:visited {
 
 a:hover {
   color: red;
+}
+
+
+h1 a,
+h1 a:visited {
+  color: #000;
+  border-bottom-width: 0;
+}
+
+h1 a:hover {
+  border-bottom-width: 1px;
 }
 
 
@@ -97,11 +114,6 @@ h2 a:hover {
   color: blue;
 }
 
-h3 {
-  font-weight: bold;
-  position: relative;
-}
-
 p {
   margin: 20px 0;
   line-height: 1.5em;
@@ -130,9 +142,14 @@ dd + dd > pre {
   margin: -10px 0 10px 0;
 }
 
-ul li {
+li {
   padding-left: 10px;
   margin-bottom: 10px;
+}
+
+ol li {
+  list-style-position: inside;
+  list-style-type: decimal;
 }
 
 ul li:after {
@@ -140,7 +157,7 @@ ul li:after {
   color: #666;
 }
 
-ul li:last-child {
+li:last-child {
 
 }
 
@@ -243,7 +260,6 @@ i {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-
 }
 
 dl {
@@ -257,6 +273,10 @@ hr {
   padding: 0;
   background: rgba(0,0,0,0.1);
   margin: 20px 0;
+}
+
+body > img {
+  box-shadow: 1px 1px 5px #ddd;
 }
 
 
