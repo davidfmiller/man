@@ -63,9 +63,15 @@ a:hover {
   color: red;
 }
 
+
 h1 a,
 h1 a:visited {
   color: #000;
+  border-bottom-width: 0;
+}
+
+h1 a:hover {
+  border-bottom-width: 1px;
 }
 
 
