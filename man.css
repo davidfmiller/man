@@ -127,10 +127,14 @@ dl {
   margin: 20px 0;
 }
 
-
 dd {
-  padding-left: 25px;
+  padding-left: 10px;
   margin: 10px 0;
+}
+
+dd:before {
+  content: "-";
+  padding-right:10px;
 }
 
 dt + dd > pre {
