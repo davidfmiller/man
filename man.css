@@ -326,7 +326,7 @@ body > img {
 .gs { font-weight: bold } /* Generic.Strong */
 .gu { color: #aaaaaa } /* Generic.Subheading */
 .gt { color: #aa0000 } /* Generic.Traceback */
-.kc { color: #000000; font-weight: bold } /* Keyword.Constant */
+.kc { color: #0086b3; } /* Keyword.Constant */
 .kd { color: #a71d5d; } /* Keyword.Declaration */
 .kn { color: #000000; font-weight: bold } /* Keyword.Namespace */
 .kp { color: #000000; font-weight: bold } /* Keyword.Pseudo */
