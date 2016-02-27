@@ -285,7 +285,7 @@ body > img {
 
 @media screen and (max-device-width: 480px) { /* smartphone */
 
-  body { padding: 50px 0 20px 0; }
+  body { width: 90%; margin: 0 auto; }
   pre {
     overflow: scroll;
   }
@@ -294,7 +294,7 @@ body > img {
 
 @media only screen and (device-width: 768px) { /* tablet */
 
-  body { padding: 50px 0 20px 0; }
+  body { width: 90%; margin: 0 auto; }
   pre {
     overflow: scroll;
   }
