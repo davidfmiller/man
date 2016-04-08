@@ -154,7 +154,7 @@
       lines = pre.innerHTML.split("\n"),
       buf = '<table><tbody>';
 
-      if (lines.length <= 1) { continue; }
+      if (lines.length <= 1 || pre.hasAttribute("data-no-lines")) { continue; }
 
       for (var j = 0; j < lines.length; j++) {
 
