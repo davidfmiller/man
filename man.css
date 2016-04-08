@@ -283,6 +283,31 @@ body > img {
   box-shadow: 1px 1px 5px #ddd;
 }
 
+pre td.col {
+  color: rgba(0,0,0,0.1);
+  transition: color 0.2s;
+}
+
+pre:hover td.col {
+  color: rgba(0,0,0,0.2);
+}
+
+td.col {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -khtml-user-select: none;    /* Konqueror */
+  -moz-user-select: none;      /* Firefox */
+  -ms-user-select: none;       /* IE/Edge */
+  user-select: none;       
+  -webkit-user-select: none;   /* Chrome/Safari/Opera */
+  color: #888;
+
+  padding-right: 10px;
+  content: 
+}
+
+td.col::before {
+  content: attr(data-line-number)
+}
 
 @media screen and (max-device-width: 480px) { /* smartphone */
 
