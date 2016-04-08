@@ -158,7 +158,7 @@
 
       for (var j = 0; j < lines.length; j++) {
 
-        buf += '<tr><td class="col" data-line-number="' + (j + 1) + '"></td><td>' + lines[j] + '</td></tr>'
+        buf += '<tr><td class="col" data-line-number="' + (j + 1) + '"></td><td>' + lines[j] + '</td></tr>';
       }
 
       buf += '</tbody></table>';
