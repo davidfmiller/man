@@ -291,6 +291,10 @@ pre table {
   width: 100%;
 }
 
+pre tr td {
+  transition: background-color 0.2s;
+}
+
 pre tr.highlighted td {
   background: rgba(255, 245, 5, 0.58);
 }

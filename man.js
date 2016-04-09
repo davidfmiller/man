@@ -166,6 +166,8 @@
       rows[i].classList.remove('highlighted');
     }
 
+    if (! td) { return; }
+
     pre = ancestor(td, 'pre');
 
     document.location = '#' + pre.getAttribute('id') + '-' + td.getAttribute('data-line-number');
@@ -234,10 +236,17 @@
     document.body.addEventListener('click',function(e) {
 
       var td;
-      if (e.target && e.target.matches('td.col')) {
+
+      if (! e.target) { return; }
+
+      if (e.target.matches('td.col')) {
         td = e.target;
         highlightRow(td);
       }
+      else if (e.target.matches('a.hash')) {
+        highlightRow(null);
+      }
+
     });
 
     if (this.debug) { window.console.log(this.toString()); }
