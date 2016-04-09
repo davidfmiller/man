@@ -1,5 +1,5 @@
 /* jshint undef: true,strict:true,trailing:true,loopfunc:true */
-/* global document,window,HTMLElement */
+/* global document,window,HTMLElement,Element */
 
 (function() {
 
@@ -108,12 +108,69 @@
    * @param node {HTMLElement}
    * @param styles {Object}
    */
-  setStyles  = function(node, styles) {
+  setStyles = function(node, styles) {
     for (var i in styles) {
       node.style[i] = styles[i];
     }
-  };
+  },
 
+  /*
+   *
+   * @param node {HTMLElement}
+   * @param styles {Object}
+   */
+  selectorMatches = function (node, selector) {
+
+    var
+    p = Element.prototype,
+    f = p.matches || p.webkitMatchesSelector || p.mozMatchesSelector || p.msMatchesSelector || function(s) {
+      return [].indexOf.call(document.querySelectorAll(s), this) !== -1;
+    };
+
+    return f.call(node, selector);
+  },
+
+  /*
+   *
+   * @param node {HTMLElement}
+   * @param styles {Object}
+   */
+  ancestor = function (node, selector, includeSelf) {
+
+    if (arguments.length == 2) { includeSelf = true; }
+  
+    var n = includeSelf ? node : node.parentNode;
+
+    while (n && ! selectorMatches(n, selector)) {
+      if (n.parentNode) {
+        n = n.parentNode;
+      }
+      else {
+        break;
+      }
+    }
+
+     if (selectorMatches(n, selector)) { return n; }
+
+    return null;
+  },
+
+  highlightRow = function(td) {
+
+    var
+    i = 0,
+    rows = arr(document.querySelectorAll('pre tr.highlighted')),
+    pre = null;
+
+    for (i = 0; i < rows.length; i++) {
+      rows[i].classList.remove('highlighted');
+    }
+
+    pre = ancestor(td, 'pre');
+
+    document.location = '#' + pre.getAttribute('id') + '-' + td.getAttribute('data-line-number');
+    ancestor(td, 'tr').classList.add('highlighted');
+  };
 
   /**
    *
@@ -149,23 +206,50 @@
     nodes = arr(node.querySelectorAll('pre'));
 
     for (i = 0; i < nodes.length; i++) {
+
       var
+      j = 0,
+      idBase = '',
       pre = nodes[i],
       lines = pre.innerHTML.split("\n"),
       buf = '<table><tbody>';
 
-      if (lines.length <= 1 || pre.hasAttribute("data-no-lines")) { continue; }
+      if (! pre.getAttribute('id')) {
+        pre.setAttribute('id', 'pre-man-' + i);
+      }
 
-      for (var j = 0; j < lines.length; j++) {
+      if (lines.length <= 1 || pre.hasAttribute('data-no-lines')) { continue; }
 
-        buf += '<tr><td class="col" data-line-number="' + (j + 1) + '"></td><td>' + lines[j] + '</td></tr>';
+      pre.classList.add('lines');
+
+      for (j = 0; j < lines.length; j++) {
+        idBase = pre.getAttribute('id') + '-' + (j + 1);
+        buf += '<tr><td id="' + (idBase) + '-line" class="col" data-line-number="' + (j + 1) + '"></td><td id="' + (idBase) + '-code" data-line-number="' + (j + 1) + '">' + lines[j] + '</td></tr>';
       }
 
       buf += '</tbody></table>';
       pre.innerHTML = buf;
     }
 
+    document.body.addEventListener('click',function(e) {
+
+      var td;
+      if (e.target && e.target.matches('td.col')) {
+        td = e.target;
+        highlightRow(td);
+      }
+    });
+
     if (this.debug) { window.console.log(this.toString()); }
+    var
+    hash = document.location.hash,
+    td = document.getElementById(hash.slice(1) + '-line');
+
+    if (td) {
+      highlightRow(td);
+    }
+    
+    
   };
 
   /**

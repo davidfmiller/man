@@ -203,6 +203,10 @@ pre {
   position: relative;
 }
 
+pre.lines {
+  padding: 10px 0;
+}
+
 pre code {
   background: transparent;
 }
@@ -283,6 +287,14 @@ body > img {
   box-shadow: 1px 1px 5px #ddd;
 }
 
+pre table {
+  width: 100%;
+}
+
+pre tr.highlighted td {
+  background: rgba(255, 245, 5, 0.58);
+}
+
 pre td.col {
   color: rgba(0,0,0,0.1);
   transition: color 0.2s;
@@ -293,6 +305,7 @@ pre:hover td.col {
 }
 
 td.col {
+  width: 1%;
   -webkit-touch-callout: none; /* iOS Safari */
   -khtml-user-select: none;    /* Konqueror */
   -moz-user-select: none;      /* Firefox */
@@ -301,13 +314,20 @@ td.col {
   -webkit-user-select: none;   /* Chrome/Safari/Opera */
   color: #888;
 
-  padding-right: 10px;
-  content: 
+  text-align: right;
+  padding: 0 5px;
+  font-size: 10px;
 }
 
 td.col::before {
   content: attr(data-line-number)
 }
+
+td.col:hover {
+  background: rgba(255, 245, 5, 0.58);
+  cursor: pointer;
+}
+
 
 @media screen and (max-device-width: 480px) { /* smartphone */
 
