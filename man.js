@@ -155,28 +155,35 @@
     return null;
   },
 
-  highlightRow = function(td, scrollIntoView) {
+  highlightRows = function(tds, updateState) {
 
     var
     i = 0,
-    rows = arr(document.querySelectorAll('pre tr.highlighted')),
+    current = arr(document.querySelectorAll('pre tr.highlighted')),
     pre = null;
 
-    for (i = 0; i < rows.length; i++) {
-      rows[i].classList.remove('highlighted');
+    for (i = 0; i < current.length; i++) {
+      current[i].classList.remove('highlighted');
     }
 
-    if (! td) { return; }
-
-    pre = ancestor(td, 'pre');
-
-    document.location = '#' + pre.getAttribute('id') + '-' + td.getAttribute('data-line-number');
-    ancestor(td, 'tr').classList.add('highlighted');
-
-    if (scrollIntoView) {
-      td.scrollIntoView(true);
+    if (! tds || ! tds.length) {
+      if (updateState) {
+        document.location.hash = '';
+      }
+      return;
     }
 
+    for (i = 0; i < tds.length; i++) {
+      if (! tds[i]) { continue; }
+      ancestor(tds[i], 'tr', true).classList.add('highlighted');
+    }
+
+    pre = ancestor(tds[0], 'pre');
+    if (updateState) {
+      document.location = '#man-' + pre.getAttribute('id') + '-' + tds[0].getAttribute('data-line-number');
+    } else {
+      tds[0].scrollIntoView(true);
+    }
   };
 
   /**
@@ -194,14 +201,8 @@
     n,
     node,
     over,
-    defaultConfig = {
-      debug : false,
-      root : document.body,
-      delay : { pop : 200, unpop : 300 },
-      factory : null
-    },
-    defaultProperties = {
-    };
+    defaultConfig = {},
+    defaultProperties = { };
 
     config = merge(defaultConfig, config);
     this.defaults = merge(defaultProperties, defaults);
@@ -230,7 +231,7 @@
       pre.classList.add('lines');
 
       for (j = 0; j < lines.length; j++) {
-        idBase = pre.getAttribute('id') + '-' + (j + 1);
+        idBase = 'man-' + pre.getAttribute('id') + '-' + (j + 1);
         buf += '<tr><td id="' + (idBase) + '-line" class="col" data-line-number="' + (j + 1) + '"></td><td id="' + (idBase) + '-code" data-line-number="' + (j + 1) + '">' + lines[j] + '</td></tr>';
       }
 
@@ -240,16 +241,11 @@
 
     document.body.addEventListener('click',function(e) {
 
-      var td;
-
-      if (! e.target) { return; }
-
       if (e.target.matches('td.col')) {
-        td = e.target;
-        highlightRow(td);
+        highlightRows([e.target], true);
       }
       else if (e.target.matches('a.hash')) {
-        highlightRow(null);
+        highlightRows(null, true);
       }
 
     });
@@ -257,14 +253,29 @@
     if (this.debug) { window.console.log(this.toString()); }
 
     var
-    hash = document.location.hash,
-    td = document.getElementById(hash.slice(1) + '-line');
+    re = /#man-([^\d]*)-(\d*)-?(\d*)?/,
+    matches = document.location.hash.match(re),
+    id,
+    td,
+    i = 0,
+    rows = [];
 
-    if (td) {
-      highlightRow(td, true);
-    }    
+    if (! matches) { return; }
 
+    if (! matches[3]) {
+      rows = [document.getElementById('man-' + matches[1] + '-' + matches[2] + '-line')];
+    } else {
+      for (i = parseInt(matches[2]); i <= parseInt(matches[3]); i++) {
 
+        id = 'man-' + matches[1] + '-' + i + '-line';
+        td = document.getElementById(id);
+        if (td) {
+          rows.push(document.getElementById(id));
+        }
+      }
+    } 
+
+    highlightRows(rows, false);
   };
 
   /**

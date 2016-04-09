@@ -314,21 +314,24 @@ td.col {
   -khtml-user-select: none;    /* Konqueror */
   -moz-user-select: none;      /* Firefox */
   -ms-user-select: none;       /* IE/Edge */
-  user-select: none;       
+  user-select: none;
   -webkit-user-select: none;   /* Chrome/Safari/Opera */
   color: #888;
 
   text-align: right;
   padding: 0 5px;
-  font-size: 10px;
+  font-size: 11px;
 }
 
 td.col::before {
   content: attr(data-line-number)
 }
 
+td.col:hover::before {
+  color: #000;
+}
+
 td.col:hover {
-  background: rgba(255, 245, 5, 0.58);
   cursor: pointer;
 }
 

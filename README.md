@@ -5,5 +5,5 @@
 View the [docs](http://davidfmiller.github.io/man).
 
 ## TODO
-- allow multiple line selection
+- subtle line highlight on hover
 - docs on how to do include/config JS
