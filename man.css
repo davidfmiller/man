@@ -365,7 +365,7 @@ td.col:hover {
 .k { color: #a71d5d; } /* Keyword */
 .o { color: #000000;  } /* Operator */
 .cm { color: #999988; } /* Comment.Multiline */
-.cp { color: #999999; font-weight: bold; font-style: italic } /* Comment.Preproc */
+.cp { color: #999999;  font-style: italic } /* Comment.Preproc */
 .c1 { color: #999988; } /* Comment.Single */
 .cs { color: #999999; font-weight: bold; } /* Comment.Special */
 .gd { color: #000000; background-color: #ffdddd } /* Generic.Deleted */
