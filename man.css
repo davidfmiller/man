@@ -292,7 +292,7 @@ pre table {
 }
 
 pre tr td {
-  transition: background-color 0.2s;
+  transition: background-color 0.5s;
 }
 
 pre tr.highlighted td {

@@ -5,6 +5,5 @@
 View the [docs](http://davidfmiller.github.io/man).
 
 ## TODO
-
-- scroll highlighted line into viewport on pageload
+- allow multiple line selection
 - docs on how to do include/config JS

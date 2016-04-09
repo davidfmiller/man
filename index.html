@@ -83,7 +83,13 @@
   <p><a href="https://github.com/davidfmiller/man" title="Clone on GitHub">Clone it</a>.</p>
 
 <script src="man.js"></script>
-<script>window.Man({'pre' : true});</script>
+<script>
+
+document.addEventListener("DOMContentLoaded", function(event) {
+  window.Man({'pre' : true});
+});
+
+</script>
 
 </body>
 </html>

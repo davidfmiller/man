@@ -155,7 +155,7 @@
     return null;
   },
 
-  highlightRow = function(td) {
+  highlightRow = function(td, scrollIntoView) {
 
     var
     i = 0,
@@ -172,6 +172,11 @@
 
     document.location = '#' + pre.getAttribute('id') + '-' + td.getAttribute('data-line-number');
     ancestor(td, 'tr').classList.add('highlighted');
+
+    if (scrollIntoView) {
+      td.scrollIntoView(true);
+    }
+
   };
 
   /**
@@ -250,15 +255,16 @@
     });
 
     if (this.debug) { window.console.log(this.toString()); }
+
     var
     hash = document.location.hash,
     td = document.getElementById(hash.slice(1) + '-line');
 
     if (td) {
-      highlightRow(td);
-    }
-    
-    
+      highlightRow(td, true);
+    }    
+
+
   };
 
   /**
