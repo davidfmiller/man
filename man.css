@@ -5,6 +5,7 @@ html {
 }
 
 body {
+  background: #fff;
   color: #000;
   font: 13px consolas, menlo, monaco, monospace-serif;
   width: 800px;
@@ -295,8 +296,8 @@ pre tr td {
   transition: background-color 0.5s;
 }
 
-pre tr.highlighted td {
-  background: rgba(255, 245, 5, 0.58);
+pre tr.highlighted td.code {
+  background: rgba(255, 245, 5, 0.50);
 }
 
 pre td.col {
@@ -424,3 +425,23 @@ td.col:hover {
 .vi { color: #008080 } /* Name.Variable.Instance */
 .il { color: #009999 } /* Literal.Number.Integer.Long */
 
+.man-badge {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  opacity: 0.2;
+  transition: opacity 0.2s;
+  transition: background 0.2s;
+  border-top-left-radius: 3px;
+}
+
+.man-badge:hover {
+  opacity: 1;
+  background: #f8f8f8;
+}
+
+.man-badge a {
+  display: inline-block;
+  border: none;
+  padding: 10px;
+}

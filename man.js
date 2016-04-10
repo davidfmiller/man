@@ -184,42 +184,29 @@
     } else {
       tds[0].scrollIntoView(true);
     }
-  };
+  },
 
-  /**
-   *
-   *
-   * @param node (node, optional) - the root element containing all elements with attached popovers
-   * @param options (Object, optional) method to retrieve the popover's data for a given node
-   */
-  window.Man = function(config, defaults) {
+  init = function(man) {
+
+    if (! man.pre) { return; }
 
     var
-    $ = this,
-    nodes,
     i = 0,
+    j = 0,
+    id,
+    matches = document.location.hash.match(/#man-([^\d]*)-(\d*)-?(\d*)?/),
+    badge,
+    buf = '',
+    pre,
+    lines,
     n,
     node,
-    over,
-    defaultConfig = {},
-    defaultProperties = { };
-
-    config = merge(defaultConfig, config);
-    this.defaults = merge(defaultProperties, defaults);
-
-    node = document.body;
-
-    if (! config.pre) { return; }
-
-    nodes = arr(node.querySelectorAll('pre'));
+    nodes = arr(document.body.querySelectorAll('pre'));
 
     for (i = 0; i < nodes.length; i++) {
 
-      var
-      j = 0,
-      idBase = '',
-      pre = nodes[i],
-      lines = pre.innerHTML.split("\n"),
+      pre = nodes[i];
+      lines = pre.innerHTML.split("\n");
       buf = '<table><tbody>';
 
       if (! pre.getAttribute('id')) {
@@ -231,61 +218,65 @@
       pre.classList.add('lines');
 
       for (j = 0; j < lines.length; j++) {
-        idBase = 'man-' + pre.getAttribute('id') + '-' + (j + 1);
-        buf += '<tr><td id="' + (idBase) + '-line" class="col" data-line-number="' + (j + 1) + '"></td><td id="' + (idBase) + '-code" data-line-number="' + (j + 1) + '">' + lines[j] + '</td></tr>';
+        id = 'man-' + pre.getAttribute('id') + '-' + (j + 1);
+        buf += '<tr><td id="' + (id) + '-line" class="col" data-line-number="' + (j + 1) + '"></td><td class="code" id="' + (id) + '-code" data-line-number="' + (j + 1) + '">' + lines[j] + '</td></tr>';
       }
 
       buf += '</tbody></table>';
       pre.innerHTML = buf;
     }
 
-    document.body.addEventListener('click',function(e) {
+    badge = makeElement('div', { 'class' : 'man-badge' });
+    badge.innerHTML = '<a href="http://davidfmiller.github.io/man/" title="Built with man" target="_blank">📘</a>';
+    document.body.appendChild(badge);
 
+    document.body.addEventListener('click',function(e) {
       if (e.target.matches('td.col')) {
         highlightRows([e.target], true);
       }
       else if (e.target.matches('a.hash')) {
         highlightRows(null, true);
       }
-
     });
-
-    if (this.debug) { window.console.log(this.toString()); }
-
-    var
-    re = /#man-([^\d]*)-(\d*)-?(\d*)?/,
-    matches = document.location.hash.match(re),
-    id,
-    td,
-    i = 0,
-    rows = [];
 
     if (! matches) { return; }
 
+    lines = [];
+
     if (! matches[3]) {
-      rows = [document.getElementById('man-' + matches[1] + '-' + matches[2] + '-line')];
+      lines = [document.getElementById('man-' + matches[1] + '-' + matches[2] + '-line')];
     } else {
       for (i = parseInt(matches[2]); i <= parseInt(matches[3]); i++) {
-
         id = 'man-' + matches[1] + '-' + i + '-line';
-        td = document.getElementById(id);
-        if (td) {
-          rows.push(document.getElementById(id));
+        node = document.getElementById(id);
+        if (node) {
+          lines.push(node);
         }
       }
     } 
 
-    highlightRows(rows, false);
+    highlightRows(lines, false);
   };
 
+
+
   /**
-   * Return a string representation of the instance
    *
-   * @return {String}
+   *
+   * @param config (Object, optional) method to retrieve the popover's data for a given node
    */
-  window.Man.prototype.toString = function() {
-    return 'Man'; // + JSON.stringify({root : '' + this.root, enabled : this.enabled, delay : this.delay, debug : this.debug});
+  window.Man = function(config) {
+
+    var
+    defaultConfig = {},
+    defaultProperties = { };
+
+    config = merge(config, defaultConfig);
+    document.addEventListener("DOMContentLoaded", function(event) {
+      init(config);
+    });
   };
+
 
 }());
 
