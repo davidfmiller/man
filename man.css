@@ -293,7 +293,11 @@ pre table {
 }
 
 pre tr td {
-  transition: background-color 0.5s;
+  transition: background-color 0.1s;
+}
+
+pre tr td.code:hover {
+  background: rgba(224, 224, 224, 0.4);
 }
 
 pre tr.highlighted td.code {

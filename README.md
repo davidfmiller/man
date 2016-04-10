@@ -5,5 +5,4 @@
 View the [docs](http://davidfmiller.github.io/man).
 
 ## TODO
-- subtle line highlight on hover
-- docs on how to do include/config JS
+- table of contents
