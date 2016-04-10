@@ -155,6 +155,12 @@
     return null;
   },
 
+
+  /*
+   *
+   * @param tds (Array of HTMLElement) - 
+   * @param updateState (optional) - 
+   */
   highlightRows = function(tds, updateState) {
 
     var
@@ -186,8 +192,15 @@
     }
   },
 
+  /**
+   * Initialize page state/interactions
+   *
+   * @param man {Object, optional}
+   * @see Window.Man
+   */
   init = function(man) {
 
+    // currently the only flag 
     if (! man.pre) { return; }
 
     var
@@ -219,7 +232,7 @@
 
       for (j = 0; j < lines.length; j++) {
         id = 'man-' + pre.getAttribute('id') + '-' + (j + 1);
-        buf += '<tr><td id="' + (id) + '-line" class="col" data-line-number="' + (j + 1) + '"></td><td class="code" id="' + (id) + '-code" data-line-number="' + (j + 1) + '">' + lines[j] + '</td></tr>';
+        buf += '<tr><td title="Line #' + (j + 1) + '" id="' + (id) + '-line" class="col" data-line-number="' + (j + 1) + '"></td><td class="code" id="' + (id) + '-code" data-line-number="' + (j + 1) + '">' + lines[j] + '</td></tr>';
       }
 
       buf += '</tbody></table>';
@@ -261,9 +274,9 @@
 
 
   /**
+   * Initialize the man page
    *
-   *
-   * @param config (Object, optional) method to retrieve the popover's data for a given node
+   * @param config {Object, optional} - 
    */
   window.Man = function(config) {
 
@@ -271,7 +284,7 @@
     defaultConfig = {},
     defaultProperties = { };
 
-    config = merge(config, defaultConfig);
+    config = merge(config ? config : {}, defaultConfig);
     document.addEventListener("DOMContentLoaded", function(event) {
       init(config);
     });
