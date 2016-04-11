@@ -133,6 +133,10 @@ dd {
   margin: 10px 0;
 }
 
+dd ul, dd ol {
+  margin-top: 10px;
+}
+
 dd:before {
   content: "-";
   padding-right:10px;
