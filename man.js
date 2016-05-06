@@ -200,9 +200,6 @@
    */
   init = function(man) {
 
-    // currently the only flag 
-    if (! man.pre) { return; }
-
     var
     i = 0,
     j = 0,
@@ -215,6 +212,13 @@
     n,
     node,
     nodes = arr(document.body.querySelectorAll('pre'));
+
+    badge = makeElement('div', { 'class' : 'man-badge' });
+    badge.innerHTML = '<a href="http://davidfmiller.github.io/man/" title="Built with man" target="_blank">📘</a>';
+    document.body.appendChild(badge);
+
+    // currently the only flag 
+    if (! man.pre) { return; }
 
     for (i = 0; i < nodes.length; i++) {
 
@@ -238,10 +242,6 @@
       buf += '</tbody></table>';
       pre.innerHTML = buf;
     }
-
-    badge = makeElement('div', { 'class' : 'man-badge' });
-    badge.innerHTML = '<a href="http://davidfmiller.github.io/man/" title="Built with man" target="_blank">📘</a>';
-    document.body.appendChild(badge);
 
     document.body.addEventListener('click',function(e) {
       if (e.target.matches('td.col')) {
