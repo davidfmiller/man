@@ -292,6 +292,10 @@ body > img {
   box-shadow: 1px 1px 5px #ddd;
 }
 
+body > img.screenshot {
+  box-shadow: none;
+}
+
 pre table {
   width: 100%;
 }
