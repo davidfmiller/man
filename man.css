@@ -179,6 +179,16 @@ ul li:before {
   padding-right: 10px;
 }
 
+ul.log li,
+ol.log li {
+
+}
+
+ul.log li:before, ol.log li:before {
+  content: "";
+}
+
+
 em {
   font-style: italic;
 }
