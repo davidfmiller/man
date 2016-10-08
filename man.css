@@ -184,6 +184,20 @@ ol.log li {
 
 }
 
+
+li.hi {
+  color: #FB4541;
+}
+
+li.med {
+  color: #FC982F;
+}
+
+li.lo {
+  color: #33B0F4;
+}
+
+
 ul.log li:before, ol.log li:before {
   content: "";
 }
