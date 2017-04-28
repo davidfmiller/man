@@ -37,21 +37,20 @@ h3 {
   margin: 20px 0 20px 0;
 }
 
+h1, h2, h3 {
+  color: #444;
+}
+
 h1 code {
   font-size: 20px;
   font-weight: bold;
   color: #000;
 }
 
-h5 i,
 h1 i {
   position: absolute;
   left: -25px;
   font-style: normal;
-}
-
-h5 i {
-  top: -2px;
 }
 
 a {
