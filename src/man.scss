@@ -117,8 +117,13 @@ h2 a:hover {
 
 p {
   margin: 20px 0;
-  line-height: 1.5em;
+  line-height: 2em;
 }
+
+p + p {
+  margin-top: -10px;
+}
+
 
 dt {
   position: relative;
@@ -230,6 +235,8 @@ pre {
   transition: border-color 0.1s linear;
   cursor: text;
   position: relative;
+  
+  
 }
 
 pre.lines {
@@ -326,6 +333,7 @@ pre table {
 
 pre tr td {
   transition: background-color 0.1s;
+  padding: 0.1em 0;
 }
 
 pre tr td.code:hover {
