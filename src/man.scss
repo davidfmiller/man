@@ -183,7 +183,7 @@ ul li:last-child:after {
 }
 
 ul li:before {
-  content: "-";
+  content: "×";
   color: #666;
   padding-right: 10px;
 }
@@ -319,7 +319,8 @@ hr {
   border: none;
   line-height: 0;
   padding: 0;
-  background: rgba(0,0,0,0.1);
+/*  background: rgba(0,0,0,0.1);*/
+  background: rgba(127,127,127,0.1);
   margin: 20px 0;
 }
 
