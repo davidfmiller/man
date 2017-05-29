@@ -239,8 +239,7 @@ pre {
   transition: border-color 0.1s linear;
   cursor: text;
   position: relative;
-  
-  
+  overflow: scroll;
 }
 
 pre.lines {
@@ -389,9 +388,6 @@ td.col:hover {
 @media screen and (max-device-width: 480px) { /* smartphone */
 
   body { width: 90%; margin: 0 auto; padding: 10px 0; }
-  pre {
-    overflow: scroll;
-  }
   h1 i { display: none; }
 }
 
@@ -399,9 +395,6 @@ td.col:hover {
 @media only screen and (device-width: 768px) { /* tablet */
 
   body { width: 90%; margin: 0 auto; padding: 10px 0;  }
-  pre {
-    overflow: scroll;
-  }
   h1 i { display: none; }
 }
 
