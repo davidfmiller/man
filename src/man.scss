@@ -166,6 +166,10 @@ li {
   margin-bottom: 10px;
 }
 
+li:last-child {
+  margin-bottom: 0;
+}
+
 ol li {
   list-style-position: inside;
   list-style-type: decimal;
@@ -233,15 +237,19 @@ code:hover {
 }
 
 pre {
-  background: rgba(0,0,0,0.03);
+  background: rgba(0,0,0,0.02);
   padding: 10px;
   border-radius: 3px;
   margin: 20px 0;
   border: 1px solid rgba(0,0,0,0.1);
-  transition: border-color 0.1s linear;
+  transition: background-color 0.2s, border-color 0.2s;
   cursor: text;
   position: relative;
   overflow: scroll;
+}
+
+pre code {
+  line-height: 20px;
 }
 
 pre.lines {
