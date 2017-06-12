@@ -164,10 +164,14 @@ dd + dd > pre {
 li {
   padding-left: 10px;
   margin-bottom: 10px;
-}
 
-li:last-child {
-  margin-bottom: 0;
+  ul {
+    margin-top: 10px;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 }
 
 ol li {
@@ -249,7 +253,7 @@ pre {
 }
 
 pre code {
-  line-height: 20px;
+  line-height: 15px;
 }
 
 pre.lines {
@@ -310,7 +314,7 @@ pre a:hover {
   border-bottom-width: 1px;
 }
 
-i {
+pre i {
   -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
@@ -477,6 +481,10 @@ td.col:hover {
 .vi { color: #008080 } /* Name.Variable.Instance */
 .il { color: #009999 } /* Literal.Number.Integer.Long */
 
+
+/* 
+  .man-badge is added via js
+*/
 .man-badge {
   position: fixed;
   right: 0;
