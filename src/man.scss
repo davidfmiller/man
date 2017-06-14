@@ -179,18 +179,10 @@ ol li {
   list-style-type: decimal;
 }
 
-ul li:after {
-  content: ",";
-  color: #666;
-}
-
 li:last-child {
 
 }
 
-ul li:last-child:after {
-  content: "."
-}
 
 ul li:before {
   content: "×";
