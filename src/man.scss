@@ -142,6 +142,11 @@ dl {
 dd {
   padding-left: 10px;
   margin: 10px 0;
+  line-height: 2em;
+}
+
+dd:last-child {
+  margin-bottom: 0;
 }
 
 dd ul, dd ol {
@@ -164,6 +169,7 @@ dd + dd > pre {
 li {
   padding-left: 10px;
   margin-bottom: 10px;
+  line-height: 2em;
 
   ul {
     margin-top: 10px;
@@ -180,9 +186,8 @@ ol li {
 }
 
 li:last-child {
-
+  margin-bttom: 0;
 }
-
 
 ul li:before {
   content: "×";
