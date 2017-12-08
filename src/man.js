@@ -300,9 +300,7 @@
     defaultConfig = { pre: false };
 
     config = merge(defaultConfig, config ? config : {});
-//    document.addEventListener('DOMContentLoaded', function() {
-      init(config);
-//    });
+    init(config);
   };
 
   module.exports = Man;
