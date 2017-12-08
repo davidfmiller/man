@@ -1,5 +1,4 @@
-/* jshint undef: true,strict:true,trailing:true,loopfunc:true */
-/* global document,window,HTMLElement,Element */
+
 
 (function() {
 
@@ -8,20 +7,19 @@
   // prevent duplicate declaration
   if (window.Man) { return; }
 
-  var
+  const
 
-  //
-  VERSION = '0.0.1',
+  // VERSION = '0.0.1',
 
   /*
    * Generate a unique string suitable for id attributes
    *
    * @param basename (String)
    * @return string
-   */
   guid = function(basename) {
     return basename + '-' + parseInt(Math.random() * 100, 10) + '-' + parseInt(Math.random() * 1000, 10);
   },
+   */
 
   /*
    * Merge two objects into one, values in b take precedence over values in a
@@ -32,13 +30,17 @@
    * @return Object
    */
   merge = function(a, b) {
-    var o = {};
-    for (var i in a) {
-      o[i] = a[i];
+    var o = {}, i;
+    for (i in a) {
+      if (a.hasOwnProperty(i)) {
+        o[i] = a[i];
+      }
     }
     if (! b) { return o; }
     for (i in b) {
-      o[i] = b[i];
+      if (b.hasOwnProperty(i)) {
+        o[i] = b[i];
+      }
     }
     return o;
   },
@@ -81,15 +83,15 @@
   },
 
   /*
-   * Retrieve an object containing { top : xx, left : xx, bottom: xx, right: xx, width: xx, height: xx }
+   * Retrieve an object containing { top: xx, left: xx, bottom: xx, right: xx, width: xx, height: xx }
    *
    * @param node (DOMNode)
-   */
+
   getRect = function(node) {
 
     var
     rect = node.getBoundingClientRect(),
-    ret = { top : rect.top, left : rect.left, bottom: rect.bottom, right : rect.right }; // create a new object that is not read-only
+    ret = { top: rect.top, left: rect.left, bottom: rect.bottom, right: rect.right }; // create a new object that is not read-only
 
     ret.top += window.pageYOffset;
     ret.left += window.pageXOffset;
@@ -102,6 +104,7 @@
 
     return ret;
   },
+   */
 
   /*
    *
@@ -109,7 +112,7 @@
    * @param styles {Object}
    */
   setStyles = function(node, styles) {
-    for (var i in styles) {
+    for (const i in styles) {
       node.style[i] = styles[i];
     }
   },
@@ -121,7 +124,7 @@
    */
   selectorMatches = function (node, selector) {
 
-    var
+    const
     p = Element.prototype,
     f = p.matches || p.webkitMatchesSelector || p.mozMatchesSelector || p.msMatchesSelector || function(s) {
       return [].indexOf.call(document.querySelectorAll(s), this) !== -1;
@@ -137,8 +140,8 @@
    */
   ancestor = function (node, selector, includeSelf) {
 
-    if (arguments.length == 2) { includeSelf = true; }
-  
+    if (arguments.length === 2) { includeSelf = true; }
+
     var n = includeSelf ? node : node.parentNode;
 
     while (n && ! selectorMatches(n, selector)) {
@@ -158,8 +161,8 @@
 
   /*
    *
-   * @param tds (Array of HTMLElement) - 
-   * @param updateState (optional) - 
+   * @param {[HTMLElement]} tds  - array of HTML elements
+   * @param {Bool} updateState - optional
    */
   highlightRows = function(tds, updateState) {
 
@@ -192,33 +195,35 @@
     }
   },
 
-  /**
+  /*
    * Initialize page state/interactions
    *
-   * @param man {Object, optional}
-   * @see Window.Man
+   * @param {object} man - optional config
    */
   init = function(man) {
 
-    var
+    const
+    matches = document.location.hash.match(/#man-([^\d]*)-(\d*)-?(\d*)?/),
+    nodes = arr(document.body.querySelectorAll('pre')),
+    badge = makeElement('div', { 'class': 'man-badge' });
+
+    let
     i = 0,
     j = 0,
     id,
-    matches = document.location.hash.match(/#man-([^\d]*)-(\d*)-?(\d*)?/),
-    badge,
     buf = '',
     pre,
     lines,
-    n,
-    node,
-    nodes = arr(document.body.querySelectorAll('pre'));
+//    n,
+    node;
 
-    badge = makeElement('div', { 'class' : 'man-badge' });
     badge.innerHTML = '<a href="http://davidfmiller.github.io/man/" title="Built with man" target="_blank">📘</a>';
     document.body.appendChild(badge);
 
-    // currently the only flag 
-    if (! man.pre) { return; }
+    // currently the only flag
+    if (! man.pre) {
+      return;
+    }
 
     for (i = 0; i < nodes.length; i++) {
 
@@ -266,7 +271,7 @@
           lines.push(node);
         }
       }
-    } 
+    }
 
     highlightRows(lines, false);
   };
@@ -276,21 +281,20 @@
   /**
    * Initialize the man page
    *
-   * @param config {Object, optional} - 
+   * @param {object} config - configuration options
    */
-  window.Man = function(config) {
+  const Man = function(config) {
 
     var
-    defaultConfig = {},
-    defaultProperties = { };
+    defaultConfig = {};
 
-    config = merge(config ? config : {}, defaultConfig);
-    document.addEventListener("DOMContentLoaded", function(event) {
+    config = merge(defaultConfig, config ? config : {});
+//    document.addEventListener('DOMContentLoaded', function() {
       init(config);
-    });
+//    });
   };
 
-
-}());
+  module.exports = Man;
+})();
 
 

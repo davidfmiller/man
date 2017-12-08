@@ -2,10 +2,16 @@
   "name": "man",
   "version": "0.0.1",
   "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
+    "es2015": "0.0.0",
     "grunt": "~0.4.5",
-    "grunt-contrib-uglify": "*",
     "grunt-contrib-compass": "*",
     "grunt-contrib-jshint": "*",
-    "grunt-contrib-watch": "*"
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-watch": "*",
+    "uglifyjs-webpack-plugin": "^1.1.2",
+    "webpack": "^3.10.0"
   }
 }
