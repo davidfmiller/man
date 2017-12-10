@@ -4,9 +4,6 @@
 
   'use strict';
 
-  // prevent duplicate declaration
-  if (window.Man) { return; }
-
   const
 
   // VERSION = '0.0.1',
@@ -30,13 +27,16 @@
    * @return Object
    */
   merge = function(a, b) {
-    var o = {}, i;
+    const o = {};
+    let i;
     for (i in a) {
       if (a.hasOwnProperty(i)) {
         o[i] = a[i];
       }
     }
-    if (! b) { return o; }
+    if (! b) {
+      return o;
+    }
     for (i in b) {
       if (b.hasOwnProperty(i)) {
         o[i] = b[i];
@@ -52,9 +52,12 @@
    * @return Array
    */
   arr = function(list) {
-    var ret = [], i = 0;
+    const ret = [];
+    let i = 0;
 
-    if (! list.length) { return ret; }
+    if (! list.length) {
+      return ret;
+    }
 
     for (i = 0; i < list.length; i++) {
       ret.push(list[i]);
@@ -72,12 +75,12 @@
    * @return HTMLElement
    */
   makeElement = function(type, attrs) {
-     var
-     n = document.createElement(type),
-     i = null;
+     const n = document.createElement(type);
 
-     for (i in attrs) {
-       n.setAttribute(i, attrs[i]);
+     for (const i in attrs) {
+       if (attrs.hasOwnProperty(i)) {
+         n.setAttribute(i, attrs[i]);
+       }
      }
      return n;
   },
@@ -110,13 +113,12 @@
    *
    * @param node {HTMLElement}
    * @param styles {Object}
-   */
   setStyles = function(node, styles) {
     for (const i in styles) {
       node.style[i] = styles[i];
     }
   },
-
+   */
   /*
    *
    * @param node {HTMLElement}
@@ -140,20 +142,23 @@
    */
   ancestor = function (node, selector, includeSelf) {
 
-    if (arguments.length === 2) { includeSelf = true; }
+    if (arguments.length === 2) {
+      includeSelf = true;
+    }
 
-    var n = includeSelf ? node : node.parentNode;
+    let n = includeSelf ? node : node.parentNode;
 
     while (n && ! selectorMatches(n, selector)) {
       if (n.parentNode) {
         n = n.parentNode;
-      }
-      else {
+      } else {
         break;
       }
     }
 
-     if (selectorMatches(n, selector)) { return n; }
+    if (selectorMatches(n, selector)) {
+      return n;
+    }
 
     return null;
   },
@@ -166,10 +171,12 @@
    */
   highlightRows = function(tds, updateState) {
 
-    var
-    i = 0,
+    let
+    i = 0;
+
+    const
     current = arr(document.querySelectorAll('pre tr.highlighted')),
-    pre = null;
+    pre = ancestor(tds[0], 'pre');
 
     for (i = 0; i < current.length; i++) {
       current[i].classList.remove('highlighted');
@@ -183,11 +190,12 @@
     }
 
     for (i = 0; i < tds.length; i++) {
-      if (! tds[i]) { continue; }
+      if (! tds[i]) {
+        continue;
+      }
       ancestor(tds[i], 'tr', true).classList.add('highlighted');
     }
 
-    pre = ancestor(tds[0], 'pre');
     if (updateState) {
       document.location = '#man-' + pre.getAttribute('id') + '-' + tds[0].getAttribute('data-line-number');
     } else {
@@ -235,7 +243,9 @@
         pre.setAttribute('id', 'pre-man-' + i);
       }
 
-      if (lines.length <= 1 || pre.hasAttribute('data-no-lines')) { continue; }
+      if (lines.length <= 1 || pre.hasAttribute('data-no-lines')) {
+        continue;
+      }
 
       pre.classList.add('lines');
 
@@ -251,13 +261,14 @@
     document.body.addEventListener('click',function(e) {
       if (e.target.matches('td.col')) {
         highlightRows([e.target], true);
-      }
-      else if (e.target.matches('a.hash')) {
+      } else if (e.target.matches('a.hash')) {
         highlightRows(null, true);
       }
     });
 
-    if (! matches) { return; }
+    if (! matches) {
+      return;
+    }
 
     lines = [];
 
@@ -285,13 +296,11 @@
    */
   const Man = function(config) {
 
-    var
-    defaultConfig = {};
+    const
+    defaultConfig = { pre: false };
 
     config = merge(defaultConfig, config ? config : {});
-//    document.addEventListener('DOMContentLoaded', function() {
-      init(config);
-//    });
+    init(config);
   };
 
   module.exports = Man;

@@ -10,7 +10,7 @@ const config = {
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'docs/'),
-    filename: 'man.bundle.js'
+    filename: 'man.js'
   },
   watch: true,
   plugins : [/*
