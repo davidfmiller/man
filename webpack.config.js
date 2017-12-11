@@ -10,14 +10,14 @@ const config = {
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'docs/'),
-    filename: 'man.js'
+    filename: 'man.bundle.js'
   },
   watch: true,
-  plugins : [/*
+  plugins : [
     new webpack.optimize.UglifyJsPlugin({
       compress: { warnings: false }
     })
-  */],
+  ],
   module: {
     rules: [
       {
