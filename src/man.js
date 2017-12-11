@@ -156,7 +156,7 @@
       }
     }
 
-    if (selectorMatches(n, selector)) {
+    if (n && selectorMatches(n, selector)) {
       return n;
     }
 
