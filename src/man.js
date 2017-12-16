@@ -52,6 +52,11 @@
    * @return Array
    */
   arr = function(list) {
+
+    if (list instanceof Array) {
+      return list;
+    }
+
     const ret = [];
     let i = 0;
 
