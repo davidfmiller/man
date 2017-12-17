@@ -6,7 +6,11 @@
   <meta name="viewport" value="width=800">
   <link rel="stylesheet" type="text/css" href="man.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
+  
+  <!-- page-specific styles that are not included in the library -->
+  <style type="text/css">
+    fieldset + fieldset { margin-top: 10px; }
+  </style>
 </head>
 <body>
 
@@ -15,7 +19,7 @@
     <h1><i>📘</i> <a href="https://github.com/davidfmiller/man/">man</a></h1>
 
     <p>
-      &hellip; is a lightweight JS &amp; CSS library to make simple, attractive, and easy-to-read documentation for software projects. The project&rsquo;s inspiration stems from your terminal&rsquo;s <code>man</code> pages; focus is placed on simplicity &amp; clarity with a nod to the monospaced world that we live in while working.
+      &hellip; is a lightweight JS &amp; CSS library to make simple, attractive, and easy-to-read documentation for software projects. The project&rsquo;s inspiration stems from your terminal&rsquo;s <a href="https://en.wikipedia.org/wiki/Man_page"><code>man</code></a> pages; focus is placed on simplicity &amp; clarity with a nod to the monospaced world that we live in while working.
     </p>
     <p>
       It is perfectly suited to styling <a href="http://daringfireball.net/projects/markdown/" title="Markdown">Markdown</a>-generated documents, although manually-authored HTML will provide some capabilities that are not supported in Markdown&rsquo;s simplified syntax/structure.
@@ -136,7 +140,8 @@
     <p>The following pieces are either actively in development or on the roadmap:</p>
 
     <ul>
-      <li>???</li>
+      <li><code>&lt;pre&gt;</code> in mobile stylesheet</li>
+      <li><code>&lt;form&gt;</code> elements</li>
     </ul>
 
     <p>If there is something you would like to see included please <a href="https://github.com/davidfmiller/man/issues/new">file an issue</a>.</p>
