@@ -90,11 +90,46 @@
 -->
     <h2 id="elements"><a href="#elements" aria-hidden="true">#</a>Elements</h2>
 
-    <button>Button</button>
-    <button disabled>Disabled button</button>
-    <select>
-      <option value="0">Select</option>
-    </select>
+    <fieldset>
+      <button>Enabled button</button>
+      <select>
+        <option value="0">Enabled select</option>
+        <option value="1">Option</option>
+      </select>
+      <label for="input-radio-checked">
+        <input id="input-radio-checked" type="radio" checked name="radio" value=""> <span>Checked Radio</span>
+      </label>
+      <label for="input-radio">
+        <input id="input-radio" type="radio" name="radio" value=""> <span>Radio</span>
+      </label>
+
+      <label for="input-checkbox">
+        <input id="input-checkbox" type="checkbox" name="" value=""> <span>Check</span>
+      </label>
+
+    </fieldset>
+
+    <fieldset>
+      <button disabled>Disabled button</button>
+      <select disabled>
+        <option value="0">Disabled select</option>
+      </select>
+      <label for="input-radio-disabled">
+        <input id="input-radio-disabled" disabled type="radio"> <span>Disabled Radio</span>
+      </label>
+      <label for="input-radio-disabled-checked">
+        <input id="input-radio-disabled-checked" checked disabled type="radio"> <span>Disabled Radio</span>
+      </label>
+
+      <label for="input-checkbox-disabled">
+        <input id="input-checkbox-disabled" disabled type="checkbox"> <span>Disabled Check</span>
+      </label>
+
+      <label for="input-checkbox-disabled-checked">
+        <input id="input-checkbox-disabled-checked" disabled checked type="checkbox"> <span>Disabled Check</span>
+      </label>
+
+    </fieldset>
 
     <h2 id="todo"><a href="#todo" aria-hidden="true">#</a>Todo</h2>
 

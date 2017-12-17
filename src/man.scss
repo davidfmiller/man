@@ -422,21 +422,52 @@ td.col {
   }
 
   select {
-    cursor: pointer;
-    background: rgba(0,0,0,0.05);
+    background-color: rgba(0,0,0,0.05);
+    /* triangle.svg */
+    background-image: url(data:image/svg+xml;charset=UTF-8;base64,PHN2ZyB3aWR0aD0iMTM2IiBoZWlnaHQ9IjEwMSIgdmlld0JveD0iMCAwIDEzNiAxMDEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTYxLjQ3IDk2Ljc3TDEuOTMgMTIuNjJBOCA4IDAgMCAxIDguNDYgMGgxMTkuMDhhOCA4IDAgMCAxIDYuNTMgMTIuNjJMNzQuNTMgOTYuNzdhOCA4IDAgMCAxLTEzLjA2IDB6IiBmaWxsPSJyZ2JhKDAsMCwwLDAuMykiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPjwvc3ZnPg==);
+    background-size: 9px 6px;
+    background-position: right 7px center;
+    background-repeat: no-repeat;
     border-radius: 4px;
     font-size: 11px;
     border: 1px solid rgba(0,0,0,0.3);
-    padding: 5px 10px;
+    padding: 5px 22px 5px 10px;
+    -moz-appearance: none;
     -webkit-appearance: none;
     font-family: consolas, menlo, monaco, monospace-serif;
     transition: background-color 0.2s, transform 0.05s, color 0.2s;
 
-    &:not([disabled]):hover {
-      background: #ddd;
+    &[disabled] {
+      /* triangle-disabled.svg */
+      background-image: url(data:image/svg+xml;charset=UTF-8;base64,PHN2ZyB3aWR0aD0iMTM2IiBoZWlnaHQ9IjEwMSIgdmlld0JveD0iMCAwIDEzNiAxMDEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTYxLjQ3IDk2Ljc3TDEuOTMgMTIuNjJBOCA4IDAgMCAxIDguNDYgMGgxMTkuMDhhOCA4IDAgMCAxIDYuNTMgMTIuNjJMNzQuNTMgOTYuNzdhOCA4IDAgMCAxLTEzLjA2IDB6IiBmaWxsPSJyZ2JhKDAsMCwwLDAuMikiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPjwvc3ZnPg==); 
+      opacity: 0.8;
     }
 
+    &:not([disabled]):hover {
+      background-color: #ddd;
+      /* triangle-hover.svg */
+      background-image: url(data:image/svg+xml;charset=UTF-8;base64,PHN2ZyB3aWR0aD0iMTM2IiBoZWlnaHQ9IjEwMSIgdmlld0JveD0iMCAwIDEzNiAxMDEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTYxLjQ3IDk2Ljc3TDEuOTMgMTIuNjJBOCA4IDAgMCAxIDguNDYgMGgxMTkuMDhhOCA4IDAgMCAxIDYuNTMgMTIuNjJMNzQuNTMgOTYuNzdhOCA4IDAgMCAxLTEzLjA2IDB6IiBmaWxsPSJyZ2JhKDAsMCwwLDAuNSkiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPjwvc3ZnPg==);
+      cursor: pointer;
+    }
+  }
 
+  label {
+
+    input[type=radio],
+    input[type=checkbox] {
+
+      &:not([disabled]):hover {
+        cursor: pointer;
+
+        & ~ span {
+          cursor: pointer;
+        }
+      }
+
+      &[disabled] ~ span{
+        opacity: 0.5;
+      }
+    }
   }
 
 }
