@@ -247,6 +247,29 @@ code:hover {
 
 }
 
+table {
+  margin: 20px 0;
+
+  thead {
+    th {
+      text-align: center;
+      border: 1px solid #ddd;
+      padding: 5px;
+    }
+  }
+
+  tbody {
+    th, td {
+      border: 1px solid #ddd;
+      padding: 5px;
+    }
+
+    td {
+      text-align: center;
+    }
+  }
+}
+
 pre {
 
   background: rgba(0,0,0,0.02);
