@@ -253,8 +253,9 @@ table {
   thead {
     th {
       text-align: center;
-      border: 1px solid #ddd;
+      border: 1px solid #ccc;
       padding: 5px;
+      background: #eee;
     }
   }
 
@@ -287,12 +288,47 @@ pre {
     border-color: rgba(0,0,0,0.3);
   }
 
+  table {
+    width: 100%;
+    margin: 0;
+  }
+
+  tr {
+    td {
+      padding: 0.1em 0;
+      transition: background-color 0.1s;
+      border: none;
+      text-align: left;
+
+      &.code:hover {
+        background: rgba(224, 224, 224, 0.4);
+      }
+
+      &.col {
+        color: rgba(0,0,0,0.1);
+        transition: color 0.2s;
+      }
+
+    }
+
+    &.highlighted td.code {
+      background: rgba(255, 245, 5, 0.50);
+    }
+  }
+
+  &:hover td.col {
+    color: rgba(0,0,0,0.2);
+  }
 
   &.lines {
     padding: 10px 0;  
   }
 
   code {
+    &:hover {
+      background: transparent;
+    }
+    padding: 0;
     line-height: 15px;
     background: transparent;
   }
@@ -375,38 +411,6 @@ body > img {
     box-shadow: none;
   }
 }
-
-pre {
-  table {
-    width: 100%;
-  }
-
-  tr {
-    td {
-      padding: 0.1em 0;
-      transition: background-color 0.1s;
-
-      &.code:hover {
-        background: rgba(224, 224, 224, 0.4);
-      }
-
-      &.col {
-        color: rgba(0,0,0,0.1);
-        transition: color 0.2s;
-      }
-
-    }
-
-    &.highlighted td.code {
-      background: rgba(255, 245, 5, 0.50);
-    }
-  }
-
-  &:hover td.col {
-    color: rgba(0,0,0,0.2);
-  }
-}
-
 
 td.col {
   -khtml-user-select: none;    /* Konqueror */
