@@ -235,16 +235,16 @@ pre {
 }
 
 code {
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.2);
   border-radius: 3px;
   color: #000;
   padding: 0 5px;
   transition: color 0.2s, background 0.2s;
-}
 
-code:hover {
-  background: rgba(61,255,6,1.0);
-
+  &:hover {
+    background: rgba(0, 0, 0, 0.8); //rgba(61,255,6,1.0);
+    color: #fff;
+  }
 }
 
 table {
@@ -499,10 +499,11 @@ td.col {
 
       -moz-appearance: none;
       -webkit-appearance: none;
-      width: 11px;
-      height: 11px;
-      display: inline-block;
       border: 1px solid #444;
+      display: inline-block;
+      height: 11px;
+      transition: background-color 0.1s;
+      width: 11px;
 
       &:not([disabled]):hover {
         cursor: pointer;
@@ -520,25 +521,22 @@ td.col {
 
     input[type=checkbox] {
       border-radius: 2px;
-      background: #eee;
+      background-color: #eee;
     }
 
     input[type=checkbox]:checked {
-      background: green;
+      background-color: green;
     }
 
     input[type=radio] {
       border-radius: 5px;
-      background: #eee;
+      background-color: #eee;
     }
 
     input[type=radio]:checked {
-      background: green;
+      background-color: green;
     }
-
-
   }
-
 }
 
 
