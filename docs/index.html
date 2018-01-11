@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="man.css">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
+
   <!-- page-specific styles that are not included in the library -->
   <style type="text/css">
     fieldset + fieldset { margin-top: 10px; }
@@ -18,7 +18,7 @@
     <h1><i>📘</i> <a href="https://github.com/davidfmiller/man/">man</a></h1>
 
     <p>
-      &hellip; is a lightweight JS &amp; CSS library to make simple, attractive, and easy-to-read documentation for software projects. The project&rsquo;s inspiration stems from your terminal&rsquo;s <a href="https://en.wikipedia.org/wiki/Man_page"><code>man</code></a> pages; focus is placed on simplicity &amp; clarity with a nod to the <code>monospace</code> world.
+      &hellip; is a lightweight CSS &amp; JS library to make simple, attractive, and easy-to-read documentation for software projects. The project&rsquo;s inspiration stems from your terminal&rsquo;s <a href="https://en.wikipedia.org/wiki/Man_page"><code>man</code></a> pages; focus is placed on simplicity &amp; clarity with a nod to the <code>monospace</code> world.
     </p>
     <p>
       It is perfectly suited to styling <a href="http://daringfireball.net/projects/markdown/" title="Markdown">Markdown</a>-generated documents, although manually-authored HTML will provide some capabilities that are not supported in Markdown&rsquo;s simplified syntax/structure.
@@ -92,8 +92,53 @@
 -->
     <h2 id="elements"><a href="#elements" aria-hidden="true">#</a>Elements</h2>
 
+    <h3>H3</h3>
+
+    <h4>H4</h4>
+
+    <p><strong>Strong</strong>, <em>em</em>, <code>code</code></p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>A0</th>
+          <th>B0</th>
+          <th>C0</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>A1</th>
+          <td>B1</td>
+          <td>C1</td>
+        </tr>
+        <tr>
+          <th>A2</th>
+          <td>B2</td>
+          <td>C2</td>
+        </tr>
+      </tbody>
+    </table>
+
     <fieldset>
       <button>Enabled button</button>
+      <label>Number: <input type="number" value="0"></label>
+    </fieldset>
+    <fieldset>
+      <label>Text: <input type="text" value="0" placeholder="text"></label>
+    </fieldset>
+    <fieldset>
+      <label>Email: <input type="email" value="0" placeholder="email" disabled></label>
+    </fieldset>
+    <fieldset>
+      <label>Password: <input type="password" value="0" placeholder="password"></label>
+    </fieldset>
+    <fieldset>
+      <input type="submit" value="Submit">
+      <input type="reset" value="Reset">
+    </fieldset>
+
+    <fieldset>
       <select>
         <option value="0">Enabled select</option>
         <option value="1">Option</option>
@@ -116,20 +161,25 @@
       <select disabled>
         <option value="0">Disabled select</option>
       </select>
+    </fieldset>
+
+    <fieldset>
       <label for="input-radio-disabled">
         <input id="input-radio-disabled" disabled type="radio"> <span>Disabled Radio</span>
       </label>
       <label for="input-radio-disabled-checked">
         <input id="input-radio-disabled-checked" checked disabled type="radio"> <span>Disabled Radio</span>
       </label>
+    </fieldset>
 
+    <fieldset>
       <label for="input-checkbox-disabled">
         <input id="input-checkbox-disabled" disabled type="checkbox"> <span>Disabled Check</span>
       </label>
-
       <label for="input-checkbox-disabled-checked">
         <input id="input-checkbox-disabled-checked" disabled checked type="checkbox"> <span>Disabled Check</span>
       </label>
+    </fieldset>
 
     </fieldset>
 
@@ -138,7 +188,6 @@
     <p>The following pieces are either actively in development or on the roadmap:</p>
 
     <ul>
-      <li><code>&lt;pre&gt;</code> in mobile stylesheet</li>
       <li><code>&lt;form&gt;</code> elements</li>
     </ul>
 
