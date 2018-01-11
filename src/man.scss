@@ -15,9 +15,7 @@ body {
   background: #fff;
   color: #000;
   font: 12px menlo, consolas, monaco, monospace;
-  margin: 0 auto;
   padding: 50px 0;
-  width: 800px;
 }
 
 div {
@@ -431,7 +429,17 @@ td.col {
 
 }
 
+body.dark {
+
+  background: #777;
+  color: #fff;
+
+}
+
 #man {
+
+  width: 800px;
+  margin: 0 auto;
 
   /* 
     form elements
@@ -463,6 +471,7 @@ td.col {
       transform: translate(0px, 2px);
       color: #fff;
       background: #aaa;
+      outline: none;
     }
 
   }
