@@ -229,11 +229,6 @@ em {
   font-style: italic;
 }
 
-pre {
-  font-family: consolas, menlo, monaco, monospace-serif;
-  background: rgba(0,0,0,0.03);
-}
-
 code {
   background: rgba(0, 0, 0, 0.1);
   border-radius: 3px;
@@ -273,6 +268,8 @@ table {
 
 pre {
 
+  font-family: consolas, menlo, monaco, monospace-serif;
+  background: rgba(0,0,0,0.03);
   background: rgba(0,0,0,0.02);
   border-radius: 3px;
   border: 1px solid rgba(0,0,0,0.1);
@@ -281,11 +278,13 @@ pre {
   overflow: scroll;
   padding: 10px;
   position: relative;
-  transition: background-color 0.2s, border-color 0.2s;
+  transition: background-color 0.2s, border-color 0.2s, transform 0.1s;
 
+  &:target,
   &:hover {
     background:rgba(0,0,0,0.05);
     border-color: rgba(0,0,0,0.3);
+    transform: scale(1.05);
   }
 
   table {
@@ -333,10 +332,6 @@ pre {
     background: transparent;
   }
 
-  &:target {
-    border-color: #888;
-    border-width: 2px;
-  }
 
   a {
     border-bottom-width: 0;
@@ -516,7 +511,11 @@ td.col {
       padding-right: 5px;
     }
 
-    &:focus {
+    &:not([disabled]):hover {
+      transform: scale(1.1);
+    }
+
+    &:not([disabled]):focus {
       transform: scale(1.2);
       outline: none;
       background: #ddd;
