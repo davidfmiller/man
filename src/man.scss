@@ -237,7 +237,7 @@ code {
   transition: color 0.2s, background 0.2s;
 
   &:hover {
-    background: rgba(0, 0, 0, 0.8); //rgba(61,255,6,1.0);
+    background: rgba(0, 0, 0, 0.4); //rgba(61,255,6,1.0);
     color: #fff;
   }
 }
