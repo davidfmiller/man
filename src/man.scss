@@ -460,11 +460,12 @@ body.dark {
       opacity: 0.8;
     }
 
+    &:not([disabled]):focus,
     &:not([disabled]):hover {
       background: #ddd;
-
       cursor: pointer;
       transform: scale(1.1);
+      outline: none;
     }
 
     &:not([disabled]):active {
