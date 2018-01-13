@@ -63,11 +63,11 @@ a {
   border-bottom-width: 1px;
   color: blue;
   text-decoration: none;
-  
+
   &:visited {
     color: purple;
   }
-  
+
   &:hover {
     color: red;
   }
@@ -146,7 +146,7 @@ dd {
   line-height: 2em;
   margin: 10px 0;
   padding-left: 10px;
-  
+
   &:last-child {
     margin-bottom: 0;
   }
@@ -318,7 +318,7 @@ pre {
   }
 
   &.lines {
-    padding: 10px 0;  
+    padding: 10px 0;
   }
 
   code {
@@ -337,7 +337,7 @@ pre {
 
     &:hover {
       border-bottom-width: 1px;
-    }   
+    }
 
     &.hash {
 
@@ -399,7 +399,7 @@ hr {
 
 body > img {
   box-shadow: 1px 1px 5px #ddd;
-  
+
   & > img.screenshot {
     box-shadow: none;
   }
@@ -441,7 +441,7 @@ body.dark {
   width: 800px;
   margin: 0 auto;
 
-  /* 
+  /*
     form elements
   */
 
@@ -504,11 +504,11 @@ body.dark {
     }
   }
 
-  input[type=submit] {
-  
+  textarea {
+    width: 100%;
   }
 
-
+  textarea,
   input[type=password],
   input[type=number],
   input[type=text],
@@ -532,7 +532,7 @@ body.dark {
     &:not([disabled]):focus {
       transform: scale(1.2);
       outline: none;
-      background: #ddd;
+      background: #eee;
       box-shadow: 0 0 10px rgba(0,0,0,0.2);
     }
 
@@ -597,7 +597,7 @@ body.dark {
     padding: 10px 0;
     width: 90%;
   }
-  
+
   #man {
     -webkit-text-size-adjust: 100%;
   }
@@ -612,7 +612,7 @@ body.dark {
 
   body {
     margin: 0 auto;
-    padding: 10px 0; 
+    padding: 10px 0;
     width: 90%;
   }
   #man {
@@ -696,7 +696,7 @@ pre { /* pygments */
   .il { color: #009999 } /* Literal.Number.Integer.Long */
 }
 
-/* 
+/*
   .man-badge is added via js
 */
 .man-badge {
