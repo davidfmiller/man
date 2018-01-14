@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="110px" height="110px" viewBox="0 0 110 110" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>check-checked</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="check-checked" fill="#000000">
+            <path d="M10,0 L100,0 C105.522847,-1.08250786e-14 110,4.4771525 110,10 L110,100 C110,105.522847 105.522847,110 100,110 L10,110 C4.4771525,110 6.76353751e-16,105.522847 0,100 L0,10 C-6.76353751e-16,4.4771525 4.4771525,1.01453063e-15 10,0 Z M15,10 C12.2385763,10 10,12.2385763 10,15 L10,95 C10,97.7614237 12.2385763,100 15,100 L95,100 C97.7614237,100 100,97.7614237 100,95 L100,15 C100,12.2385763 97.7614237,10 95,10 L15,10 Z" id="Rectangle-2"></path>
+            <rect id="Rectangle" transform="translate(54.871320, 54.871320) rotate(45.000000) translate(-54.871320, -54.871320) " x="-13.9000179" y="48.8713203" width="137.542677" height="12"></rect>
+            <rect id="Rectangle" transform="translate(55.388456, 54.680087) scale(-1, 1) rotate(45.000000) translate(-55.388456, -54.680087) " x="-11.2857954" y="48.6800865" width="133.348503" height="12"></rect>
+        </g>
+    </g>
+</svg>
