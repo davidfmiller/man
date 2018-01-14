@@ -573,13 +573,11 @@ body.dark {
       -webkit-appearance: none;
       background-repeat: no-repeat;
       background-position: 50% 50%;
-
-/*      border: 2px solid #444; */
+      background-size: 11px 11px;
       height: 11px;
+      line-height: normal;
       transition: background 0.1s, transform 0.2s;
       width: 11px;
-      line-height: normal;
-
 
       &:not([disabled]):hover {
         cursor: pointer;
@@ -598,7 +596,6 @@ body.dark {
 
     input[type=checkbox] {
       background-image: url(data:image/svg+xml;charset=UTF-8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iMTEwcHgiIGhlaWdodD0iMTEwcHgiIHZpZXdCb3g9IjAgMCAxMTAgMTEwIiB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiPgogICAgPCEtLSBHZW5lcmF0b3I6IFNrZXRjaCA0OC4yICg0NzMyNykgLSBodHRwOi8vd3d3LmJvaGVtaWFuY29kaW5nLmNvbS9za2V0Y2ggLS0+CiAgICA8dGl0bGU+Y2hlY2stY2hlY2tlZDwvdGl0bGU+CiAgICA8ZGVzYz5DcmVhdGVkIHdpdGggU2tldGNoLjwvZGVzYz4KICAgIDxkZWZzPjwvZGVmcz4KICAgIDxnIGlkPSJQYWdlLTEiIHN0cm9rZT0ibm9uZSIgc3Ryb2tlLXdpZHRoPSIxIiBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPgogICAgICAgIDxnIGlkPSJjaGVjay1jaGVja2VkIiBmaWxsPSIjMDAwMDAwIj4KICAgICAgICAgICAgPHBhdGggZD0iTTEwLDAgTDEwMCwwIEMxMDUuNTIyODQ3LC0xLjA4MjUwNzg2ZS0xNCAxMTAsNC40NzcxNTI1IDExMCwxMCBMMTEwLDEwMCBDMTEwLDEwNS41MjI4NDcgMTA1LjUyMjg0NywxMTAgMTAwLDExMCBMMTAsMTEwIEM0LjQ3NzE1MjUsMTEwIDYuNzYzNTM3NTFlLTE2LDEwNS41MjI4NDcgMCwxMDAgTDAsMTAgQy02Ljc2MzUzNzUxZS0xNiw0LjQ3NzE1MjUgNC40NzcxNTI1LDEuMDE0NTMwNjNlLTE1IDEwLDAgWiBNMTUsMTAgQzEyLjIzODU3NjMsMTAgMTAsMTIuMjM4NTc2MyAxMCwxNSBMMTAsOTUgQzEwLDk3Ljc2MTQyMzcgMTIuMjM4NTc2MywxMDAgMTUsMTAwIEw5NSwxMDAgQzk3Ljc2MTQyMzcsMTAwIDEwMCw5Ny43NjE0MjM3IDEwMCw5NSBMMTAwLDE1IEMxMDAsMTIuMjM4NTc2MyA5Ny43NjE0MjM3LDEwIDk1LDEwIEwxNSwxMCBaIiBpZD0iUmVjdGFuZ2xlLTIiPjwvcGF0aD4KICAgICAgICA8L2c+CiAgICA8L2c+Cjwvc3ZnPg==);
-      background-size: 10px 10px;
     }
 
     input[type=checkbox]:checked {
@@ -607,7 +604,6 @@ body.dark {
 
     input[type=radio] {
       background-image: url(radio.svg);
-      background-size: 11px 11px;
     }
 
     input[type=radio]:checked {
