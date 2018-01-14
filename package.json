@@ -1,6 +1,16 @@
 {
   "name": "man",
   "version": "0.0.1",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/davidfmiller/man"
+  },
+  "author": {
+    "name": "David Miller",
+    "email": "davidfmiller@me.com",
+    "url": "http://readmeansrun.com"
+  },
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
@@ -15,6 +25,6 @@
     "webpack": "^3.10.0"
   },
   "dependencies": {
-    "rmr-util": "^1.0.2"
+    "rmr-util": "^1.1.0"
   }
 }
