@@ -6,6 +6,11 @@
     "type": "git",
     "url": "https://github.com/davidfmiller/man"
   },
+  "author": {
+    "name": "David Miller",
+    "email": "davidfmiller@me.com",
+    "url": "http://readmeansrun.com"
+  },
   "devDependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
