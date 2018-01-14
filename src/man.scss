@@ -63,11 +63,11 @@ a {
   border-bottom-width: 1px;
   color: blue;
   text-decoration: none;
-  
+
   &:visited {
     color: purple;
   }
-  
+
   &:hover {
     color: red;
   }
@@ -146,7 +146,7 @@ dd {
   line-height: 2em;
   margin: 10px 0;
   padding-left: 10px;
-  
+
   &:last-child {
     margin-bottom: 0;
   }
@@ -318,7 +318,7 @@ pre {
   }
 
   &.lines {
-    padding: 10px 0;  
+    padding: 10px 0;
   }
 
   code {
@@ -337,7 +337,7 @@ pre {
 
     &:hover {
       border-bottom-width: 1px;
-    }   
+    }
 
     &.hash {
 
@@ -399,7 +399,7 @@ hr {
 
 body > img {
   box-shadow: 1px 1px 5px #ddd;
-  
+
   & > img.screenshot {
     box-shadow: none;
   }
@@ -441,7 +441,7 @@ body.dark {
   width: 800px;
   margin: 0 auto;
 
-  /* 
+  /*
     form elements
   */
 
@@ -460,11 +460,13 @@ body.dark {
       opacity: 0.8;
     }
 
+    &:not([disabled]):focus,
     &:not([disabled]):hover {
       background: #ddd;
-
       cursor: pointer;
       transform: scale(1.1);
+      outline: none;
+      border-color:rgba(0,0,0,0.5);
     }
 
     &:not([disabled]):active {
@@ -480,7 +482,7 @@ body.dark {
     -moz-appearance: none;
     -webkit-appearance: none;
     background-color: rgba(0,0,0,0.05);
-    background-image: url(data:image/svg+xml;charset=UTF-8;base64,PHN2ZyB3aWR0aD0iMTM2IiBoZWlnaHQ9IjEwMSIgdmlld0JveD0iMCAwIDEzNiAxMDEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTYxLjQ3IDk2Ljc3TDEuOTMgMTIuNjJBOCA4IDAgMCAxIDguNDYgMGgxMTkuMDhhOCA4IDAgMCAxIDYuNTMgMTIuNjJMNzQuNTMgOTYuNzdhOCA4IDAgMCAxLTEzLjA2IDB6IiBmaWxsPSJyZ2JhKDAsMCwwLDAuMykiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPjwvc3ZnPg==); /* triangle.svg */
+    background-image: url(data:image/svg+xml;charset=UTF-8;base64,PHN2ZyB3aWR0aD0iMTM2IiBoZWlnaHQ9IjEwMSIgdmlld0JveD0iMCAwIDEzNiAxMDEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTYxLjQ3IDk2Ljc3TDEuOTMgMTIuNjJBOCA4IDAgMCAxIDguNDYgMGgxMTkuMDhhOCA4IDAgMCAxIDYuNTMgMTIuNjJMNzQuNTMgOTYuNzdhOCA4IDAgMCAxLTEzLjA2IDB6IiBmaWxsPSJyZ2JhKDAsMCwwLDAuNSkiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPjwvc3ZnPgo=); /* triangle.svg */
     background-position: right 7px center;
     background-repeat: no-repeat;
     background-size: 9px 6px;
@@ -489,26 +491,29 @@ body.dark {
     font-family: consolas, menlo, monaco, monospace-serif;
     font-size: 11px;
     padding: 5px 22px 5px 10px;
-    transition: background-color 0.2s, transform 0.1s, color 0.2s;
+    transition: background-color 0.2s, transform 0.1s, color 0.2s, border 0.2s;
 
     &[disabled] {
       background-image: url(data:image/svg+xml;charset=UTF-8;base64,PHN2ZyB3aWR0aD0iMTM2IiBoZWlnaHQ9IjEwMSIgdmlld0JveD0iMCAwIDEzNiAxMDEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTYxLjQ3IDk2Ljc3TDEuOTMgMTIuNjJBOCA4IDAgMCAxIDguNDYgMGgxMTkuMDhhOCA4IDAgMCAxIDYuNTMgMTIuNjJMNzQuNTMgOTYuNzdhOCA4IDAgMCAxLTEzLjA2IDB6IiBmaWxsPSJyZ2JhKDAsMCwwLDAuMikiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPjwvc3ZnPg==); /* triangle-disabled.svg */
       opacity: 0.8;
     }
 
+    &:not([disabled]):focus,
     &:not([disabled]):hover {
       background-color: #ddd;
-      background-image: url(data:image/svg+xml;charset=UTF-8;base64,PHN2ZyB3aWR0aD0iMTM2IiBoZWlnaHQ9IjEwMSIgdmlld0JveD0iMCAwIDEzNiAxMDEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTYxLjQ3IDk2Ljc3TDEuOTMgMTIuNjJBOCA4IDAgMCAxIDguNDYgMGgxMTkuMDhhOCA4IDAgMCAxIDYuNTMgMTIuNjJMNzQuNTMgOTYuNzdhOCA4IDAgMCAxLTEzLjA2IDB6IiBmaWxsPSJyZ2JhKDAsMCwwLDAuNSkiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPjwvc3ZnPg==); /* triangle-hover.svg */
+      background-image: url(data:image/svg+xml;charset=UTF-8;base64,PHN2ZyB3aWR0aD0iMTM2IiBoZWlnaHQ9IjEwMSIgdmlld0JveD0iMCAwIDEzNiAxMDEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTYxLjQ3IDk2Ljc3TDEuOTMgMTIuNjJBOCA4IDAgMCAxIDguNDYgMGgxMTkuMDhhOCA4IDAgMCAxIDYuNTMgMTIuNjJMNzQuNTMgOTYuNzdhOCA4IDAgMCAxLTEzLjA2IDB6IiBmaWxsPSJyZ2JhKDAsMCwwLDAuNikiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPjwvc3ZnPgo=); /* triangle-hover.svg */
       cursor: pointer;
       transform: scale(1.1);
+      border-color:rgba(0,0,0,0.5);
+      outline: none;
     }
   }
 
-  input[type=submit] {
-  
+  textarea {
+    width: 100%;
   }
 
-
+  textarea,
   input[type=password],
   input[type=number],
   input[type=text],
@@ -518,7 +523,7 @@ body.dark {
     border: 1px solid rgba(0,0,0,0.3);
     padding: 5px 10px;
     border-radius: 4px;
-    transition: transform 0.2s, background 0.2s, color 0.2s;
+    transition: transform 0.2s, background 0.2s, color 0.2s, border 0.2s;
 
     &[type=number] {
       width: 6em;
@@ -527,13 +532,15 @@ body.dark {
 
     &:not([disabled]):hover {
       transform: scale(1.1);
+      border-color:rgba(0,0,0,0.5);
     }
 
     &:not([disabled]):focus {
       transform: scale(1.2);
       outline: none;
-      background: #ddd;
+      background: #eee;
       box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      border-color:rgba(0,0,0,0.6);
     }
 
     &[disabled] {
@@ -550,10 +557,10 @@ body.dark {
       -moz-appearance: none;
       -webkit-appearance: none;
       border: 1px solid #444;
-      display: inline-block;
-      height: 11px;
+      height: 12px;
       transition: background-color 0.1s;
-      width: 11px;
+      width: 12px;
+      line-height: normal;
 
       &:not([disabled]):hover {
         cursor: pointer;
@@ -597,7 +604,7 @@ body.dark {
     padding: 10px 0;
     width: 90%;
   }
-  
+
   #man {
     -webkit-text-size-adjust: 100%;
   }
@@ -612,7 +619,7 @@ body.dark {
 
   body {
     margin: 0 auto;
-    padding: 10px 0; 
+    padding: 10px 0;
     width: 90%;
   }
   #man {
@@ -696,7 +703,7 @@ pre { /* pygments */
   .il { color: #009999 } /* Literal.Number.Integer.Long */
 }
 
-/* 
+/*
   .man-badge is added via js
 */
 .man-badge {
