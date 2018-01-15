@@ -561,11 +561,18 @@ body.dark {
 
 
   /* safari 11 desktop */
-  @media not all and (min-resolution:.001dpcm) { @supports (-webkit-appearance:none) and (stroke-color:transparent) {
+  @media not all and (min-resolution:.001dpcm) and (hover: hover) { @supports (-webkit-appearance:none) and (stroke-color:transparent) {
     input[type=search] {
       padding: 2px 1px;
     }
   } }
+
+  /* reset padding for search input on mobile browsers */
+  @media only screen  and (max-device-width: 1024px) {
+    input[type=search] {
+      padding: 5px 10px;
+    }
+  }
 
 
   input[type=radio],
