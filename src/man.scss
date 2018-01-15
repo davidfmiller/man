@@ -572,15 +572,7 @@ body.dark {
     input[type=radio],
     input[type=checkbox] {
 
-      -moz-appearance: none;
-      -webkit-appearance: none;
-      background-repeat: no-repeat;
-      background-position: 50% 50%;
-      background-size: 11px 11px;
-      height: 11px;
-      line-height: normal;
-      transition: background 0.1s, transform 0.2s;
-      width: 11px;
+      transition: transform 0.2s;
 
       &:not([disabled]):hover {
         cursor: pointer;
@@ -595,6 +587,28 @@ body.dark {
       &[disabled] ~ span{
         opacity: 0.5;
       }
+    }
+
+    input[type=checkbox],
+    input[type=radio] {
+      -moz-appearance: none;
+      -webkit-appearance: none;
+      appearance: none;
+      background-size: 11px 11px;
+      background-color: #fff;
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      border: none;
+      border-radius:0;
+      height: 11px;
+      width: 11px;
+      transition: background 0.1s, transform 0.2s;
+
+      &:not([disabled]):hover {
+        cursor: pointer;
+        transform: scale(1.5);
+      }
+
     }
 
     input[type=checkbox] {
