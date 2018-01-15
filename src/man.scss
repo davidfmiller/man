@@ -448,6 +448,9 @@ body.dark {
   input[type=reset],
   input[type=submit],
   button {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+
     background: rgba(0, 0, 0, 0.05);
     border-radius: 2px;
     border: 1px solid rgba(0,0,0,0.3);
