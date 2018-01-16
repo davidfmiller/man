@@ -80,7 +80,7 @@
     if (! pres.length == 0 && tables.length == 0) {
       return;
     }
-
+/*
     for (i = 0; i < tables.length; i++) {
       table = tables[i];
       table.addEventListener('click', function(e) {
@@ -89,7 +89,7 @@
         }
       });
     }
-
+*/
 
     for (i = 0; i < pres.length; i++) {
 
