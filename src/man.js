@@ -58,8 +58,8 @@
 
     const
     matches = document.location.hash.match(/#man-([^\d]*)-(\d*)-?(\d*)?/),
-    pres = RMR.Array.coerce(document.body.querySelectorAll('pre')),
-    tables = RMR.Array.coerce(document.body.querySelectorAll('table')),
+    pres = man.pre ? RMR.Array.coerce(document.body.querySelectorAll('pre')) : [],
+    tables = man.table ? RMR.Array.coerce(document.body.querySelectorAll('table')) : [],
     badge = RMR.Node.make('div', { 'class': 'man-badge' });
 
     let
@@ -77,7 +77,7 @@
     document.body.appendChild(badge);
 
     // currently the only flag
-    if (! pres.length == 0 && tables.length == 0) {
+    if (pres.length == 0 && tables.length == 0) {
       return;
     }
 /*
