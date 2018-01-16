@@ -1,12 +1,1 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="110px" height="110px" viewBox="0 0 110 110" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
-    <title>radio-checked</title>
-    <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="radio-checked" fill="#000000" fill-rule="nonzero">
-            <path d="M55,110 C24.6243388,110 0,85.3756612 0,55 C0,24.6243388 24.6243388,0 55,0 C85.3756612,0 110,24.6243388 110,55 C110,85.3756612 85.3756612,110 55,110 Z M55,72 C64.3888407,72 72,64.3888407 72,55 C72,45.6111593 64.3888407,38 55,38 C45.6111593,38 38,45.6111593 38,55 C38,64.3888407 45.6111593,72 55,72 Z" id="Oval"></path>
-        </g>
-    </g>
-</svg>
+<svg width="110" height="110" viewBox="0 0 110 110" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><title>radio-checked</title><desc>Created with Sketch.</desc><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="radio-checked" fill="#444" fill-rule="nonzero"><path d="M55,110 C24.6243388,110 0,85.3756612 0,55 C0,24.6243388 24.6243388,0 55,0 C85.3756612,0 110,24.6243388 110,55 C110,85.3756612 85.3756612,110 55,110 Z M55,72 C64.3888407,72 72,64.3888407 72,55 C72,45.6111593 64.3888407,38 55,38 C45.6111593,38 38,45.6111593 38,55 C38,64.3888407 45.6111593,72 55,72 Z" id="Oval"/></g></g></svg>
