@@ -58,7 +58,8 @@
 
     const
     matches = document.location.hash.match(/#man-([^\d]*)-(\d*)-?(\d*)?/),
-    nodes = RMR.Array.coerce(document.body.querySelectorAll('pre')),
+    pres = RMR.Array.coerce(document.body.querySelectorAll('pre')),
+    tables = RMR.Array.coerce(document.body.querySelectorAll('table')),
     badge = RMR.Node.make('div', { 'class': 'man-badge' });
 
     let
@@ -67,6 +68,7 @@
     id,
     buf = '',
     pre,
+    table,
     lines,
 //    n,
     node;
@@ -75,13 +77,23 @@
     document.body.appendChild(badge);
 
     // currently the only flag
-    if (! man.pre) {
+    if (! pres.length == 0 && tables.length == 0) {
       return;
     }
 
-    for (i = 0; i < nodes.length; i++) {
+    for (i = 0; i < tables.length; i++) {
+      table = tables[i];
+      table.addEventListener('click', function(e) {
+        if (RMR.Node.matches(e.target, 'tbody td, tbody th')) {
+//          e.target.classList.add('');
+        }
+      });
+    }
 
-      pre = nodes[i];
+
+    for (i = 0; i < pres.length; i++) {
+
+      pre = pres[i];
       lines = pre.innerHTML.split("\n");
       buf = '<table><tbody>';
 
