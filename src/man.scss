@@ -600,7 +600,7 @@ body.dark {
 
     &:not([disabled]):hover {
       cursor: pointer;
-      transform: scale(4);
+      transform: scale(2);
     }
 
 
@@ -609,7 +609,7 @@ body.dark {
     }
 
     &:focus {
-      transform: scale(4);
+      transform: scale(2);
       outline: none;
     }
   }
