@@ -597,7 +597,7 @@ body.dark {
   /* reset padding for search input on mobile browsers */
   @media only screen  and (max-device-width: 1024px) {
     input[type=search] {
-      padding: 5px 10px;
+      padding: 5px 5px 5px 23px;
     }
   }
 
