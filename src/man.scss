@@ -458,6 +458,59 @@ body.dark {
     form elements
   */
 
+  input[type=file] {
+
+    cursor: pointer;
+
+    -moz-appearance: none;
+
+    &::-webkit-file-upload-button {
+
+      -webkit-appearance: none;
+
+      background: rgba(0, 0, 0, 0.05);
+      border-radius: 2px;
+      border: 1px solid rgba(0,0,0,0.3);
+      font-family: consolas, menlo, monaco, monospace-serif;
+      font-size: 11px;
+      padding: 5px 10px;
+      transition: background-color $transition-duration, transform $transition-duration-short, color $transition-duration-short;
+    }
+
+    &[disabled] {
+      opacity: 0.5;
+      cursor: not-allowed;
+
+      &::-webkit-file-upload-button {
+        cursor: not-allowed;
+      }
+    }
+
+    &:not([disabled]):focus,
+    &:not([disabled]):hover {
+
+      &::-webkit-file-upload-button {
+        background: #ddd;
+        cursor: pointer;
+        transform: scale(1.1);
+        outline: none;
+        border-color:rgba(0,0,0,0.5);
+      }
+    }
+
+    &:not([disabled]):active {
+      &::-webkit-file-upload-button {
+        transform: translate(0px, 2px);
+        color: #fff;
+        background: #aaa;
+        outline: none;
+      }
+    }
+
+
+  }
+
+
   input[type=reset],
   input[type=submit],
   button {
@@ -492,7 +545,6 @@ body.dark {
       background: #aaa;
       outline: none;
     }
-
   }
 
   select {
@@ -528,11 +580,12 @@ body.dark {
   }
 
   textarea,
+  input[type=email]
   input[type=password],
   input[type=number],
   input[type=search],
   input[type=text],
-  input[type=email] {
+  input[type=tel] {
 
     -webkit-appearance: none;
     font-size: 11px;
@@ -555,8 +608,8 @@ body.dark {
     &:focus {
       transform: scale(1.2);
       outline: none;
-      background-color: #eee;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      background-color: #f0f0f0;
+      box-shadow: 0 0 5px rgba(0,0,0,0.2);
       border-color:rgba(0,0,0,0.6);
     }
 
