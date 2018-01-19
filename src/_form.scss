@@ -131,6 +131,7 @@
 
   textarea,
   input[type=email],
+  input[type=time],
   input[type=date],
   input[type=password],
   input[type=number],
@@ -173,7 +174,12 @@
   }
 
   input[type=date] {
-    width: 120px;
+    display: inline-block;
+    -webkit-appearance: textfield;
+    width: 120px;  
+    @include webkit-mobile {
+
+    }
   }
 
   textarea {

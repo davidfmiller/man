@@ -3,11 +3,12 @@
 <head>
   <title>man</title>
   <meta charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="man.css">
+  <link rel="stylesheet" type="text/css" href="man.css?bust=1">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- page-specific styles that are not included in the library -->
   <style type="text/css">
+  body { background: red;}
     fieldset {
       margin: 10px 0 20px 0;
     }
@@ -161,7 +162,9 @@
         <input type="search" disabled placeholder="Search">
         <input type="date" placeholder="Date">
         <input type="date" placeholder="Date" disabled>
-
+        <hr>
+        <input type="time" placeholder="Time">
+        <input type="time" placeholder="Time" disabled>
         <hr>
         <textarea placeholder="Textarea" rows="4"></textarea>
         <hr>
