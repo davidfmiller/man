@@ -173,12 +173,19 @@
     }
   }
 
+  input[type=time] {
+    display: inline-block;
+    @include webkit-mobile {
+      width: 70px;
+    }
+  }
+
   input[type=date] {
     display: inline-block;
-    -webkit-appearance: textfield;
     width: 120px;  
     @include webkit-mobile {
-
+      width: 100px;
+      background: red;
     }
   }
 
