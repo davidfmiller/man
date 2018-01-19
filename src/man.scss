@@ -1,5 +1,10 @@
 @charset "UTF-8";
 
+
+$transition-duration : 0.2s;
+$transition-duration-short : 0.1s;
+
+
 html{color:#000;background:#FFF}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0}table{border-collapse:collapse;border-spacing:0}fieldset,img{border:0}address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal}ol,ul{list-style:none}caption,th{text-align:left}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}q:before,q:after{content:''}abbr,acronym{border:0;font-variant:normal}sup{vertical-align:text-top}sub{vertical-align:text-bottom}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit}input,textarea,select{*font-size:100%}legend{color:#000}#yui3-css-stamp.cssreset{display:none}
 fieldset {
   margin: 0;
@@ -101,7 +106,7 @@ h2 a:visited {
   left: -15px;
   position: absolute;
   text-decoration: none;
-  transition: color 0.2s linear;
+  transition: color $transition-duration linear;
 }
 
 
@@ -235,7 +240,7 @@ code {
   border-radius: 3px;
   color: #000;
   padding: 0 5px;
-  transition: color 0.2s, background 0.2s;
+  transition: color $transition-duration, background $transition-duration;
 
   &:hover {
     background: rgba(0, 0, 0, 0.4); //rgba(61,255,6,1.0);
@@ -286,7 +291,7 @@ pre {
   overflow: scroll;
   padding: 10px;
   position: relative;
-  transition: background-color 0.2s, border-color 0.2s, transform 0.1s;
+  transition: background-color $transition-duration, border-color $transition-duration, transform $transition-duration-short;
 
   &:target,
   &:hover {
@@ -303,7 +308,7 @@ pre {
   tr {
     td {
       padding: 0.1em 0;
-      transition: background-color 0.1s;
+      transition: background-color $transition-duration-short;
       border: none;
       text-align: left;
 
@@ -313,7 +318,7 @@ pre {
 
       &.col {
         color: rgba(0,0,0,0.1);
-        transition: color 0.2s;
+        transition: color $transition-duration;
       }
 
     }
@@ -366,7 +371,7 @@ pre {
       padding: 5px;
       position: absolute;
       right: 0;
-      transition: opacity 0.2s;
+      transition: opacity $transition-duration;
       user-select: none;
     }
   } // /pre a
@@ -467,7 +472,7 @@ body.dark {
     font-family: consolas, menlo, monaco, monospace-serif;
     font-size: 11px;
     padding: 5px 10px;
-    transition: background-color 0.2s, transform 0.1s, color 0.1s;
+    transition: background-color $transition-duration, transform $transition-duration-short, color $transition-duration-short;
 
     &[disabled] {
       opacity: 0.8;
@@ -504,7 +509,7 @@ body.dark {
     font-family: consolas, menlo, monaco, monospace-serif;
     font-size: 11px;
     padding: 5px 22px 5px 10px;
-    transition: background-color 0.2s, transform 0.1s, color 0.2s, border 0.2s;
+    transition: background-color $transition-duration, transform $transition-duration-short, color $transition-duration, border $transition-duration;
 
     &[disabled] {
       background-image: url(data:image/svg+xml;charset=UTF-8;base64,PHN2ZyB3aWR0aD0iMTM2IiBoZWlnaHQ9IjEwMSIgdmlld0JveD0iMCAwIDEzNiAxMDEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTYxLjQ3IDk2Ljc3TDEuOTMgMTIuNjJBOCA4IDAgMCAxIDguNDYgMGgxMTkuMDhhOCA4IDAgMCAxIDYuNTMgMTIuNjJMNzQuNTMgOTYuNzdhOCA4IDAgMCAxLTEzLjA2IDB6IiBmaWxsPSJyZ2JhKDAsMCwwLDAuMikiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPjwvc3ZnPg==); /* triangle-disabled.svg */
@@ -539,7 +544,7 @@ body.dark {
     border: 1px solid rgba(0,0,0,0.3);
     padding: 5px 10px;
     border-radius: 4px;
-    transition: transform 0.2s, background 0.2s, color 0.2s, border 0.2s;
+    transition: transform $transition-duration, background $transition-duration, color $transition-duration, border $transition-duration;
 
     &[type=number] {
       width: 6em;
@@ -583,6 +588,94 @@ body.dark {
 
   }
 
+  // https://css-tricks.com/styling-cross-browser-compatible-range-inputs-css/
+  input[type=range] {
+
+    -webkit-appearance: none;
+    border-radius: 10px;
+    height: 12px;
+    position: relative;
+    overflow: visible;
+    transition: background $transition-duration;
+
+    &:focus {
+      outline: none; 
+    }
+
+    &::-moz-range-thumb {
+      background: #888;
+      border: 4px solid #888;
+      border-radius: 32px;
+      height: 12px;
+      transition: transform $transition-duration;
+      width: 12px;
+    }
+
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      background: #888;
+      border: 4px solid #888;
+      border-radius: 32px;
+      height: 16px;
+      margin-top: -6px;
+      transition: transform $transition-duration-short;
+      width: 16px;
+    }
+
+    &::-webkit-slider-runnable-track {
+      -webkit-appearance: none;
+      background: #bbb;
+      border-radius: 4px;
+      height: 4px;
+      outline: none; 
+      transition: background-color $transition-duration;
+    }
+
+    &:not([disabled]) {
+      cursor: pointer;
+
+      &:focus,
+      &:hover {
+
+        cursor: pointer;
+
+        &::-webkit-slider-runnable-track {
+          background: #888;
+        }
+
+        &::-moz-range-thumb {
+          display: block;
+          transform: scale(1.5);
+          background: #ddd;
+          border-color: #444;
+        }
+        &::-webkit-slider-thumb {
+          display: block;
+          transform: scale(1.5);
+          background: #ddd;
+          border-color: #444;
+        }
+      }
+
+    }
+
+    &[disabled] {
+      &::-moz-range-thumb {
+        background: #ccc;
+        border-color: #bbb;
+      }
+
+      &::-webkit-slider-thumb {
+        background: #ccc;
+        border-color: #bbb;
+      }
+
+      &::-webkit-slider-runnable-track {
+        background: #ccc;
+      }
+    }
+  }
+
   /* safari 11 desktop */
   @media not all and (min-resolution:.001dpcm) and (hover: hover) { @supports (-webkit-appearance:none) and (stroke-color:transparent) {
 
@@ -617,7 +710,7 @@ body.dark {
     border-radius: 0;
     height: 11px;
     width: 11px;
-    transition: background-image 0.2s, transform 0.2s;
+    transition: background-image $transition-duration, transform $transition-duration;
 
     &:not([disabled]):hover {
       cursor: pointer;
@@ -673,7 +766,7 @@ body.dark {
     input[type=radio],
     input[type=checkbox] {
 
-      transition: transform 0.2s;
+      transition: transform $transition-duration;
 
       &:not([disabled]):hover {
         cursor: pointer;
@@ -809,8 +902,8 @@ pre { /* pygments */
   opacity: 0.2;
   position: fixed;
   right: 0;
-  transition: background 0.2s;
-  transition: opacity 0.2s;
+  transition: background $transition-duration;
+  transition: opacity $transition-duration;
 
   &:hover {
     background: #f8f8f8;
