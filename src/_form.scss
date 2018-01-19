@@ -443,6 +443,13 @@
   */
   meter {
     -webkit-appearance: none;
+    border: none;
+    border-radius: 5px;
+
+    @include firefox {
+      height: 4px;
+    }
+
     &[disabled] {
       opacity: 0.5;
 
@@ -459,9 +466,8 @@
 
     &::-webkit-meter-bar {
       height: 4px;
-      border-radius: 5px;
       background: #ddd;
-      border: none;
+      border-radius: 5px;
     }
     &::-webkit-meter-optimum-value {
       background: rgba(0,192,0,1);
