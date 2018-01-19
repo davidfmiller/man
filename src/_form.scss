@@ -438,6 +438,7 @@
 
   }
 
+
   /*
     meter
   */
@@ -448,6 +449,7 @@
 
     @include firefox {
       height: 4px;
+      background: #ddd;
     }
 
     &[disabled] {
@@ -464,11 +466,17 @@
       }
     }
 
-    &::-webkit-meter-bar {
+    &::-moz-meter-bar {
       height: 4px;
-      background: #ddd;
+      background: #888;
       border-radius: 5px;
     }
+
+    &::-webkit-meter-optimum-value {
+      background: rgba(0,192,0,1);
+      border-radius: 5px;
+    }
+
     &::-webkit-meter-optimum-value {
       background: rgba(0,192,0,1);
       border-radius: 5px;
@@ -511,4 +519,8 @@
     }
 
   }
+}
+
+:-moz-meter-optimum::-moz-meter-bar {
+  background: rgba(0,192,0,1);
 }
