@@ -519,6 +519,11 @@ body.dark {
     -moz-appearance: none;
     -webkit-appearance: none;
 
+/*
+    border-radius: 4px;
+    border: 2px solid #444;
+*/
+
     background: rgba(0, 0, 0, 0.05);
     border-radius: 2px;
     border: 1px solid rgba(0,0,0,0.3);
@@ -794,6 +799,8 @@ body.dark {
     height: 11px;
     width: 11px;
     transition: background-image $transition-duration, transform $transition-duration;
+    padding: 0 2px;
+    transform: scale(1.2);
 
     &:not([disabled]):hover {
       cursor: pointer;
