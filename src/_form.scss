@@ -8,9 +8,8 @@
   */
   input[type=file] {
 
-    cursor: pointer;
-
     -moz-appearance: none;
+    cursor: pointer;
 
     &::-webkit-file-upload-button {
 
@@ -521,12 +520,6 @@
           cursor: pointer;
         }
       }
-
     }
-
   }
-}
-
-:-moz-meter-optimum::-moz-meter-bar {
-  background: rgba(0,192,0,1);
 }
