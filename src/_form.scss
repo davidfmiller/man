@@ -1,5 +1,6 @@
 
 @import "_vars.scss";
+@import "../node_modules/rmr-util/src/styles/rmr-util.scss";
 
 #man {
   /*
@@ -400,21 +401,41 @@
   */
   progress {
     -webkit-appearance: none;
+    -moz-appearance: none;
+
+    border: none;
+    border-radius: 5px;
+    padding: 0;
     width: 120px;
+
+    @include firefox {
+      background: #ddd;
+      height: 4px;
+    }
+
     &[disabled] {
       opacity: 0.5;
     }
-  }
-  ::-webkit-progress-inner-element { }
-  ::-webkit-progress-bar {
-    background: #ddd;
-    border: none;
-    border-radius: 5px;
-    height: 4px;
-  }
-  ::-webkit-progress-value {
-    background: #888;
-    border-radius: 5px;
+
+    &::-webkit-progress-inner-element { }
+    &::-webkit-progress-bar {
+      background: #ddd;
+      border: none;
+      height: 4px;
+      border-radius: 5px;
+    }
+
+    &::-webkit-progress-value {
+      background: #888;
+      border-radius: 5px;
+    }
+
+    &::-moz-progress-bar {
+      background: #888;
+      border-radius: 5px;
+      height: 4px;
+    }
+
   }
 
   /*
@@ -425,13 +446,13 @@
     &[disabled] {
       opacity: 0.5;
 
-      &::-webkit-meter-optimum-value {
+      ::-webkit-meter-optimum-value {
         background: #aaa;
       }
-      &::-webkit-meter-suboptimum-value {
+      ::-webkit-meter-suboptimum-value {
         background: #aaa;
       }
-      &::-webkit-meter-even-less-good-value {
+      ::-webkit-meter-even-less-good-value {
         background: #aaa;
       }
     }
