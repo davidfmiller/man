@@ -458,6 +458,10 @@ body.dark {
     form elements
   */
 
+
+  /*
+  https://developer.mozilla.org/en-US/docs/Web/CSS/::-ms-browse
+  */
   input[type=file] {
 
     cursor: pointer;
@@ -506,11 +510,9 @@ body.dark {
         outline: none;
       }
     }
-
-
   }
 
-
+  /* ensure that styles applied to reset, submit, & button are also applied to file input */
   input[type=reset],
   input[type=submit],
   button {
@@ -579,10 +581,6 @@ body.dark {
     }
   }
 
-  input[type=date] {
-    width: 120px;
-  }
-
   textarea,
   input[type=email],
   input[type=date],
@@ -624,6 +622,10 @@ body.dark {
       border: 1px solid rgba(0,0,0,0.2);
       cursor: not-allowed;
     }
+  }
+
+  input[type=date] {
+    width: 120px;
   }
 
   textarea {
