@@ -444,12 +444,12 @@
   */
   meter {
     -webkit-appearance: none;
-    border: none;
-    border-radius: 5px;
 
     @include firefox {
       height: 4px;
       background: #ddd;
+      border: none;
+      border-radius: 5px;
     }
 
     &[disabled] {
@@ -469,6 +469,12 @@
     &::-moz-meter-bar {
       height: 4px;
       background: #888;
+      border-radius: 5px;
+    }
+
+    &::-webkit-meter-bar {
+      height: 4px;
+      background: #ddd;
       border-radius: 5px;
     }
 
