@@ -8,7 +8,35 @@
 
   <!-- page-specific styles that are not included in the library -->
   <style type="text/css">
-    fieldset + fieldset { margin-top: 10px; }
+    fieldset {
+      margin: 10px 0 20px 0;
+    }
+
+    legend {
+      border-bottom: 1px solid #ddd;
+      display: block;
+      font-size: 120%;
+      font-weight: bold;
+      margin-bottom: 5px;
+      padding-bottom: 5px;
+    }
+    fieldset hr {
+      display: block;
+      margin: 2px 0;
+      visibility: hidden;
+    }
+    label {
+      display: inline-block;
+      padding: 5px 0;
+    }
+    fieldset table {
+      margin: 0;
+    }
+    fieldset table tbody td {
+      border: none;
+      padding: 5px 10px 5px 0;
+      text-align: left;
+    }
   </style>
 </head>
 <body><!--  class="dark" -->
@@ -121,99 +149,114 @@
     </table>
 
     <fieldset>
-      <button>Enabled button</button>
-      <label>Number: <input type="number" value="0"></label>
+      <legend>Text</legend>
+      <fieldset>
+        <input type="text" placeholder="Text">
+        <input type="number" value="0" plaeholder="Number">
+
+        <input type="password" value="0" placeholder="password">
+        <input type="tel" placeholder="Telephone">
+        <input type="email" placeholder="name@email.com" disabled>
+        <hr>
+        <input type="search" placeholder="Search">
+        <input type="search" disabled placeholder="Search">
+        <input type="date" placeholder="Date">
+        <input type="date" placeholder="Date" disabled>
+
+        <hr>
+        <textarea placeholder="Textarea" rows="4"></textarea>
+        <hr>
+        <textarea placeholder="Disabled" rows="4" disabled></textarea>
+
+      </fieldset>
+
     </fieldset>
+
     <fieldset>
-      <label>Text: <input type="text" value="0" placeholder="text"></label>
+      <legend>Checkboxes &amp; Radios</legend>
+      <table>
+        <tbody>
+          <tr>
+            <td>
+            <label for="input-checkbox">
+              <input id="input-checkbox" type="checkbox" name="" value=""> <span>Check</span>
+            </label>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="input-radio-checked">
+                <input id="input-radio-checked" type="radio" checked name="radio" value=""> <span>Checked Radio</span>
+              </label>
+            </td>
+            <td>
+              <label for="input-radio">
+                <input id="input-radio" type="radio" name="radio" value=""> <span>Radio</span>
+              </label>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="input-radio-disabled">
+                <input id="input-radio-disabled" disabled type="radio"> <span>Disabled Radio</span>
+              </label>
+            </td>
+            <td>
+              <label for="input-radio-disabled-checked">
+                <input id="input-radio-disabled-checked" checked disabled type="radio"> <span>Disabled Radio</span>
+              </label>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="input-checkbox-disabled">
+                <input id="input-checkbox-disabled" disabled type="checkbox"> <span>Disabled Check</span>
+              </label>
+            </td>
+            <td>
+              <label for="input-checkbox-disabled-checked">
+                <input id="input-checkbox-disabled-checked" disabled checked type="checkbox"> <span>Disabled Check</span>
+              </label>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </fieldset>
+
     <fieldset>
-      <label>Email: <input type="email" value="0" placeholder="email" disabled></label>
-    </fieldset>
-    <fieldset>
-      <label>Password: <input type="password" value="0" placeholder="password"></label>
-      <input type="tel" placeholder="Telephone">
-    </fieldset>
-    <fieldset>
-      <input type="search" placeholder="Search">
-      <input type="search" disabled placeholder="Search">
-    </fieldset>
-    <fieldset>
-      <input type="range" min="0" max="100">
-      <input type="range" min="0" max="100" disabled>
-    </fieldset>
-    <fieldset>
-      <textarea placeholder="Textarea" rows="4"></textarea>
-      <textarea placeholder="Disabled" rows="4" disabled></textarea>
+      <legend>Buttons</legend>
       <input type="submit" value="Submit">
       <input type="reset" value="Reset">
-    </fieldset>
-
-    <!--
-    https://www.tjvantoll.com/2013/04/15/list-of-pseudo-elements-to-style-form-controls/#placeholder_attribute
-    -->
-    <fieldset>
-      <progress max="100" value="25">
-    </fieldset>
-    <fieldset>
-      <meter low="69" high="80" max="100" optimum="100" value="52"></meter>
-      <meter low="69" high="80" max="100" optimum="100" value="90"></meter>
-      <meter low="20" high="80" max="100" optimum="100" value="52" disabled></meter>
-
-    </fieldset>
-
-
-    <fieldset>
+      <button>Button</button>
       <select>
-        <option value="0">Enabled select</option>
+        <option value="0">Select</option>
         <option value="1">Option</option>
       </select>
-      <label for="input-radio-checked">
-        <input id="input-radio-checked" type="radio" checked name="radio" value=""> <span>Checked Radio</span>
-      </label>
-      <label for="input-radio">
-        <input id="input-radio" type="radio" name="radio" value=""> <span>Radio</span>
-      </label>
-
-      <label for="input-checkbox">
-        <input id="input-checkbox" type="checkbox" name="" value=""> <span>Check</span>
-      </label>
-
-    </fieldset>
-
-    <fieldset>
       <button disabled>Disabled button</button>
       <select disabled>
         <option value="0">Disabled select</option>
       </select>
-    </fieldset>
-
-    <fieldset>
+      <hr>
       <input type="file">
       <input type="file" disabled>
-    </fieldset>
-    <fieldset>
-      <input type="date" placeholder="Date">
-      <input type="date" placeholder="Date" disabled>
+
     </fieldset>
 
     <fieldset>
-      <label for="input-radio-disabled">
-        <input id="input-radio-disabled" disabled type="radio"> <span>Disabled Radio</span>
-      </label>
-      <label for="input-radio-disabled-checked">
-        <input id="input-radio-disabled-checked" checked disabled type="radio"> <span>Disabled Radio</span>
-      </label>
-    </fieldset>
+      <legend>Meters &amp; Ranges</legend>
+      <!--
+      https://www.tjvantoll.com/2013/04/15/list-of-pseudo-elements-to-style-form-controls/#placeholder_attribute
+      -->
+      <input type="range" min="0" max="100">
+      <input type="range" min="0" max="100" disabled>
+      <hr>
+      <progress max="100" value="25"></progress>
 
-    <fieldset>
-      <label for="input-checkbox-disabled">
-        <input id="input-checkbox-disabled" disabled type="checkbox"> <span>Disabled Check</span>
-      </label>
-      <label for="input-checkbox-disabled-checked">
-        <input id="input-checkbox-disabled-checked" disabled checked type="checkbox"> <span>Disabled Check</span>
-      </label>
-    </fieldset>
+      <meter low="69" high="80" max="100" optimum="100" value="52" title="Low"></meter>
+
+      <meter low="20" high="80" max="100" optimum="100" value="52" disabled title="Medium"></meter>
+
+      <meter low="69" high="80" max="100" optimum="100" value="90" title="High"></meter>
 
     </fieldset>
 
