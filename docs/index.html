@@ -246,16 +246,16 @@
       <!--
       https://www.tjvantoll.com/2013/04/15/list-of-pseudo-elements-to-style-form-controls/#placeholder_attribute
       -->
-      <input type="range" min="0" max="100">
-      <input type="range" min="0" max="100" disabled>
+      <input type="range" min="0" max="100" title="Range">
+      <input type="range" min="0" max="100" disabled title="Disabled range">
       <hr>
-      <progress max="100" value="25"></progress>
+      <progress max="100" value="25" title="Progress"></progress>
+      <progress max="100" value="25" title="Disabled progress" disabled></progress>
 
       <meter low="69" high="80" max="100" optimum="100" value="52" title="Low"></meter>
-
-      <meter low="20" high="80" max="100" optimum="100" value="52" disabled title="Medium"></meter>
-
-      <meter low="69" high="80" max="100" optimum="100" value="90" title="High"></meter>
+      <meter low="20" high="80" max="100" optimum="100" value="52" title="Medium"></meter>
+      <meter low="69" high="80" max="100" optimum="100" value="80" title="High"></meter>
+      <meter low="69" high="80" max="100" optimum="100" value="60" title="High" disabled></meter>
 
     </fieldset>
 

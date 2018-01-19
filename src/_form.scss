@@ -210,6 +210,7 @@
     -webkit-appearance: none;
     border-radius: 10px;
     height: 16px;
+    width: 120px;
     position: relative;
     overflow: visible;
     transition: background $transition-duration;
@@ -394,7 +395,77 @@
     }
   }
 
+  /*
+    progress
+  */
+  progress {
+    -webkit-appearance: none;
+    width: 120px;
+    &[disabled] {
+      opacity: 0.5;
+    }
+  }
+  ::-webkit-progress-inner-element { }
+  ::-webkit-progress-bar {
+    background: #ddd;
+    border: none;
+    border-radius: 5px;
+    height: 4px;
+  }
+  ::-webkit-progress-value {
+    background: #888;
+    border-radius: 5px;
+  }
+
+  /*
+    meter
+  */
+  meter {
+    -webkit-appearance: none;
+    &[disabled] {
+      opacity: 0.5;
+
+      &::-webkit-meter-optimum-value {
+        background: #aaa;
+      }
+      &::-webkit-meter-suboptimum-value {
+        background: #aaa;
+      }
+      &::-webkit-meter-even-less-good-value {
+        background: #aaa;
+      }
+    }
+
+    &::-webkit-meter-bar {
+      height: 4px;
+      border-radius: 5px;
+      background: #ddd;
+      border: none;
+    }
+    &::-webkit-meter-optimum-value {
+      background: rgba(0,192,0,1);
+      border-radius: 5px;
+    }
+    &::-webkit-meter-suboptimum-value {
+      background: orange;
+      border-radius: 5px;
+    }
+    &::-webkit-meter-even-less-good-value {
+      background: red;
+      border-radius: 5px;
+    }
+  }
+
+
   label {
+
+    input {
+      &[disabled],
+      &[disabled] ~ span {
+        cursor: not-allowed;
+        opacity: 0.5;
+      }
+    }
 
     input[type=radio],
     input[type=checkbox] {
@@ -410,11 +481,6 @@
         }
       }
 
-      &[disabled],
-      &[disabled] ~ span {
-        cursor: not-allowed;
-        opacity: 0.5;
-      }
     }
 
   }
