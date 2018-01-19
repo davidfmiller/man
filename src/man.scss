@@ -279,7 +279,6 @@ table {
 }
 
 pre {
-
   font-family: consolas, menlo, monaco, monospace-serif;
   background: rgba(0,0,0,0.03);
   background: rgba(0,0,0,0.02);
@@ -338,6 +337,7 @@ pre {
   code {
     &:hover {
       background: transparent;
+      color: inherit;
     }
     padding: 0;
     line-height: 15px;
