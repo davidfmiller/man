@@ -295,7 +295,10 @@ pre {
   &:hover {
     background:rgba(0,0,0,0.05);
     border-color: rgba(0,0,0,0.3);
-    transform: scale(1.05);
+
+    &:not(.rmr-no-transform) {
+      transform: scale(1.05);
+    }
   }
 
   table {
@@ -330,7 +333,7 @@ pre {
     color: rgba(0,0,0,0.2);
   }
 
-  &.lines {
+  &.rmr-lines {
     padding: 10px 0;
   }
 

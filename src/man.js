@@ -109,7 +109,7 @@
         continue;
       }
 
-      pre.classList.add('lines');
+      pre.classList.add('rmr-lines');
 
       for (j = 0; j < lines.length; j++) {
 
