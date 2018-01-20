@@ -23,7 +23,7 @@ module.exports = function(grunt) {
           sassDir : 'src/',
           cssDir : 'docs',
           environment : 'production',
-//          outputStyle : 'compressed
+          outputStyle : 'compressed'
         }
       }
     },

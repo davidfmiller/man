@@ -162,8 +162,8 @@
       <input type="date" placeholder="Date">
       <input type="date" placeholder="Date" disabled>
       <hr>
-      <input type="time" placeholder="Time">
-      <input type="time" placeholder="Time" disabled>
+      <input type="time" placeholder="--:--">
+      <input type="time" placeholder="--:--" disabled>
       <hr>
       <textarea placeholder="Textarea" rows="4"></textarea>
       <hr>
@@ -176,6 +176,9 @@
       <table>
         <tbody>
           <tr>
+            <td>
+              <input type="color" value="#ff00ff">
+            </td>
             <td>
             <label for="input-checkbox">
               <input id="input-checkbox" type="checkbox" name="" value=""> <span>Check</span>
@@ -284,7 +287,28 @@
 
 <script src="man.js"></script>
 <script>
-  window.Man({pre : true});
+  document.addEventListener('DOMContentLoaded', function() {
+    var
+    dates = document.querySelectorAll('input[type=date]'),
+    times = document.querySelectorAll('input[type=time]'),
+    i = 0;
+
+    for (i in dates) {
+      if (dates.hasOwnProperty(i)) {
+        dates[i].value = "2000-01-01";
+      }
+    }
+
+    for (i in times) {
+      if (times.hasOwnProperty(i)) {
+        //times[i].value = "2000-01-01";
+//        times[i].value = "23:59";
+      }
+    }
+
+
+    window.Man({pre : true});
+  });
 </script>
 
 </body>
