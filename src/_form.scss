@@ -191,6 +191,12 @@
     width: 25px;
     padding: 4px;
 
+    @include firefox {
+      background: #fff;
+      height: 30px;
+      width: 35px;
+    }
+
     &:hover,
     &:focus {
       transform: scale(1.2);
@@ -569,17 +575,6 @@
           cursor: pointer;
         }
       }
-    }
-  }
-}
-
-
-@supports (-moz-appearance:none) {
-  #man {
-    input[type=color] {
-      background: #fff;
-      height: 30px;
-      width: 35px;
     }
   }
 }
