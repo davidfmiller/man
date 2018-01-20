@@ -108,6 +108,12 @@
       pre.classList.add('lines');
 
       for (j = 0; j < lines.length; j++) {
+
+        // don't include last line if it's empty
+        if (j == lines.length - 1 && lines[j] == "") {
+          break;
+        }
+
         id = 'man-' + pre.getAttribute('id') + '-' + (j + 1);
         buf += '<tr><td title="Line #' + (j + 1) + '" id="' + (id) + '-line" class="col" data-line-number="' + (j + 1) + '"></td><td class="code" id="' + (id) + '-code" data-line-number="' + (j + 1) + '">' + lines[j] + '</td></tr>';
       }
