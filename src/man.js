@@ -110,7 +110,7 @@
       for (j = 0; j < lines.length; j++) {
 
         // don't include last line if it's empty
-        if (j == lines.length - 1 && lines[j] == "") {
+        if (j == lines.length - 1 && (lines[j] == "" || lines[j] == "<span class=\"w\">\n</span>")) {
           break;
         }
 
