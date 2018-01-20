@@ -13,7 +13,7 @@ const config = {
     filename: 'man.js'
   },
   watch: true,
-  plugins : [
+  plugins: [
     new webpack.optimize.UglifyJsPlugin({
       compress: { warnings: false }
     })
@@ -26,7 +26,7 @@ const config = {
         use: [{
           loader: 'babel-loader',
           options: {
-            presets: ['es2015'],
+            presets: ['es2015']
           }
         }]
       }
