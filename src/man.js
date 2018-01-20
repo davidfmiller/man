@@ -110,8 +110,11 @@
       for (j = 0; j < lines.length; j++) {
 
         // don't include last line if it's empty
-        if (j == lines.length - 1 && (lines[j] == "" || lines[j] == "<span class=\"w\">\n</span>")) {
-          break;
+        if (j == lines.length - 1) {
+          console.log(j, lines[j]);
+          if (lines[j] == "") {
+            break;
+          }
         }
 
         id = 'man-' + pre.getAttribute('id') + '-' + (j + 1);
