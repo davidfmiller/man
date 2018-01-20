@@ -77,7 +77,7 @@
     document.body.appendChild(badge);
 
     // currently the only flag
-    if (pres.length == 0 && tables.length == 0) {
+    if (pres.length === 0 && tables.length === 0) {
       return;
     }
 /*
@@ -101,6 +101,10 @@
         pre.setAttribute('id', 'pre-man-' + i);
       }
 
+      if (lines.length > 10) {
+        pre.classList.add('rmr-no-transform');
+      }
+
       if (lines.length <= 1 || pre.hasAttribute('data-no-lines')) {
         continue;
       }
@@ -110,9 +114,8 @@
       for (j = 0; j < lines.length; j++) {
 
         // don't include last line if it's empty
-        if (j == lines.length - 1) {
-          console.log(j, lines[j]);
-          if (lines[j] == "") {
+        if (j === lines.length - 1) {
+          if (lines[j] === "") {
             break;
           }
         }
