@@ -7,7 +7,7 @@ const
 // const extractCSS = new ExtractTextPlugin('[name].bundle.css');
 
 const config = {
-  entry: './src/index.js',
+  entry: './src/scripts/index.js',
   output: {
     path: path.resolve(__dirname, 'docs/'),
     filename: 'man.js'

@@ -4,8 +4,9 @@
 @import "_form.scss";
 
 
-@import "../node_modules/rmr-util/src/styles/rmr-util.scss";
+@import "../../node_modules/rmr-util/src/styles/rmr-util.scss";
 
+/* remove with next rmr-util */
 fieldset {
   margin: 0;
   padding: 0;
@@ -288,14 +289,26 @@ pre {
   overflow: scroll;
   padding: 10px;
   position: relative;
-  transition: background-color $transition-duration, border-color $transition-duration, transform $transition-duration-short;
+  transition: background-color $transition-duration,
+    border-color $transition-duration,
+    transform $transition-duration-short;
 
-  &:target,
-  &:hover {
+  &.abbr {
+    max-height: 600px;
+  }
+
+  &.rmr-screen {
+    background: #fff;
+    height: 100%;
+    max-height: 100%;
+  }
+
+  &:not(.rmr-screen):target,
+  &:not(.rmr-screen):hover {
     background:rgba(0,0,0,0.05);
     border-color: rgba(0,0,0,0.3);
 
-    &:not(.rmr-no-transform) {
+    &:not(.abbr) {
       transform: scale(1.05);
     }
   }

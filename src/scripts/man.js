@@ -7,6 +7,7 @@
   const
 
   RMR = require('rmr-util'),
+  Fullscreen = require('./fullscreen'),
 
   // VERSION = '0.0.1',
 
@@ -101,6 +102,7 @@
         pre.setAttribute('id', 'pre-man-' + i);
       }
 
+
       if (lines.length > 10) {
         pre.classList.add('rmr-no-transform');
       }
@@ -126,6 +128,26 @@
 
       buf += '</tbody></table>';
       pre.innerHTML = buf;
+
+/*
+      if (pre.classList.contains('abbr')) {
+
+        var n = RMR.Node.make('button', {});
+        n.innerHTML = 'Full';
+        n.addEventListener('click', () => {
+
+          const screen = new Fullscreen(pre);
+          screen.on('fullscreen', function(e) { window.console.log('fullscreen!!'); })
+          screen.on('exit', function(e) { window.console.log('exit!!'); })
+          if (screen.isSupported()) {
+            screen.toggle();
+          }
+
+        });
+        pre.appendChild(n);
+      }
+*/
+
     }
 
     document.body.addEventListener('click',function(e) {
