@@ -55,15 +55,15 @@
 
     <p>Simply include the stylesheet in your page&hellip;</p>
 
-    <pre><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type=</span><span class="s">&quot;text/css&quot;</span> <span class="na">href=</span><span class="s">&quot;<a href="http://davidfmiller.github.io/man/man.css">http://davidfmiller.github.io/man/man.css</a>&quot;</span><span class="nt">&gt;</span></pre>
+    <pre><div><span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type=</span><span class="s">&quot;text/css&quot;</span> <span class="na">href=</span><span class="s">&quot;<a href="http://davidfmiller.github.io/man/man.css">http://davidfmiller.github.io/man/man.css</a>&quot;</span><span class="nt">&gt;</span></div></pre>
 
   <p>&hellip; and, optionally, the following JavaScript:</p>
 
-  <pre id="pre-js"><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;<a href="http://davidfmiller.github.io/man/man.js">http://davidfmiller.github.io/man/man.js</a>&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+  <pre id="pre-js"><div><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;<a href="http://davidfmiller.github.io/man/man.js">http://davidfmiller.github.io/man/man.js</a>&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
 <span class="nt">&lt;script&gt;</span>
   <span class="nb">window</span><span class="p">.</span><span class="nx">Man</span><span class="p">({</span><span class="s1">pre</span><span class="o">:</span> <span class="kc">true</span><span class="p">});</span>
 <span class="nt">&lt;/script&gt;</span>
-</pre>
+</div></pre>
 
     <p>&hellip; or save the files locally within your project&rsquo;s repository and include them from there.</p>
 
@@ -73,7 +73,7 @@
 
     <p>&hellip; should be placed within the standard <code>&lt;pre&gt;&lt;/pre&gt;</code> (for block formatting) or <code>&lt;code&gt;&lt;/code&gt;</code> (for inline presentation) tags. Output from <code><a href="http://pygments.org" title="pygments">pygments</a></code> <code><a href="http://pygments.org/docs/formatters/?highlight=html%20formatter#HtmlFormatter" title="HTMLFormatter">HTMLFormatter</a></code> will receive syntax highlighting, ex:
 
-    <pre id="pre-code"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+    <pre id="pre-code"><div><span class="cp">&lt;!DOCTYPE html&gt;</span>
 <span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">&quot;en&quot;</span><span class="nt">&gt;</span>
   <span class="nt">&lt;head&gt;</span>
     <span class="nt">&lt;title&gt;</span>man<span class="nt">&lt;/title&gt;</span>
@@ -84,20 +84,20 @@
   <span class="nt">&lt;body&gt;</span>
   <span class="c">&lt;-- markup --&gt;</span>
   <span class="nt">&lt;/body&gt;</span>
-<span class="nt">&lt;/html&gt;</span></pre>
+<span class="nt">&lt;/html&gt;</span></div></pre>
 
     <p>Create annotated markup from a source file like so:</p>
 
-    <pre><code><i>⚡</i> <span class="nt">pygmentize</span> <span class="nt">-f</span> <span class="nb">html</span> <span class="nt">-l</span> <span class="nb">python</span> <span class="nt">-o</span> <span class="nb">output.html</span> <span class="nb">input.py</span></code></pre>
+    <pre><div><code><i>⚡</i> <span class="nt">pygmentize</span> <span class="nt">-f</span> <span class="nb">html</span> <span class="nt">-l</span> <span class="nb">python</span> <span class="nt">-o</span> <span class="nb">output.html</span> <span class="nb">input.py</span></code></div></pre>
 
     <p>Code blocks may be linked to directly, for example:
 
-    <pre id="hash-id"><span class="nt">&lt;pre</span> <span class="na">id=</span><span class="s">&quot;hash-id&quot;</span><span class="nt">&gt;</span>
+    <pre id="hash-id"><div><span class="nt">&lt;pre</span> <span class="na">id=</span><span class="s">&quot;hash-id&quot;</span><span class="nt">&gt;</span>
   <span class="c">&lt;--</span>
   <span class="c">source goes here</span>
   <span class="c">--&gt;</span>
   <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;#hash-id&quot;</span> <span class="na">class=</span><span class="s">&quot;hash&quot;</span> <span class="na">aria-hidden=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>#<span class="nt">&lt;/a&gt;</span>
-<span class="nt">&lt;/pre&gt;</span></pre>
+<span class="nt">&lt;/pre&gt;</span></div></pre>
 
     <p>If the <code>pre</code> flag is passed to the JavaScript initializer, all multiline <code>&lt;pre&gt;</code> blocks will receive line numbers. It is recommended that unique <code>id</code> attributes be added to the blocks so that line number anchors remain consistent as the page evolves/changes. Blocks that have a <code>data-no-lines</code> attribute applied will <em>not</em> have line numbers applied.</p>
 

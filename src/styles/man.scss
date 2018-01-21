@@ -6,6 +6,7 @@
 
 @import "../../node_modules/rmr-util/src/styles/rmr-util.scss";
 
+*{box-sizing:border-box;}
 /* remove with next rmr-util */
 fieldset {
   margin: 0;
@@ -548,12 +549,14 @@ body.dark {
 
   body {
     margin: 0 auto;
-    padding: 10px 0;
-    width: 90%;
+    padding: 0 10px;
   }
 
   #man {
     -webkit-text-size-adjust: 100%;
+    margin: 0 auto;
+    padding: 10px 0;
+    width: 100%;
   }
 
   h1 i {
