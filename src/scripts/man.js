@@ -145,23 +145,25 @@
       }
 
       // add hash link
-      const a = RMR.Node.make('a', {class: 'hash', 'aria-hidden': true, href: '#' + pre.getAttribute('id'), title: 'Link' });
+      const a = RMR.Node.make('a', { class: 'rmr-hash', 'aria-hidden': true, href: '#' + pre.getAttribute('id'), title: 'Link' });
       a.innerHTML = '#';
       pre.appendChild(a);
 
-      // add modal/data-uri link
-      const title = 'Expand',
-      n = RMR.Node.make('i', {title: title});
-      n.innerHTML = title;
-      n.addEventListener('click', openData.bind({node: pre, content: content}));
-      pre.appendChild(n);
+      if (pre.classList.contains('rmr-modal')) {
+        // add modal/data-uri link
+        const title = 'Expand',
+        n = RMR.Node.make('i', {title: title, 'aria-hidden': true});
+        n.innerHTML = title;
+        n.addEventListener('click', openData.bind({node: pre, content: content}));
+        pre.appendChild(n);
+      }
 
     }
 
     document.body.addEventListener('click',function(e) {
       if (e.target.matches('td.col')) {
         highlightRows([e.target], true);
-      } else if (e.target.matches('a.hash')) {
+      } else if (e.target.matches('a.rmr-hash')) {
         highlightRows(null, true);
       }
     });

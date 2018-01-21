@@ -1,5 +1,7 @@
 $modalDuration : 0.2s;
 
+*{box-sizing: border-box;}
+
 .rmr-modal-bg {
 
   background: rgba(0,0,0,0.9);
@@ -131,6 +133,7 @@ $modalDuration : 0.2s;
       position: relative;
       width: 100%;
     }
+    box-sizing: border-box;
     height: auto;
     left: 10%;
     margin: 0 auto;
