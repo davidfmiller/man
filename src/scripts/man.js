@@ -99,7 +99,7 @@
 
     const openData = function(e) {
       if (RMR.Browser.opensData()) {
-        window.open('data:text/html;charset=UTF-8;base64,' + RMR.Base64.encode('<!DOCTYPE html><html><head><title>' + document.location + '</title><meta charset="utf-8"><style>html{margin:0;padding:0;}body{margin:0;padding:0;font-family:sans-serif;}header{background:#fff;border-bottom:1px solid #ddd;position:fixed;padding:10px;width:100%;}main{padding:30px 5px;}table,td{white-space:pre;}</style><body><header><a href="' + document.location + '">Back</a></header><main><pre>' + this.content + '</pre></main><</body></html>'));
+        window.open('data:text/html;charset=UTF-8;base64,' + RMR.Base64.encode('<!DOCTYPE html><html><head><title>' + document.location + '</title><meta charset="utf-8"><style>html{margin:0;padding:0;}body{margin:0;padding:0;font-family:sans-serif;}header{background:#fff;border-bottom:1px solid #ddd;position:fixed;padding:10px;width:100%;}main{padding:30px 5px;}table,td{white-space:pre;}</style><body><header><a href="' + document.location + '">' + document.location + '</a></header><main><pre>' + this.content + '</pre></main></body></html>'));
       } else {
         const modal = new Modal.Modal({ node : this.node });
         modal.show();
