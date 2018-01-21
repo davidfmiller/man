@@ -21,6 +21,10 @@
    */
   highlightRows = function(tds, updateState) {
 
+    if (! tds || tds.count == 0) {
+      return;
+    }
+
     let
     i = 0;
 
@@ -95,6 +99,15 @@
     }
 */
 
+    const openData = function(e) {
+      if (RMR.Browser.opensData()) {
+        window.open('data:text/html;charset=UTF-8;base64,' + Base64.encode('<style>table,td{white-space:pre;}</style><pre>' + this.content + '</pre>'));
+      } else {
+        const modal = new Modal.Modal({ node : this.node });
+        modal.show();
+      }
+    };
+
     for (i = 0; i < pres.length; i++) {
 
       pre = pres[i];
@@ -112,45 +125,36 @@
         pre.classList.add('rmr-no-transform');
       }
 
-      if (lines.length <= 1 || pre.hasAttribute('data-no-lines')) {
-        continue;
-      }
+      if (lines.length > 1 && ! pre.hasAttribute('data-no-lines')) {
 
-      pre.classList.add('rmr-lines');
+        pre.classList.add('rmr-lines');
+        for (j = 0; j < lines.length; j++) {
 
-      for (j = 0; j < lines.length; j++) {
-
-        // don't include last line if it's empty
-        if (j === lines.length - 1) {
-          if (lines[j] === "") {
-            break;
+          if (j === lines.length - 1) { // don't include last line if it's empty
+            if (lines[j] === "") {
+              break;
+            }
           }
+
+          id = 'man-' + pre.getAttribute('id') + '-' + (j + 1);
+          buf += '<tr><td title="Line #' + (j + 1) + '" id="' + (id) + '-line" class="col" data-line-number="' + (j + 1) + '"></td><td class="code" id="' + (id) + '-code" data-line-number="' + (j + 1) + '">' + lines[j] + '</td></tr>';
         }
 
-        id = 'man-' + pre.getAttribute('id') + '-' + (j + 1);
-        buf += '<tr><td title="Line #' + (j + 1) + '" id="' + (id) + '-line" class="col" data-line-number="' + (j + 1) + '"></td><td class="code" id="' + (id) + '-code" data-line-number="' + (j + 1) + '">' + lines[j] + '</td></tr>';
+  //<a href="#pre-code" class="hash" aria-hidden="true">#</a>
+
+        buf += '</tbody></table></div>';
+        pre.innerHTML = buf;
       }
+      const a = RMR.Node.make('a', {class: 'hash', 'aria-hidden': true, href: '#' + pre.getAttribute('id'), title: 'Link' });
+      a.innerHTML = '#';
+      pre.appendChild(a);
 
-      buf += '</tbody></table></div>';
-      pre.innerHTML = buf;
+      const title = 'Expand',
+      n = RMR.Node.make('i', {title: title});
 
-      if (pre.classList.contains('rmr-modal')) {
-
-        const title = 'Expand',
-        n = RMR.Node.make('i', { title: title});
-
-        n.innerHTML = title;
-        n.addEventListener('click', () => {
-          if (RMR.Browser.opensData()) {
-            window.open('data:text/html;charset=UTF-8;base64,' + Base64.encode('<style>table,td{white-space:pre;}</style><pre>' + pre.innerHTML + '</pre>'));
-          } else {
-            const modal = new Modal.Modal({ node : pre });
-            modal.show();
-          }
-        });
-        pre.appendChild(n);
-      }
-
+      n.innerHTML = title;
+      n.addEventListener('click', openData.bind({node: pre, content: content}));
+      pre.appendChild(n);
 
     }
 
