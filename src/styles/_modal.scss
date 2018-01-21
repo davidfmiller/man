@@ -99,7 +99,7 @@ $modalDuration : 0.2s;
   }
 
 /*  &.rmr-modal-mobile { */
-    button.rmr-modal-dismiss { 
+    button.rmr-modal-dismiss {
 /*      display: none; */
     }
 /*  } */
@@ -116,7 +116,7 @@ $modalDuration : 0.2s;
 
   > section {
     transition: opacity $modalDuration;
-    overflow: auto;    
+    overflow: auto;
   }
 
   &.rmr-modal-focus {
