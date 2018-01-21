@@ -217,7 +217,7 @@ ul.categories {
       background-image: url(man.svg#tag);
 
       @include rmr-webkit-mobile {
-        background-image: url(tag.svg);
+        background-image: url(svg/tag.svg);
       }
 
       background-position: 0% 50%;
