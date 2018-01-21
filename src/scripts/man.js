@@ -2,12 +2,15 @@
 
 (function() {
 
+//  const Base64={_keyStr:"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",encode:function(e){var t="";var n,r,i,s,o,u,a;var f=0;e=Base64._utf8_encode(e);while(f<e.length){n=e.charCodeAt(f++);r=e.charCodeAt(f++);i=e.charCodeAt(f++);s=n>>2;o=(n&3)<<4|r>>4;u=(r&15)<<2|i>>6;a=i&63;if(isNaN(r)){u=a=64}else if(isNaN(i)){a=64}t=t+this._keyStr.charAt(s)+this._keyStr.charAt(o)+this._keyStr.charAt(u)+this._keyStr.charAt(a)}return t},decode:function(e){var t="";var n,r,i;var s,o,u,a;var f=0;e=e.replace(/[^A-Za-z0-9\+\/\=]/g,"");while(f<e.length){s=this._keyStr.indexOf(e.charAt(f++));o=this._keyStr.indexOf(e.charAt(f++));u=this._keyStr.indexOf(e.charAt(f++));a=this._keyStr.indexOf(e.charAt(f++));n=s<<2|o>>4;r=(o&15)<<4|u>>2;i=(u&3)<<6|a;t=t+String.fromCharCode(n);if(u!=64){t=t+String.fromCharCode(r)}if(a!=64){t=t+String.fromCharCode(i)}}t=Base64._utf8_decode(t);return t},_utf8_encode:function(e){e=e.replace(/\r\n/g,"\n");var t="";for(var n=0;n<e.length;n++){var r=e.charCodeAt(n);if(r<128){t+=String.fromCharCode(r)}else if(r>127&&r<2048){t+=String.fromCharCode(r>>6|192);t+=String.fromCharCode(r&63|128)}else{t+=String.fromCharCode(r>>12|224);t+=String.fromCharCode(r>>6&63|128);t+=String.fromCharCode(r&63|128)}}return t},_utf8_decode:function(e){var t="";var n=0;var r=c1=c2=0;while(n<e.length){r=e.charCodeAt(n);if(r<128){t+=String.fromCharCode(r);n++}else if(r>191&&r<224){c2=e.charCodeAt(n+1);t+=String.fromCharCode((r&31)<<6|c2&63);n+=2}else{c2=e.charCodeAt(n+1);c3=e.charCodeAt(n+2);t+=String.fromCharCode((r&15)<<12|(c2&63)<<6|c3&63);n+=3}}return t}}
+
   'use strict';
 
   const
 
   RMR = require('rmr-util'),
   Fullscreen = require('./fullscreen'),
+  Modal = require('./modal'),
 
   // VERSION = '0.0.1',
 
@@ -95,8 +98,11 @@
     for (i = 0; i < pres.length; i++) {
 
       pre = pres[i];
+
+      const content = pre.innerHTML;
+
       lines = pre.innerHTML.split("\n");
-      buf = '<table><tbody>';
+      buf = '<div><table><tbody>';
 
       if (! pre.getAttribute('id')) {
         pre.setAttribute('id', 'pre-man-' + i);
@@ -126,27 +132,22 @@
         buf += '<tr><td title="Line #' + (j + 1) + '" id="' + (id) + '-line" class="col" data-line-number="' + (j + 1) + '"></td><td class="code" id="' + (id) + '-code" data-line-number="' + (j + 1) + '">' + lines[j] + '</td></tr>';
       }
 
-      buf += '</tbody></table>';
+      buf += '</tbody></table></div>';
       pre.innerHTML = buf;
 
-/*
-      if (pre.classList.contains('abbr')) {
+      if (pre.classList.contains('rmr-modal')) {
 
-        var n = RMR.Node.make('button', {});
-        n.innerHTML = 'Full';
+        const title = 'Expand',
+        n = RMR.Node.make('i', { title: title});
+
+        n.innerHTML = title;
         n.addEventListener('click', () => {
-
-          const screen = new Fullscreen(pre);
-          screen.on('fullscreen', function(e) { window.console.log('fullscreen!!'); })
-          screen.on('exit', function(e) { window.console.log('exit!!'); })
-          if (screen.isSupported()) {
-            screen.toggle();
-          }
-
+          const modal = new Modal.Modal({ node : pre });
+          modal.show();
         });
         pre.appendChild(n);
       }
-*/
+
 
     }
 
