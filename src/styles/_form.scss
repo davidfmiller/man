@@ -1,6 +1,7 @@
 
 @import "_vars.scss";
-@import "../../node_modules/rmr-util/src/styles/rmr-util.scss";
+//@import "../../node_modules/rmr-util/src/styles/rmr-util.scss";
+@import "../../node_modules/rmr-util/src/styles/_rmr-mixins.scss";
 
 #man {
   /*
@@ -185,7 +186,7 @@
     width: 25px;
     padding: 4px;
 
-    @include firefox {
+    @include rmr-firefox {
       background: #fff;
       height: 30px;
       width: 35px;
@@ -211,7 +212,7 @@
   input[type=time] {
     display: inline-block;
     width: 70px;
-    @include webkit-mobile {
+    @include rmr-webkit-mobile {
       width: 80px;
     }
   }
@@ -220,7 +221,7 @@
     display: inline-block;
     width: 120px;
 
-    @include webkit-mobile {
+    @include rmr-webkit-mobile {
       width: 100px;
     }
   }
@@ -456,7 +457,7 @@
     padding: 0;
     width: 120px;
 
-    @include firefox {
+    @include rmr-firefox {
       background: #ddd;
       height: 4px;
     }
@@ -493,7 +494,7 @@
   meter {
     -webkit-appearance: none;
 
-    @include firefox {
+    @include rmr-firefox {
       height: 4px;
       background: #ddd;
       border: none;
