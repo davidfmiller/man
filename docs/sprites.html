@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>man → sprites</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="man.css?bust=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style type="text/css">
+
+    div.tag {
+      background-image: url(man.svg#tag);
+      background-size: contain;
+      width: 32px;
+      height: 32px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div id="man">
+
+    <h1><i>📘</i> <a href="https://github.com/davidfmiller/man/">man → sprites</a></h1>
+    <p>
+      <div class="sprite tag"></div>
+      <img src="man.svg#tag" alt="" width="15" height="15">
+      <img src="man.svg#tag" alt="" width="15" height="15">
+    </p>
+  </div>
+
+<script src="man.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    window.Man({pre : true});
+  });
+</script>
+
+</body>
+</html>
