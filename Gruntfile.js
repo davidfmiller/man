@@ -5,25 +5,15 @@ module.exports = function(grunt) {
   grunt.initConfig({
 
     pkg: grunt.file.readJSON('package.json'),
-/*
-    uglify: {
-      js: {
-        options: {
-          mangle: true
-        },
-        files: {
-          'docs/man.js' : ['src/man.js']
-        }
-      }
-    },
-*/
+
     compass : {
       dist : {
         options : {
           sassDir : 'src/styles/',
           cssDir : 'docs',
           environment : 'production',
-          outputStyle : 'compressed'
+//          debugInfo : true,
+//          outputStyle : 'expanded' /* compressed */
         }
       }
     },
