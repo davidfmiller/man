@@ -349,8 +349,8 @@ pre {
   div { overflow: scroll; }
 
   // modal
-  i {
-    background: url(data:image/svg+xml;charset=UTF-8;base64,PHN2ZyB3aWR0aD0iMzciIGhlaWdodD0iMzciIHZpZXdCb3g9IjAgMCAzNyAzNyIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIj48dGl0bGU+ZmF2aWNvbjwvdGl0bGU+PGRlc2M+Q3JlYXRlZCB3aXRoIFNrZXRjaC48L2Rlc2M+PGcgaWQ9IlBhZ2UtMSIgc3Ryb2tlPSJub25lIiBzdHJva2Utd2lkdGg9IjEiIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+PGcgaWQ9ImZhdmljb24iPjxwYXRoIGQ9Ik0xOC41LDM3IEM4LjI4MjczMjEzLDM3IDAsMjguNzE3MjY3OSAwLDE4LjUgQzAsOC4yODI3MzIxMyA4LjI4MjczMjEzLDAgMTguNSwwIEMyOC43MTcyNjc5LDAgMzcsOC4yODI3MzIxMyAzNywxOC41IEMzNywyOC43MTcyNjc5IDI4LjcxNzI2NzksMzcgMTguNSwzNyBaIiBpZD0iZnVsbCIgZmlsbD0iIzlCOUI5QiIgZmlsbC1ydWxlPSJub256ZXJvIi8+PHBhdGggZD0iTTEyLjk5OTIwMzgsOSBDMTIuOTMyODk5Niw5IDEyLjg2OTMxMTIsOS4wMjYzMzkyMSAxMi44MjI0MjcxLDkuMDczMjIzMyBDMTIuNzI0Nzk2LDkuMTcwODU0MzggMTIuNzI0Nzk2LDkuMzI5MTQ1NjIgMTIuODIyNDI3MSw5LjQyNjc3NjcgTDI3LjU3MzIyMzMsMjQuMTc3NTcyOSBDMjcuNjIwMTA3NCwyNC4yMjQ0NTcgMjcuNjgzNjk1OSwyNC4yNTA3OTYyIDI3Ljc1LDI0LjI1MDc5NjIgQzI3Ljg4ODA3MTIsMjQuMjUwNzk2MiAyOCwyNC4xMzg4Njc0IDI4LDI0LjAwMDc5NjIgTDI4LDkuNSBDMjgsOS4yMjM4NTc2MyAyNy43NzYxNDI0LDkgMjcuNSw5IEwxMi45OTkyMDM4LDkgWiIgaWQ9ImZ1bGwtcGF0aCIgZmlsbD0iI0ZGRiIvPjxwYXRoIGQ9Ik05LjUsMjggTDI0LjAwMDc5NjIsMjggQzI0LjA2NzEwMDQsMjggMjQuMTMwNjg4OCwyNy45NzM2NjA4IDI0LjE3NzU3MjksMjcuOTI2Nzc2NyBDMjQuMjc1MjA0LDI3LjgyOTE0NTYgMjQuMjc1MjA0LDI3LjY3MDg1NDQgMjQuMTc3NTcyOSwyNy41NzMyMjMzIEw5LjQyNjc3NjcsMTIuODIyNDI3MSBDOS4zNzk4OTI2LDEyLjc3NTU0MyA5LjMxNjMwNDEyLDEyLjc0OTIwMzggOS4yNSwxMi43NDkyMDM4IEM5LjExMTkyODgxLDEyLjc0OTIwMzggOSwxMi44NjExMzI2IDksMTIuOTk5MjAzOCBMOSwyNy41IEM5LDI3Ljc3NjE0MjQgOS4yMjM4NTc2MywyOCA5LjUsMjggWiIgaWQ9ImZ1bGwtcGF0aCIgZmlsbD0iI0ZGRiIvPjwvZz48L2c+PC9zdmc+);
+  > i {
+    background: url(man.svg#fullscreen);
     background-size: 100%;
     cursor: pointer;
     display: block;
@@ -362,6 +362,10 @@ pre {
     top: -10px;
     transition: opacity $transition-duration;
     width: 20px;
+
+    @include rmr-webkit-mobile {
+      background-image: url(svg/fullscreen.svg);
+    }
   }
 
   &:hover {
@@ -445,7 +449,6 @@ pre {
 
     &.rmr-hash {
 
-      -khtml-user-select: none;
       -moz-user-select: none;
       -ms-user-select: none;
       -webkit-touch-callout: none;
