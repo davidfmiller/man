@@ -215,6 +215,7 @@ ul.categories {
     &:before {
       content:"";
       background-image: url(man.svg#tag);
+      opacity: 0.6;
 
       @include rmr-webkit-mobile {
         background-image: url(svg/tag.svg);
@@ -257,16 +258,39 @@ em {
   font-style: italic;
 }
 
+a {
+/*
+  &:visited {
+    code {
+      background: purple;
+    }
+  }
+
+  &:active {
+    code {
+      background: red;
+    }
+  }
+*/
+
+}
+
 code {
-  background: rgba(0, 0, 0, 0.1);
-  border-radius: 3px;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 5px;
   color: #000;
   padding: 0 5px;
   transition: color $transition-duration, background $transition-duration;
-
-  &:hover {
-    background: rgba(0, 0, 0, 0.4); //rgba(61,255,6,1.0);
+/*
+  a {
+    background: rgba(0,0,0,0.8);
     color: #fff;
+  }
+*/
+  &:hover {
+    background: rgba(0,0,0,0.8);
+    color: #fff;
+
   }
 }
 
