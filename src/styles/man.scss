@@ -334,6 +334,12 @@ table {
 
 
 pre {
+
+  > code {
+    display: block;
+    overflow: auto;
+  }
+
   font-family: consolas, menlo, monaco, monospace-serif;
   background: rgba(0,0,0,0.02);
   border-radius: 3px;
