@@ -149,15 +149,11 @@
       a.innerHTML = '#';
       pre.appendChild(a);
 
-//      if (pre.classList.contains('rmr-modal')) {
-        // add modal/data-uri link
-        const title = 'Expand',
-        n = RMR.Node.make('i', {title: title, 'aria-hidden': true});
-        n.innerHTML = title;
-        n.addEventListener('click', openData.bind({node: pre, content: content}));
-        pre.appendChild(n);
-//      }
-
+      const title = 'Expand',
+      n = RMR.Node.make('i', {title: title, 'aria-hidden': true});
+      n.innerHTML = title;
+      n.addEventListener('click', openData.bind({node: pre, content: content}));
+      pre.appendChild(n);
     }
 
     document.body.addEventListener('click',function(e) {

@@ -365,6 +365,7 @@ pre {
 
     @include rmr-webkit-mobile {
       background-image: url(svg/fullscreen.svg);
+      opacity: 1;
     }
   }
 
