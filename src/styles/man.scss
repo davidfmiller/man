@@ -176,6 +176,10 @@ dt + dd > pre {
   margin: 0;
 }
 
+dd + dt {
+  padding-top: 10px;
+}
+
 dd + dd > pre {
   margin: -10px 0 10px 0;
 }
