@@ -7,8 +7,9 @@
   const
 
   RMR = require('rmr-util'),
-  Fullscreen = require('./fullscreen'),
+//  Fullscreen = require('./fullscreen'),
   Modal = require('./modal'),
+  Popover = require('./popover'),
 
   // VERSION = '0.0.1',
 
@@ -19,7 +20,7 @@
    */
   highlightRows = function(tds, updateState) {
 
-    if (! tds || tds.count == 0) {
+    if (! tds || tds.count === 0) {
       return;
     }
 
@@ -65,7 +66,8 @@
     const
     matches = document.location.hash.match(/#man-([^\d]*)-(\d*)-?(\d*)?/),
     pres = man.pre ? RMR.Array.coerce(document.body.querySelectorAll('pre')) : [],
-    tables = man.table ? RMR.Array.coerce(document.body.querySelectorAll('table')) : [],
+    footnotes = man.footnotes ? RMR.Array.coerce(document.body.querySelectorAll('sup a.footnote')) : [],
+//    tables = man.table ? RMR.Array.coerce(document.body.querySelectorAll('table')) : [],
     badge = RMR.Node.make('div', { 'class': 'man-badge' });
 
     let
@@ -74,7 +76,7 @@
     id,
     buf = '',
     pre,
-    table,
+//    table,
     lines,
 //    n,
     node;
@@ -82,10 +84,29 @@
     badge.innerHTML = '<a href="http://davidfmiller.github.io/man/" title="Built with man" target="_blank">📘</a>';
     document.body.appendChild(badge);
 
-    // currently the only flag
-    if (pres.length === 0 && tables.length === 0) {
-      return;
+    for (i = 0; i < footnotes.length; i++) {
+      const
+      a = footnotes[i],
+      target = document.querySelector(a.getAttribute('href').replace(':', '\\:'));
+
+      if (! target) { // footnote content doesn't exist (??)
+        continue;
+      }
+
+      a.setAttribute('data-popover-footnote', target.id);
     }
+
+    if (footnotes.length) {
+      var pop = new Popover({
+        root : '#man',
+        attribute : 'data-popover-footnote',
+        debug: true,
+        factory : function(targetNode) {
+          return { class: 'man-popover', content: document.querySelector(targetNode.getAttribute('href').replace(':', '\\:')).innerHTML };
+        }
+      });
+    }
+
 /*
     for (i = 0; i < tables.length; i++) {
       table = tables[i];
@@ -97,11 +118,12 @@
     }
 */
 
-    const openData = function(e) {
+    // open
+    const openData = function(/* e */) {
       if (RMR.Browser.opensData()) {
         window.open('data:text/html;charset=UTF-8;base64,' + RMR.Base64.encode('<!DOCTYPE html><html><head><title>' + document.location + '</title><meta charset="utf-8"><style>html{margin:0;padding:0;}body{margin:0;padding:0;font-family:sans-serif;}header{background:#fff;border-bottom:1px solid #ddd;position:fixed;padding:10px;width:100%;}main{padding:30px 5px;}table,td{white-space:pre;}</style><body><header><a href="' + document.location + '">' + document.location + '</a></header><main><pre>' + this.content + '</pre></main></body></html>'));
       } else {
-        const modal = new Modal.Modal({ node : this.node });
+        const modal = new Modal.Modal({ node: this.node });
         modal.show();
       }
     };
@@ -195,7 +217,10 @@
   const Man = function(config) {
 
     const
-    defaultConfig = { pre: false };
+    defaultConfig = {
+      pre: false,
+      footnotes: false
+    };
 
     config = RMR.Object.merge(defaultConfig, config ? config : {});
     init(config);

@@ -3,16 +3,32 @@
 @import "_vars.scss";
 @import "_form.scss";
 @import "_modal.scss";
+@import "_popover.scss";
 
 @import "../../node_modules/rmr-util/src/styles/rmr-util.scss";
 
-*{box-sizing:border-box;}
+* { box-sizing:border-box; }
+
 /* remove with next rmr-util */
 fieldset {
   margin: 0;
   padding: 0;
 }
 
+sup {
+  padding-left: 5px;
+  vertical-align: middle;
+}
+
+body .man-popover {
+  max-width: 300px;
+
+  .bd { padding: 10px; }
+  p {
+    margin: 0;
+  }
+  a.reversefootnote { display: none; }
+}
 
 html {
 /*  background: #fff; */
@@ -196,6 +212,11 @@ li {
 
   &:last-child {
     margin-bottom: 0;
+  }
+
+  > p {
+    margin-top: 0;
+    display: inline;
   }
 }
 

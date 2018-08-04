@@ -14,12 +14,12 @@ const config = {
   },
   watch: true,
   plugins: [
-    new webpack.optimize.UglifyJsPlugin({
-      compress: { warnings: false }
-    })
+//     new webpack.optimize.UglifyJsPlugin({
+//       compress: { warnings: false }
+//     })
   ],
   module: {
-    rules: [
+    rules: [/*
       {
         test: /\.js$/,
 //        include: path.resolve(__dirname, 'src'),
@@ -30,7 +30,7 @@ const config = {
           }
         }]
       }
-    ]
+    */]
   }
 };
 

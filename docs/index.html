@@ -51,6 +51,10 @@
       <code>man</code> is perfectly suited to styling <a href="http://daringfireball.net/projects/markdown/" title="Markdown">Markdown</a>-generated documents, although manually-authored HTML will provide some features &amp; capabilities that are not supported in Markdown&rsquo;s simplified syntax/structure.
     </p>
 
+    <p>Checkout this sweet footnote<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>.</p>
+
+    <p>And this other sweet footnote<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup>.</p>
+
     <h2 id="usage"><a href="#usage" aria-hidden="true">#</a>Usage</h2>
 
     <p>Simply include the stylesheet in your page&hellip;</p>
@@ -573,7 +577,20 @@
   <span class="nt">body</span> <span class="p">{</span> <span class="k">width</span><span class="p">:</span> <span class="mi">90</span><span class="kt">%</span><span class="p">;</span> <span class="k">margin</span><span class="p">:</span> <span class="mi">0</span> <span class="kc">auto</span><span class="p">;</span> <span class="k">padding</span><span class="p">:</span> <span class="mi">10</span><span class="kt">px</span> <span class="mi">0</span><span class="p">;</span>  <span class="p">}</span>
 <span class="p">}</span></pre>
 
+
+    <div class="footnotes">
+      <ol>
+        <li id="fn:1">
+          <p>A footnote. <a href="#fnref:1" class="reversefootnote">↩</a></p>
+        </li>
+        <li id="fn:2">
+          <p>This is another footnote that will hopefully wrap at least one line so that I  <a href="#fnref:2" class="reversefootnote">↩</a></p>
+        </li>
+      </ol>
+    </div>
   </div>
+
+
 
 
 
@@ -598,7 +615,10 @@
     }
 
 
-    window.Man({pre : true});
+    window.Man({
+      pre : true,
+      footnotes: true
+    });
   });
 </script>
 
