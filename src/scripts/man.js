@@ -100,7 +100,7 @@
       var pop = new Popover({
         root : '#man',
         attribute : 'data-popover-footnote',
-        debug: true,
+        debug: false,
         factory : function(targetNode) {
           return { class: 'man-popover', content: document.querySelector(targetNode.getAttribute('href').replace(':', '\\:')).innerHTML };
         }
