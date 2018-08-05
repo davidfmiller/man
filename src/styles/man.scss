@@ -16,12 +16,45 @@ fieldset {
 }
 
 sup {
-  padding-left: 5px;
   vertical-align: middle;
+  font-size: 9px;
+  margin-left: 5px;
+  line-height: 1em;
+  display: inline-block;
+
+  a,a:visited,a:hover {
+    background: rgba(0,0,0,0.3);
+    border-radius: 10px;
+    border-bottom: none;
+    color: #fff;
+    display: block;
+    padding: 3px 5px ;
+  }
+
+  a {
+    transition: background $transition-duration;
+    &:hover {
+      background: rgba(0,0,0,0.6);
+    }
+  }
+}
+
+div.footnotes {
+  border-top: 1px solid #ddd;
+  margin-top: 2em;
+  padding-top: 2em;
 }
 
 body .man-popover {
   max-width: 300px;
+
+  a,
+  a:visited {
+    color: #fff;
+  }
+  a:hover {
+    color: red;
+  }
 
   .bd { padding: 10px; }
   p {
