@@ -15,29 +15,6 @@ fieldset {
   padding: 0;
 }
 
-sup {
-  vertical-align: middle;
-  font-size: 9px;
-  line-height: 1em;
-  display: inline-block;
-  margin-left: 5px;
-
-  a,a:visited,a:hover {
-    background: rgba(0,0,0,0.3);
-    border-radius: 10px;
-    border-bottom: none;
-    color: #fff;
-    display: block;
-    padding: 3px 5px ;
-  }
-
-  a {
-    transition: background $transition-duration;
-    &:hover {
-      background: rgba(0,0,0,0.6);
-    }
-  }
-}
 
 div.footnotes {
   border-top: 1px solid #ddd;
@@ -887,5 +864,29 @@ pre { /* pygments */
     border: none;
     display: inline-block;
     padding: 10px;
+  }
+}
+
+sup {
+  vertical-align: middle;
+  font-size: 9px;
+  line-height: 1em;
+  display: inline-block;
+  margin-left: 5px;
+
+  a,a:visited,a:hover {
+    background: rgba(0,0,0,0.3);
+    border-radius: 10px;
+    border-bottom: none;
+    color: #fff;
+    display: block;
+    padding: 3px 5px ;
+  }
+
+  a {
+    transition: background $transition-duration;
+    &:hover {
+      background: rgba(0,0,0,0.6);
+    }
   }
 }
