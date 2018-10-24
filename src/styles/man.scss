@@ -7,6 +7,10 @@
 
 @import "../../node_modules/rmr-util/src/styles/rmr-util.scss";
 
+
+
+
+
 * { box-sizing:border-box; }
 
 /* remove with next rmr-util */
@@ -51,6 +55,11 @@ body {
   color: #000;
   font: 12px menlo, consolas, monaco, monospace;
   padding: 50px 0;
+
+//   @include rmr-dark {
+//     background: #222;
+//     color: #fff;
+//   }
 }
 
 div {
