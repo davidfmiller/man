@@ -89,6 +89,8 @@
       a = footnotes[i],
       target = document.querySelector(a.getAttribute('href').replace(':', '\\:'));
 
+      a.parentNode.setAttribute('title', 'Click to see footnote');
+
       if (! target) { // footnote content doesn't exist (??)
         continue;
       }
@@ -100,9 +102,9 @@
       var pop = new Popover({
         root : '#man',
         attribute : 'data-popover-footnote',
-        debug: true,
+        debug: false,
         factory : function(targetNode) {
-          return { class: 'man-popover', content: document.querySelector(targetNode.getAttribute('href').replace(':', '\\:')).innerHTML };
+          return { events: { pop: 'click' }, class: 'man-popover', content: document.querySelector(targetNode.getAttribute('href').replace(':', '\\:')).innerHTML };
         }
       });
     }

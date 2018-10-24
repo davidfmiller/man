@@ -51,10 +51,6 @@
       <code>man</code> is perfectly suited to styling <a href="http://daringfireball.net/projects/markdown/" title="Markdown">Markdown</a>-generated documents, although manually-authored HTML will provide some features &amp; capabilities that are not supported in Markdown&rsquo;s simplified syntax/structure.
     </p>
 
-    <p>Checkout this sweet footnote<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>.</p>
-
-    <p>And this other sweet footnote<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup>.</p>
-
     <h2 id="usage"><a href="#usage" aria-hidden="true">#</a>Usage</h2>
 
     <p>Simply include the stylesheet in your page&hellip;</p>
@@ -65,13 +61,17 @@
 
   <pre id="pre-js"><div><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;<a href="http://davidfmiller.github.io/man/man.js">http://davidfmiller.github.io/man/man.js</a>&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
 <span class="nt">&lt;script&gt;</span>
-  <span class="nb">window</span><span class="p">.</span><span class="nx">Man</span><span class="p">({</span><span class="s1">pre</span><span class="o">:</span> <span class="kc">true</span><span class="p">});</span>
-<span class="nt">&lt;/script&gt;</span>
-</div></pre>
+  <span class="nb">window</span><span class="p">.</span><span class="nx">Man</span><span class="p">({</span><br>    <span class="s1">pre</span><span class="o">:</span> <span class="kc">true</span><br>    <span class="s1">footnotes</span><span class="o">:</span> <span class="kc">true</span><span class="p"><br>  });</span>
+<span class="nt">&lt;/script&gt;</span></div></pre>
 
     <p>&hellip; or save the files locally within your project&rsquo;s repository and include them from there.</p>
 
     <p>This page is built using <code>man</code>; save and copy the source to use as a template for your project&rsquo;s documentation.</p>
+
+
+    <h3 id="footnotes"><a href="#footnotes" aria-hidden="true">#</a>Footnotes</h3>
+
+    <p><code>man</code> now supports footnotes<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup>.</p>
 
     <h3 id="code"><a href="#code" aria-hidden="true">#</a>Code blocks</h3>
 
@@ -584,10 +584,7 @@
     <div class="footnotes">
       <ol>
         <li id="fn:1">
-          <p>A footnote. <a href="#fnref:1" class="reversefootnote">↩</a></p>
-        </li>
-        <li id="fn:2">
-          <p>This is another footnote that will hopefully wrap at least one line so that I  <a href="#fnref:2" class="reversefootnote">↩</a></p>
+          <p>A footnote just for the sake of it. <a href="#fnref:1" class="reversefootnote">↩</a></p>
         </li>
       </ol>
     </div>

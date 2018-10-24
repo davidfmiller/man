@@ -459,6 +459,7 @@
 
       l = {
         on: function(e) {
+          if (e.type === 'click') { e.preventDefault(); }
           on(e, self.delay.pop);
         },
         off: function(e) {
