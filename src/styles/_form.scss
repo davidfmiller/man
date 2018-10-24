@@ -152,6 +152,7 @@
   input[type=password],
   input[type=number],
   input[type=search],
+  input[type=color],
   input[type=text],
   input[type=tel] {
 
@@ -184,14 +185,24 @@
     }
   }
 
-  input[type=number] {
-    width: 6em;
-    padding-right: 5px;
-  }
-
   input[type=color] {
 
-    border: 2px solid #888;
+    &[disabled] {
+      background-color: transparent;
+      color: rgba(0,0,0,0.2);
+      border: 1px solid rgba(0,0,0,0.2);
+      cursor: not-allowed;
+      &:hover {
+        transform: none;
+        border-color: rgba(0,0,0,0.2);
+      }
+    }
+
+
+    border: 1px solid rgba(0,0,0,0.3);
+    border-radius: 5px;
+
+    border: 1px solid rgba(0,0,0,0.3);
     border-radius: 5px;
     cursor: pointer;
     display: inline-block;
@@ -222,6 +233,13 @@
     }
 
   }
+
+
+  input[type=number] {
+    width: 6em;
+    padding-right: 5px;
+  }
+
 
   input[type=time] {
     display: inline-block;
