@@ -7,10 +7,6 @@
 
 @import "../../node_modules/rmr-util/src/styles/rmr-util.scss";
 
-
-
-
-
 * { box-sizing:border-box; }
 
 /* remove with next rmr-util */
@@ -45,7 +41,17 @@ body .man-popover {
 }
 
 html {
-/*  background: #fff; */
+
+  --background-color: #fff;
+  --foreground-color: #000;
+
+  @include rmr-dark {
+
+    --background-color: #444;
+    --foreground-color: #fff;
+  }
+
+  background: var(--background-color);
 }
 
 body {
@@ -56,10 +62,10 @@ body {
   font: 12px menlo, consolas, monaco, monospace;
   padding: 50px 0;
 
-//   @include rmr-dark {
-//     background: #222;
-//     color: #fff;
-//   }
+  @include rmr-dark {
+    color: var(--foreground-color);
+  }
+
 }
 
 div {
@@ -87,12 +93,12 @@ h3 {
 }
 
 h1, h2, h3 {
-  color: #444;
+  color: var(--foreground-color);
   line-height: 2em;
 }
 
 h1 code {
-  color: #000;
+  color: var(--foreground-color);
   font-size: 20px;
   font-weight: bold;
 }
@@ -120,13 +126,13 @@ a {
 
 strong {
   font-weight: inherit;
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid var(--foreground-color);;
 }
 
 h1 a,
 h1 a:visited {
   border-bottom-width: 0;
-  color: #000;
+  color: var(--foreground-color);;
 }
 
 h1 a:hover {
@@ -324,7 +330,7 @@ a {
 code {
   background: rgba(0, 0, 0, 0.05);
   border-radius: 5px;
-  color: #000;
+  color: var(--foreground-color);
   padding: 0 5px;
   transition: color $transition-duration, background $transition-duration;
 /*
