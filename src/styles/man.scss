@@ -489,11 +489,17 @@ pre {
 
       &.code:hover {
         background: rgba(224, 224, 224, 0.4);
+        @include rmr-dark {
+          background: #333;
+        }
       }
 
       &.col {
         color: rgba(0,0,0,0.1);
         transition: color $transition-duration;
+        @include rmr-dark {
+          color: #222;
+        }
       }
 
     }

@@ -5,12 +5,14 @@
 
 #man {
 
-  --color-input-background: #00A1FF;
+  --color-input-background: #f8f8f8;
+  --color-input-border: rgba(0,0,0,0.3);
   --color-button-background: rgba(0, 0, 0, 0.05);
   --color-button-foreground: rgba(255, 255, 255, 0.45);
 
   @include rmr-dark {
-    --color-input-background: #00A1FF;
+    --color-input-background: #d8d8d8;
+    --color-input-border: #000;
     --color-button-background: rgba(255, 255, 255, 0.45);
     --color-button-foreground: rgba(255, 255, 255, 0.45);
   }
@@ -119,7 +121,7 @@
   select {
     -moz-appearance: none;
     -webkit-appearance: none;
-    background-color: rgba(0,0,0,0.05);
+    background-color: var(--color-button-background);
     background-image: url(man.svg#select-dropdown); /* triangle.svg */
     background-position: right 7px center;
     background-repeat: no-repeat;
@@ -173,8 +175,8 @@
 
     -webkit-appearance: none;
     font-size: 11px;
-    background-color: #f8f8f8;
-    border: 1px solid rgba(0,0,0,0.3);
+    background-color: var(--color-input-background);
+    border: 1px solid var(--color-input-border);
     padding: 5px 10px;
     border-radius: 4px;
     transition: transform $transition-duration, background $transition-duration, color $transition-duration, border $transition-duration;
