@@ -5,8 +5,19 @@
 
 #man {
 
-  --main-bg-color: coral;
+  --color-input-background: #00A1FF;
+  --color-button-background: rgba(0, 0, 0, 0.05);
+  --color-button-foreground: rgba(255, 255, 255, 0.45);
 
+  @include rmr-dark {
+    --color-input-background: #00A1FF;
+    --color-button-background: rgba(255, 255, 255, 0.45);
+    --color-button-foreground: rgba(255, 255, 255, 0.45);
+  }
+
+  legend {
+    color: var(--color-foreground);
+  }
 
   /*
   https://developer.mozilla.org/en-US/docs/Web/CSS/::-ms-browse
@@ -20,7 +31,7 @@
 
       -webkit-appearance: none;
 
-      background: rgba(0, 0, 0, 0.05);
+      background: var(--color-button-background);
       border-radius: 2px;
       border: 1px solid rgba(0,0,0,0.3);
       font-family: consolas, menlo, monaco, monospace-serif;
@@ -75,7 +86,7 @@
     border: 2px solid #444;
 */
 
-    background: rgba(0, 0, 0, 0.05);
+    background: var(--color-button-background);
     border-radius: 2px;
     border: 1px solid rgba(0,0,0,0.3);
     font-family: consolas, menlo, monaco, monospace-serif;
@@ -296,12 +307,12 @@
         background-image: url(svg/search-hover.svg);
       }
     }
-
   }
 
   // https://css-tricks.com/styling-cross-browser-compatible-range-inputs-css/
   input[type=range] {
 
+    background: var(--color-background);
     -webkit-appearance: none;
     border-radius: 10px;
     height: 16px;

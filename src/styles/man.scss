@@ -9,10 +9,19 @@
 
 * { box-sizing:border-box; }
 
-/* remove with next rmr-util */
-fieldset {
-  margin: 0;
-  padding: 0;
+html {
+
+  --color-background: #fff;
+  --color-foreground: #000;
+
+  @include rmr-dark {
+
+    --color-link: #00A1FF;
+    --color-background: #444;
+    --color-foreground: #fff;
+  }
+
+  background: var(--color-background);
 }
 
 
@@ -40,19 +49,6 @@ body .man-popover {
   a.reversefootnote { display: none; }
 }
 
-html {
-
-  --background-color: #fff;
-  --foreground-color: #000;
-
-  @include rmr-dark {
-
-    --background-color: #444;
-    --foreground-color: #fff;
-  }
-
-  background: var(--background-color);
-}
 
 body {
 
@@ -63,7 +59,7 @@ body {
   padding: 50px 0;
 
   @include rmr-dark {
-    color: var(--foreground-color);
+    color: var(--color-foreground);
   }
 
 }
@@ -93,12 +89,12 @@ h3 {
 }
 
 h1, h2, h3 {
-  color: var(--foreground-color);
+  color: var(--color-foreground);
   line-height: 2em;
 }
 
 h1 code {
-  color: var(--foreground-color);
+  color: var(--color-foreground);
   font-size: 20px;
   font-weight: bold;
 }
@@ -115,6 +111,10 @@ a {
   color: blue;
   text-decoration: none;
 
+  @include rmr-dark {
+    color: #ff00ff;
+  }
+
   &:visited {
     color: purple;
   }
@@ -126,13 +126,13 @@ a {
 
 strong {
   font-weight: inherit;
-  border-bottom: 1px solid var(--foreground-color);;
+  border-bottom: 1px solid var(--color-foreground);
 }
 
 h1 a,
 h1 a:visited {
   border-bottom-width: 0;
-  color: var(--foreground-color);;
+  color: var(--color-foreground);
 }
 
 h1 a:hover {
@@ -330,7 +330,7 @@ a {
 code {
   background: rgba(0, 0, 0, 0.05);
   border-radius: 5px;
-  color: var(--foreground-color);
+  color: var(--color-foreground);
   padding: 0 5px;
   transition: color $transition-duration, background $transition-duration;
 /*
@@ -524,7 +524,7 @@ pre {
 
   a {
     border-bottom-width: 0;
-    color: blue;
+    color: var(--color-link);
 
     &:hover {
       border-bottom-width: 1px;
@@ -579,11 +579,12 @@ dl {
 }
 
 hr {
-  background: rgba(127,127,127,0.1);
+  background: var(--color-foreground);
   border: none;
   height: 1px;
   line-height: 0;
   margin: 20px 0;
+  opacity: 0.15;
   padding: 0;
 }
 
