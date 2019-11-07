@@ -14,7 +14,7 @@
     legend {
       border-bottom: 1px solid #ddd;
       display: block;
-      font-size: 120%;
+
       font-weight: bold;
       margin-bottom: 5px;
       padding-bottom: 5px;
@@ -45,7 +45,7 @@
     <h1><i>📘</i> <a href="https://github.com/davidfmiller/man/">man</a></h1>
 
     <p>
-      &hellip; is a lightweight CSS &amp; JS library to make simple, attractive, and easy-to-read documentation. The project&rsquo;s inspiration stems from your terminal&rsquo;s <a href="https://en.wikipedia.org/wiki/Man_page"><code>man</code></a> pages, and focus is placed on simplicity &amp; clarity with a nod to the <code>monospace</code> world.
+      &hellip; is a lightweight CSS (&amp; JS) library to make simple, attractive, and easy-to-read documentation. The project&rsquo;s inspiration stems from your terminal&rsquo;s <a href="https://en.wikipedia.org/wiki/Man_page"><code>man</code></a> pages, and focus is placed on simplicity &amp; clarity with a nod to the <code>monospace</code> world.
     </p>
     <p>
       <code>man</code> is perfectly suited to styling <a href="http://daringfireball.net/projects/markdown/" title="Markdown">Markdown</a>-generated documents, although manually-authored HTML will provide some features &amp; capabilities that are not supported in Markdown&rsquo;s simplified syntax/structure.
@@ -131,6 +131,8 @@
     <h2 id="elements"><a href="#elements" aria-hidden="true">#</a>Elements</h2>
 
     <h3>H3</h3>
+
+    <h3>This is a really long title to test <code>line-height</code> within header elements and ensure they match the rest of the document.</h3>
 
     <h4>H4</h4>
 
@@ -302,7 +304,7 @@
         </p>
     </footer>
 
-<h3>This is a really long title to test <code>line-height</code> within header elements and ensure they match the rest of the document.</h3>
+
 
 <pre class="rmr-modal"><span class="p">@</span><span class="k">charset</span> <span class="s2">&quot;UTF-8&quot;</span><span class="p">;</span>
 
@@ -603,6 +605,7 @@
     times = document.querySelectorAll('input[type=time]'),
     i = 0;
 
+    // default values
     for (i in dates) {
       if (dates.hasOwnProperty(i)) {
         dates[i].value = "2000-01-01";
