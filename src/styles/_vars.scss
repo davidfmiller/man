@@ -1,4 +1,26 @@
+@import "../../node_modules/rmr-util/src/styles/rmr-util.scss";
 
 $transition-duration : 0.2s;
 $transition-duration-short : 0.1s;
 
+body {
+
+    --color-bg: #fff;
+    --color-code-bg: #{rgba(0, 0, 0, 0.05)};
+    --color-fg: #000;
+    --color-code-fg: #000;
+    --color-link: blue;
+    --color-title: #444;
+    --color-border: #{rgba(127,127,127,0.1)};
+
+   @include rmr-dark {
+      --color-bg: #222;
+      --color-title: #aaa;
+      --color-code-bg: #333;
+      --color-fg: #fff;
+      --color-code-fg: #ccc;
+      --color-link: #3f9fff;
+      --color-border: #{rgba(255,255,255,0.2)};
+   }
+
+}

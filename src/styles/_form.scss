@@ -5,7 +5,7 @@
 
 #man {
 
-  --main-bg-color: coral;
+
 
 
   /*
@@ -301,7 +301,7 @@
 
   // https://css-tricks.com/styling-cross-browser-compatible-range-inputs-css/
   input[type=range] {
-
+    background: transparent;
     -webkit-appearance: none;
     border-radius: 10px;
     height: 16px;
