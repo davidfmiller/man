@@ -6,8 +6,6 @@
 @import "_popover.scss";
 
 
-
-
 * {
   box-sizing:border-box;
 }
@@ -99,15 +97,14 @@ a {
   border-bottom-width: 1px;
   color: var(--color-link);
   text-decoration: none;
-/*
+
   &:visited {
-    color: purple;
+    color: var(--color-link-visited);
   }
 
   &:hover {
     color: red;
   }
-*/
 }
 
 strong {
@@ -326,7 +323,7 @@ code {
   }
 */
   &:hover {
-    background: rgba(0,0,0,0.8);
+    background: var(--color-bg);
     color: var(--color-fg);
   }
 }

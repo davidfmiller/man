@@ -9,7 +9,10 @@ body {
     --color-code-bg: #{rgba(0, 0, 0, 0.05)};
     --color-fg: #000;
     --color-code-fg: #000;
+
     --color-link: blue;
+    --color-link-visited: purple;
+
     --color-title: #444;
     --color-border: #{rgba(127,127,127,0.1)};
 
@@ -19,7 +22,10 @@ body {
       --color-code-bg: #333;
       --color-fg: #fff;
       --color-code-fg: #ccc;
+
       --color-link: #3f9fff;
+      --color-link-visited: #{rgb(241, 85, 215)};
+
       --color-border: #{rgba(255,255,255,0.2)};
    }
 
