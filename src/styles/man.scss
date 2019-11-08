@@ -133,12 +133,12 @@ h1 a:hover {
   border-bottom-width: 1px;
 }
 
-dt a,
-dt a:visited,
-h3 a,
-h3 a:visited,
-h2 a,
-h2 a:visited {
+dt a[aria-hidden],
+dt a[aria-hidden]:visited,
+h3 a[aria-hidden],
+h3 a[aria-hidden]:visited,
+h2 a[aria-hidden],
+h2 a[aria-hidden]:visited {
   border: none;
   color: #eee;
   left: -15px;
