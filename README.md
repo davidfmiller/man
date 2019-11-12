@@ -6,7 +6,7 @@ View the [docs](http://davidfmiller.github.io/man).
 
 ## `man.iatemplate`
 
-… is a preview template for [iA Writer](https://www.ia.net/writer):
+… is a [preview template](https://github.com/iainc/iA-Writer-Templates) for [iA Writer](https://www.ia.net/writer):
 
 * copy the bundle to `~/Library/Containers/pro.writer.mac/Data/Library/Application Support/iA Writer/Templates/`
-* restart the app, open the Preferences window, navigate to the “Templates” tab and select “man” in the “Custom templates” list.
+* restart the app, and select `man` from the status/toolbar  at the bottom of the preview pane
