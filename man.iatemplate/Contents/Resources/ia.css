@@ -1,3 +1,6 @@
 ﻿html {
   padding: 0 !important;
 }
+html.night-mode {
+  background: #222;
+}
