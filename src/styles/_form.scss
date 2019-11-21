@@ -22,7 +22,7 @@
 
       -webkit-appearance: none;
 
-      background: rgba(0, 0, 0, 0.05);
+      background: var(--color-button-bg);
       border-radius: 2px;
       border: 1px solid rgba(0,0,0,0.3);
       font-family: consolas, menlo, monaco, monospace-serif;
@@ -77,7 +77,7 @@
     border: 2px solid #444;
 */
 
-    background: rgba(0, 0, 0, 0.05);
+    background: var(--color-button-bg);
     border-radius: 2px;
     border: 1px solid rgba(0,0,0,0.3);
     font-family: consolas, menlo, monaco, monospace-serif;
@@ -110,7 +110,7 @@
   select {
     -moz-appearance: none;
     -webkit-appearance: none;
-    background-color: rgba(0,0,0,0.05);
+    background-color: var(--color-button-bg);
     background-image: url(man.svg#select-dropdown); /* triangle.svg */
     background-position: right 7px center;
     background-repeat: no-repeat;
@@ -354,7 +354,6 @@
 
     &:not([disabled]) {
       cursor: pointer;
-
 
       &:focus,
       &:hover {

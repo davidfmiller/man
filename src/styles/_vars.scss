@@ -5,11 +5,16 @@ $transition-duration-short : 0.1s;
 
 html {
 
+    /* background colors */
     --color-bg: #fff;
     --color-code-bg: #{rgba(0, 0, 0, 0.05)};
+    --color-button-bg: #{rgba(0, 0, 0, 0.05)};
+
+    /* foreground colors */
     --color-fg: #000;
     --color-code-fg: #000;
 
+    /* link colors */
     --color-link: blue;
     --color-link-visited: purple;
 
@@ -17,16 +22,22 @@ html {
     --color-border: #{rgba(127,127,127,0.1)};
 
    @include rmr-dark {
+      /* background-colors */
       --color-bg: #222;
-      --color-title: #aaa;
       --color-code-bg: #333;
+      --color-button-bg: #bbb;
+
+      /* foreground colors */
       --color-fg: #fff;
       --color-code-fg: #ccc;
 
+      /* link colors */
       --color-link: #3f9fff;
       --color-link-visited: #{rgb(241, 85, 215)};
 
+      --color-title: #aaa;
       --color-border: #444;
+
    }
 
 }
