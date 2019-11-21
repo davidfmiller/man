@@ -4,6 +4,17 @@
 
 View the [docs](http://davidfmiller.github.io/man).
 
+### Building
+
+
+
+```
+sudo npm i -g grunt
+sudo npm i -g webpack
+```
+
+
+
 ## `man.iatemplate`
 
 … is a [preview template](https://github.com/iainc/iA-Writer-Templates) for [iA Writer](https://www.ia.net/writer):
