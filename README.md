@@ -9,8 +9,11 @@ View the [docs](http://davidfmiller.github.io/man).
 
 
 ```
+sudo gem install compass
 sudo npm i -g grunt
-sudo npm i -g webpack
+npm i
+grunt compass
+npx webpack
 ```
 
 

@@ -41,11 +41,12 @@ body .man-popover {
   a.reversefootnote { display: none; }
 }
 
+html {
+  background: var(--color-bg);
+}
 
 body {
-
   -webkit-tap-highlight-color: rgba(32, 32, 32, 0.1);
-  background: var(--color-bg);
   color: var(--color-fg);
   font: 14px menlo, consolas, monaco, monospace;
   padding: 50px 0;
