@@ -1,6 +1,6 @@
 # man
 
-… is a lightweight CSS (& JS) library to make simple, attractive documentation for software projects. Focus is placed on simplicity & clarity with a nod to the monospaced fonts that  working.
+… is a lightweight CSS (& JS) library to make simple, attractive documentation for software projects. Focus is placed on simplicity & clarity with a nod to the monospaced world that software developers employ.
 
 View the [docs](http://davidfmiller.github.io/man).
 
