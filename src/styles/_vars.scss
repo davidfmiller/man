@@ -9,6 +9,8 @@ html {
     --color-bg: #fff;
     --color-code-bg: #{rgba(0, 0, 0, 0.05)};
     --color-button-bg: #{rgba(0, 0, 0, 0.05)};
+    --color-input-bg: #eee;
+    --color-input-focus-bg: #fff;
 
     /* foreground colors */
     --color-fg: #000;
@@ -26,6 +28,8 @@ html {
       --color-bg: #222;
       --color-code-bg: #333;
       --color-button-bg: #bbb;
+      --color-input-bg: #666;
+      --color-input-focus-bg: #aaa;
 
       /* foreground colors */
       --color-fg: #fff;

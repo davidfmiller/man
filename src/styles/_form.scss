@@ -164,7 +164,7 @@
 
     -webkit-appearance: none;
     font-size: 11px;
-    background-color: #f8f8f8;
+    background-color: var(--color-input-bg);
     border: 1px solid rgba(0,0,0,0.3);
     padding: 5px 10px;
     border-radius: 4px;
@@ -178,7 +178,7 @@
     &:focus {
       transform: scale(1.2);
       outline: none;
-      background-color: #f0f0f0;
+      background-color: var(--color-input-focus-bg);
       box-shadow: 0 0 5px rgba(0,0,0,0.2);
       border-color:rgba(0,0,0,0.6);
     }
