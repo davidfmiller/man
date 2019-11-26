@@ -397,8 +397,8 @@ pre {
   > code {
     display: block;
     overflow: auto;
-    line-height: 1.2em;
   }
+  line-height: 1.5em;
 
   font-family: consolas, menlo, monaco, monospace-serif;
   background: var(--color-code-bg);
@@ -468,7 +468,7 @@ pre {
 
   tr {
     td {
-      padding: 0.1em 0;
+      padding: 0;
       transition: background-color $transition-duration-short;
       border: none;
       text-align: left;
@@ -504,7 +504,6 @@ pre {
       color: inherit;
     }
     padding: 0;
-    line-height: 15px;
     background: transparent;
   }
 
