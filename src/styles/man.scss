@@ -397,6 +397,7 @@ pre {
   > code {
     display: block;
     overflow: auto;
+    line-height: 1.2em;
   }
 
   font-family: consolas, menlo, monaco, monospace-serif;
@@ -411,7 +412,9 @@ pre {
     border-color $transition-duration,
     transform $transition-duration-short;
 
-  div { overflow: scroll; }
+  > div {
+    overflow: scroll;
+  }
 
   // modal
   > i {
@@ -475,7 +478,8 @@ pre {
       }
 
       &.col {
-        color: rgba(0,0,0,0.1);
+        color: var(--color-code-fg);
+        opacity: 0.5;
         transition: color $transition-duration;
       }
 
@@ -486,9 +490,9 @@ pre {
     }
   }
 
-  &:hover td.col {
-    color: rgba(0,0,0,0.2);
-  }
+   &:hover td.col {
+     color: var(--color-code-fg);
+   }
 
   &.rmr-lines {
     padding: 10px 0;
@@ -584,7 +588,6 @@ td.col {
   -ms-user-select: none;       /* IE/Edge */
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none;   /* Chrome/Safari/Opera */
-  color: #888;
   cursor: pointer;
   font-size: 11px;
   padding: 0 5px;
