@@ -180,11 +180,10 @@ dl {
 
 dd {
   line-height: 2em;
-  margin: 10px 0;
   padding-left: 10px;
 
   &:last-child {
-    margin-bottom: 0;
+    margin-bottom: 10px;
   }
 }
 
