@@ -1,22 +1,22 @@
 
 const
   path = require('path'),
-  webpack = require('webpack');
-
-// const ExtractTextPlugin = require('extract-text-webpack-plugin');
-// const extractCSS = new ExtractTextPlugin('[name].bundle.css');
+  webpack = require('webpack'),
+    terser = require('terser-webpack-plugin');
 
 const config = {
   entry: './src/scripts/index.js',
+  mode: 'production',
   output: {
     path: path.resolve(__dirname, 'docs/'),
     filename: 'man.js'
   },
   watch: true,
   plugins: [
-//     new webpack.optimize.UglifyJsPlugin({
-//       compress: { warnings: false }
-//     })
+    new terser({
+      extractComments: false,
+      test: /\.js(\?.*)?$/i
+    })
   ],
   module: {
     rules: [/*

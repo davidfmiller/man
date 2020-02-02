@@ -18,11 +18,11 @@
     "grunt-contrib-compass": "*",
     "grunt-contrib-uglify": "^4.0.0",
     "grunt-contrib-watch": "^1.1.0",
-    "uglifyjs-webpack-plugin": "^1.3.0",
-    "webpack": "^4.41.2",
+    "terser-webpack-plugin": "^2.3.4",
+    "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10"
   },
   "dependencies": {
-    "rmr-util": "^1.1.30"
+    "rmr-util": "^1.1.63"
   }
 }
