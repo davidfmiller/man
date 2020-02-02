@@ -68,7 +68,7 @@
     pres = man.pre ? RMR.Array.coerce(document.body.querySelectorAll('pre')) : [],
     footnotes = man.footnotes ? RMR.Array.coerce(document.body.querySelectorAll('sup a.footnote')) : [],
 //    tables = man.table ? RMR.Array.coerce(document.body.querySelectorAll('table')) : [],
-    badge = RMR.Node.make('div', { 'class': 'man-badge' });
+    badge = RMR.Node.create('div', { 'class': 'man-badge' });
 
     let
     i = 0,
@@ -169,12 +169,12 @@
       }
 
       // add hash link
-      const a = RMR.Node.make('a', { class: 'rmr-hash', 'aria-hidden': true, href: '#' + pre.getAttribute('id'), title: 'Link' });
+      const a = RMR.Node.create('a', { class: 'rmr-hash', 'aria-hidden': true, href: '#' + pre.getAttribute('id'), title: 'Link' });
       a.innerHTML = '#';
       pre.appendChild(a);
 
       const title = 'Expand',
-      n = RMR.Node.make('i', {title: title, 'aria-hidden': true});
+      n = RMR.Node.create('i', {title: title, 'aria-hidden': true});
       n.innerHTML = title;
       n.addEventListener('click', openData.bind({node: pre, content: content}));
       pre.appendChild(n);
