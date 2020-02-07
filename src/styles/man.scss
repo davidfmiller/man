@@ -572,8 +572,10 @@ hr {
   padding: 0;
 }
 
-body > img {
+#man > img {
   box-shadow: 1px 1px 5px #ddd;
+  max-width: 100%;
+  height: auto;
 
   & > img.screenshot {
     box-shadow: none;
