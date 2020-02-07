@@ -572,7 +572,8 @@ hr {
   padding: 0;
 }
 
-#man > picture,
+#man > picture > img,
+#man > picture > source,
 #man > img {
   max-width: 100%;
   height: auto;
