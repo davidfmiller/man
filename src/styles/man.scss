@@ -572,10 +572,10 @@ hr {
   padding: 0;
 }
 
-#man > a:has(> picture),
-#man > a:has(> img) {
+#man > a {
   max-width: 100%;
   display: block;
+  border-bottom: none;
 }
 
 #man > picture > img,
