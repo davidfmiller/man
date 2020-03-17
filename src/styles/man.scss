@@ -1,11 +1,11 @@
 @charset "UTF-8";
 
+@import "../../node_modules/rmr-util/src/styles/rmr-util";
+
 @import "_vars.scss";
 @import "_form.scss";
 @import "_modal.scss";
 @import "_popover.scss";
-
-
 
 div.footnotes {
   border-top: 1px solid var(--color-border);
@@ -81,6 +81,9 @@ h1 i {
   font-style: normal;
   left: -25px;
   position: absolute;
+  @include rmr-breakpoint-down('sm') {
+    display: none;
+  }
 }
 
 a {
@@ -125,6 +128,9 @@ h2 a[aria-hidden]:visited {
   position: absolute;
   text-decoration: none;
   transition: color $transition-duration linear;
+  @include rmr-breakpoint-down('sm') {
+    display: none;
+  }
 }
 
 
@@ -599,46 +605,11 @@ td.col {
 }
 
 #man {
-  max-width: 700px;
+  max-width: 768px;
   margin: 0 auto;
-}
-
-
-@media screen and (max-device-width: 480px) { /* smartphone */
-
-  body {
-    margin: 0 auto;
-    padding: 0 10px;
+  @include rmr-breakpoint-down('sm') {
+    margin: 0 10px;
   }
-
-  #man {
-    -webkit-text-size-adjust: 100%;
-    margin: 0 auto;
-    padding: 10px 0;
-    width: 100%;
-  }
-
-  h1 i {
-    display: none;
-  }
-}
-
-
-@media only screen and (device-width: 768px) { /* tablet */
-
-  body {
-    margin: 0 auto;
-    padding: 10px 0;
-    width: 90%;
-  }
-  #man {
-    -webkit-text-size-adjust: 100%;
-  }
-
-  h1 i {
-    display: none;
-  }
-
 }
 
 /*
