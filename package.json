@@ -23,6 +23,6 @@
     "webpack-cli": "^3.3.10"
   },
   "dependencies": {
-    "rmr-util": "^1.1.63"
+    "rmr-util": "^1.1.85"
   }
 }
