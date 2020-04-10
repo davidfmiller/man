@@ -19,7 +19,7 @@
     "grunt-contrib-uglify": "^4.0.0",
     "grunt-contrib-watch": "^1.1.0",
     "terser-webpack-plugin": "^2.3.4",
-    "webpack": "^4.42.0",
+    "webpack": "^4.42.1",
     "webpack-cli": "^3.3.10"
   },
   "dependencies": {
