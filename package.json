@@ -18,7 +18,7 @@
     "grunt-contrib-compass": "^1.1.1",
     "grunt-contrib-uglify": "^4.0.0",
     "grunt-contrib-watch": "^1.1.0",
-    "terser-webpack-plugin": "^2.3.5",
+    "terser-webpack-plugin": "^2.3.8",
     "webpack": "^4.43.0"
   },
   "dependencies": {
